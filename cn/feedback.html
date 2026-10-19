@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>意见反馈 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body{background-color:#FFFFFF;margin:0;padding:0;font-family:"Microsoft YaHei","PingFang SC","Helvetica Neue",Arial,sans-serif;color:#000000;}
+        a{color:#000000;text-decoration:none;}
+        a:hover{color:#996633;}
+        img{border:0;max-width:100%;}
+        p{margin:8px 0;line-height:1.6;}
+
+        /* ===== Feedback 页面 ===== */
+        .fb-page{max-width:720px;margin:30px auto 60px;padding:0 20px;font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif;color:#333;line-height:1.7;}
+        .fb-page h1{color:#996633;font-family:"Arial Black","Microsoft YaHei",Arial,sans-serif;font-weight:bold;font-size:1.6rem;text-align:center;margin:0 0 6px;}
+        .fb-page .fb-intro{text-align:center;color:#666;font-size:0.9rem;margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid #EEE;}
+        .fb-page .fb-form{background:#FBFAF6;border:1px solid #E5DFD0;border-radius:6px;padding:26px 24px;}
+        .fb-field{margin-bottom:18px;}
+        .fb-field label{display:block;font-size:0.9rem;color:#000;font-weight:600;margin-bottom:6px;}
+        .fb-field label .required{color:#C0392B;margin-left:4px;}
+        .fb-field input[type="text"],.fb-field input[type="email"],.fb-field select,.fb-field textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #DDD;border-radius:4px;font-size:0.92rem;font-family:inherit;color:#333;background:#FFFFFF;transition:border-color 0.2s;}
+        .fb-field input:focus,.fb-field select:focus,.fb-field textarea:focus{outline:none;border-color:#B89162;}
+        .fb-field textarea{min-height:120px;resize:vertical;}
+        .fb-field .fb-hint{font-size:0.8rem;color:#888;margin-top:4px;}
+        .fb-radio-group{display:flex;flex-wrap:wrap;gap:18px;padding-top:4px;}
+        .fb-radio-group label{display:inline-flex;align-items:center;font-weight:normal;font-size:0.9rem;color:#333;margin:0;cursor:pointer;}
+        .fb-radio-group input[type="radio"]{margin-right:6px;accent-color:#B89162;}
+        .fb-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;padding-top:20px;border-top:1px dashed #E5DFD0;}
+        .fb-btn{padding:11px 28px;border-radius:4px;font-size:0.92rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:background 0.2s,color 0.2s;}
+        .fb-btn-primary{background:#B89162;color:#FFFFFF;}
+        .fb-btn-primary:hover{background:#996633;}
+        .fb-btn-primary:disabled{background:#C9B79B;cursor:not-allowed;}
+        .fb-btn-secondary{background:transparent;color:#000;border:1px solid #B89162;}
+        .fb-btn-secondary:hover{background:#F9F7EC;}
+        .fb-alert{padding:12px 16px;border-radius:4px;font-size:0.9rem;margin-bottom:20px;}
+        .fb-alert-success{background:#EBF5EC;border-left:4px solid #4CAF50;color:#2E7D32;}
+        .fb-alert-error{background:#FDECEA;border-left:4px solid #C0392B;color:#922B21;}
+        .fb-privacy{font-size:0.82rem;color:#666;margin-top:20px;line-height:1.6;}
+        .fb-privacy a{color:#996633;text-decoration:underline;}
+        .fb-honeypot{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;}
+
+        @media (max-width: 768px) {
+            /* Feedback 页面手机端 */
+            .fb-page { margin: 20px auto 40px; padding: 0 15px; }
+            .fb-page h1 { font-size: 1.3rem; }
+            .fb-page .fb-intro { font-size: 0.85rem; margin-bottom: 20px; padding-bottom: 15px; }
+            .fb-page .fb-form { padding: 20px 16px; }
+            .fb-field label { font-size: 0.88rem; }
+            .fb-field input[type="text"],
+            .fb-field input[type="email"],
+            .fb-field select,
+            .fb-field textarea { font-size: 0.9rem; padding: 9px 11px; }
+            .fb-field textarea { min-height: 100px; }
+            .fb-radio-group { flex-direction: column; gap: 8px; }
+            .fb-actions { flex-direction: column; }
+            .fb-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <div class="main-wrapper">
+
+        <div class="fb-page">
+
+            <h1>意见反馈</h1>
+            <p class="fb-intro">
+                感谢您抽出宝贵时间与我们分享您的想法。您的反馈将帮助我们不断改进服务，为您和其他用户带来更好的体验。
+            </p>
+
+            <div id="fbMessage" class="fb-alert" style="display:none;"></div>
+
+            <form id="feedbackForm" class="fb-form" action="https://formspree.io/f/xljgaywj" method="post" novalidate>
+
+                <!-- ★ 已改为纯英文主题防止邮件乱码 -->
+                <input type="hidden" name="_subject" value="Double Alpha HR - 新反馈提交" />
+
+                <div class="fb-honeypot" aria-hidden="true">
+                    <label for="fbHoneypot">请勿填写此字段</label>
+                    <input type="text" id="fbHoneypot" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <div class="fb-field">
+                    <label for="txtName">您的称呼 <span class="required">*</span></label>
+                    <input type="text" id="txtName" name="txtName" maxlength="80" placeholder="请输入您的姓名" required />
+                </div>
+
+                <div class="fb-field">
+                    <label for="txtEmail">邮箱地址 <span class="required">*</span></label>
+                    <!-- ★ 已改为 name="email" -->
+                    <input type="email" id="txtEmail" name="email" maxlength="120" placeholder="example@domain.com" required />
+                </div>
+
+                <div class="fb-field">
+                    <label for="txtPhone">联系电话（选填）</label>
+                    <input type="text" id="txtPhone" name="txtPhone" maxlength="30" placeholder="+86 或 +44 电话号码" />
+                </div>
+
+                <div class="fb-field">
+                    <label for="txtLocation">所在国家 / 地区 <span class="required">*</span></label>
+                    <input type="text" id="txtLocation" name="txtLocation" maxlength="80" placeholder="例如：中国 / 英国 / 德国 / 美国加州" required />
+                    <div class="fb-hint">请输入您目前所在的国家或地区，以便我们更好地了解您的背景。</div>
+                </div>
+
+                <div class="fb-field">
+                    <label for="ddlType">反馈类型</label>
+                    <select id="ddlType" name="ddlType">
+                        <option value="服务建议">服务建议</option>
+                        <option value="网站问题">网站问题</option>
+                        <option value="求职者咨询">求职者咨询</option>
+                        <option value="企业招聘咨询">企业招聘咨询</option>
+                        <option value="投诉">投诉</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+
+                <div class="fb-field">
+                    <label>整体满意度</label>
+                    <div class="fb-radio-group">
+                        <label><input type="radio" name="rblRating" value="5" /> 非常满意</label>
+                        <label><input type="radio" name="rblRating" value="4" /> 满意</label>
+                        <label><input type="radio" name="rblRating" value="3" checked /> 一般</label>
+                        <label><input type="radio" name="rblRating" value="2" /> 不满意</label>
+                        <label><input type="radio" name="rblRating" value="1" /> 非常不满意</label>
+                    </div>
+                </div>
+
+                <div class="fb-field">
+                    <label for="txtMessage">反馈内容 <span class="required">*</span></label>
+                    <textarea id="txtMessage" name="txtMessage" maxlength="2000" placeholder="请详细描述您的建议、意见或遇到的问题..." required></textarea>
+                    <div class="fb-hint">最多 2,000 字</div>
+                </div>
+
+                <div class="fb-actions">
+                    <button type="submit" class="fb-btn fb-btn-primary">提交反馈</button>
+                    <!-- 增加 id 方便 JS 绑定清空事件 -->
+                    <button type="reset" id="btnReset" class="fb-btn fb-btn-secondary">清空</button>
+                </div>
+
+                <p class="fb-privacy">
+                    提交即表示您同意我们依据
+                    <a href="/legal/privacy-policy.html" target="_blank">隐私政策</a>
+                    处理您的信息。您的反馈仅用于改进我们的服务，不会用于营销，也不会与第三方共享。
+                    如果您不希望留下邮箱，也可以直接发送邮件至
+                    <a href="mailto:Business@doublealphahr.com">Business@doublealphahr.com</a>。
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 页面专属脚本 (表单逻辑) ================= -->
+    <script>
+    (function () {
+        // ===== 将自动填充封装为函数 =====
+        function autoFillLocation() {
+            var locEl = document.getElementById('txtLocation');
+            if (locEl && !locEl.value) {
+                var tzMap = {
+                    'Asia/Shanghai':'中国','Asia/Chongqing':'中国','Asia/Harbin':'中国','Asia/Urumqi':'中国',
+                    'Asia/Hong_Kong':'中国香港特别行政区','Asia/Macau':'中国澳门特别行政区','Asia/Taipei':'中国台湾地区',
+                    'Europe/London':'英国','Europe/Berlin':'德国','Europe/Paris':'法国','Europe/Amsterdam':'荷兰',
+                    'Europe/Madrid':'西班牙','Europe/Rome':'意大利','Europe/Zurich':'瑞士','Europe/Stockholm':'瑞典',
+                    'America/New_York':'美国','America/Chicago':'美国','America/Denver':'美国','America/Los_Angeles':'美国',
+                    'America/Toronto':'加拿大','America/Vancouver':'加拿大',
+                    'Australia/Sydney':'澳大利亚','Australia/Melbourne':'澳大利亚',
+                    'Asia/Singapore':'新加坡','Asia/Kuala_Lumpur':'马来西亚','Asia/Tokyo':'日本','Asia/Seoul':'韩国',
+                    'Asia/Bangkok':'泰国','Asia/Jakarta':'印度尼西亚','Asia/Manila':'菲律宾','Asia/Ho_Chi_Minh':'越南','Asia/Dubai':'阿联酋'
+                };
+                try { var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tzMap[tz]) locEl.value = tzMap[tz]; } catch (e) {}
+            }
+        }
+
+        // 页面加载时执行一次
+        autoFillLocation();
+
+        // ===== 表单提交 =====
+        var form = document.getElementById('feedbackForm');
+        if (!form) return;
+
+        var msgBox = document.getElementById('fbMessage');
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var resetBtn = document.getElementById('btnReset');
+
+        // 点击“清空”后，延迟一点点（等原生 reset 生效后）重新填入地区
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                setTimeout(autoFillLocation, 50);
+            });
+        }
+
+        function showMessage(type, text) {
+            if (!msgBox) return;
+            msgBox.className = 'fb-alert fb-alert-' + type;
+            msgBox.textContent = text;
+            msgBox.style.display = 'block';
+            msgBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            var nameEl = document.getElementById('txtName');
+            var emailEl = document.getElementById('txtEmail');
+            var locEl2 = document.getElementById('txtLocation');
+            var msgEl = document.getElementById('txtMessage');
+            var errors = [];
+            if (!nameEl.value.trim()) errors.push('请输入您的称呼。');
+            if (!emailEl.value.trim()) { errors.push('请输入您的邮箱地址。'); }
+            else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailEl.value.trim())) { errors.push('邮箱格式不正确。'); }
+            if (!locEl2.value.trim()) errors.push('请输入您所在的国家 / 地区。');
+            if (!msgEl.value.trim()) errors.push('请输入反馈内容。');
+            if (msgEl.value.length > 2000) errors.push('反馈内容不能超过 2,000 字。');
+
+            if (errors.length > 0) {
+                showMessage('error', errors.join(' '));
+                return;
+            }
+
+            var formData = new FormData(form);
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '提交中...'; }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    form.reset();
+                    // 提交成功清空后，重新填充一下地区
+                    setTimeout(autoFillLocation, 50);
+
+                    showMessage('success', '感谢您的反馈！我们已成功收到，会尽快查看并处理。');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = '提交反馈'; }
+                } else {
+                    return response.json().then(function (data) {
+                        var errText = '提交失败，请稍后重试。';
+                        if (data && data.errors && data.errors.length) {
+                            errText = data.errors.map(function (x) { return x.message; }).join(' ');
+                        }
+                        showMessage('error', errText);
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = '提交反馈'; }
+                    });
+                }
+            })
+            .catch(function () {
+                showMessage('error', '网络错误，请检查网络连接后重试。');
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = '提交反馈'; }
+            });
+        });
+    })();
+    </script>
+
+    <!-- ================= 5. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>About Us | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.6; }
+
+        /* ===== 主体 ===== */
+        .main-wrapper { width: 99%; max-width: 1200px; margin: 0 auto; }
+
+        /* ===== Hero 大图 ===== */
+        .hero-banner {
+            position: relative; width: 100%; height: 50vh; min-height: 300px;
+            overflow: hidden; background-color: #f0f0f0; margin-top: 20px;
+        }
+        .hero-banner img {
+            width: 100%; height: 100%;
+            object-fit: cover; object-position: center center;
+            display: block;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
+            z-index: 1;
+        }
+        .hero-text {
+            position: absolute; top: 12%; left: 5%; transform: none;
+            width: 55%; color: #FFFFFF; z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left;
+        }
+        .hero-text h1 {
+            font-family: 'Arial Black', 'Microsoft YaHei', sans-serif;
+            font-size: 2.4rem; margin: 0 0 12px 0; line-height: 1.2;
+        }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text p {
+            font-size: 1rem; margin: 0 0 22px 0;
+            color: #F5EFE3; letter-spacing: 0.5px; line-height: 1.5;
+        }
+        .hero-text .hero-cta {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s;
+        }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        /* ===== 按钮组 ===== */
+        .about-cta-group {
+            display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+            gap: 16px; padding: 30px 10px 40px;
+        }
+        .about-cta-btn {
+            display: inline-block; background-color: #996633; color: #FFFFFF;
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+            font-size: 16px; font-weight: 600; line-height: 1;
+            padding: 14px 26px; border-radius: 6px; text-decoration: none;
+            white-space: nowrap;
+            transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+        }
+        .about-cta-btn:hover {
+            background-color: #7a4f26; color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(153,102,51,0.25);
+        }
+
+        /* ===== 正文排版精细调整 ===== */
+        .about-text-content {
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+            font-size: 16px !important;
+            line-height: 1.8;
+            color: #333;
+            padding: 20px 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .main-heading {
+            display: block;
+            font-size: 1.5rem !important;
+            color: #000;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+            border-bottom: 2px solid #B89162;
+            padding-bottom: 10px;
+        }
+        .about-text-content p {
+            font-size: 16px !important;
+            margin: 0 0 16px 0;
+            line-height: 1.8;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* ===== 响应式手机端优化 ===== */
+        @media (max-width: 768px) {
+            .hero-banner { height: 38vh; min-height: 240px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.4rem; margin-bottom: 8px; }
+            .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            .about-cta-group { gap: 12px; padding: 20px 10px 30px; }
+            .about-cta-btn { font-size: 14px; padding: 12px 18px; display: block; width: 100%; max-width: 280px; margin: 0 auto; }
+            
+            .main-heading { font-size: 1.3rem !important; }
+            .about-text-content p { font-size: 15px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/image1.jpg" alt="About Us" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>About <span class="gold">Double Alpha</span></h1>
+            <p>Your trusted HR partner — delivering the "Double Alpha" advantage for organisations and individuals worldwide.</p>
+            <a class="hero-cta" href="/contact.html">Get in Touch</a>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="about-text-content">
+            <span class="main-heading">Why Choose "Double Alpha"?</span>
+            
+            <p>"Alpha" represents market-beating performance. The HR landscape has shifted from a back-office administrative function to a high-stakes strategic battleground. Whether you need to secure top-tier talent for a critical role or audit your compliance against evolving standards, we give you the "Double Alpha" advantage. Our dual-stream approach to Human Resources ensures your business is both high-performing and fully protected.</p>
+            
+            <p>Our core services include:</p>
+            
+            <p><strong>Precision Recruitment:</strong> We don't just fill vacancies; we search for "Alpha" professionals.</p>
+            
+            <p><strong>Compliance &amp; Employment Law:</strong> From customized contracts to employee handbooks, we ensure your business remains rock-solid amidst changing UK employment regulations.</p>
+            
+            <p><strong>Strategic Outsourcing:</strong> Leave recruitment, onboarding, contracts, payroll management, and complex employee relations to us, allowing you to focus on business growth.</p>
+            
+            <p>HR is no longer a cost center; it is a competitive engine. With our advantage, whether you are a client or a candidate, we help you focus on the present and protect the future. Partner with us and expect your "Double Alpha" excellence.</p>
+        </div>
+
+        <div class="about-cta-group">
+            <a href="/contact.html" class="about-cta-btn">Contact us for consultancy &amp; services</a>
+            <a href="/job/positions.html" class="about-cta-btn">Find our opening job positions</a>
+            <a href="/cv/index.html" class="about-cta-btn">Send us your CV</a>
+        </div>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (英文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载英文页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载英文页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>For Candidates | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== Hero ===== */
+        .hero-banner {
+            position: relative; width: 100%; height: 50vh; min-height: 300px;
+            overflow: hidden; background-color: #f0f0f0; margin-top: 20px;
+        }
+        .hero-banner img {
+            width: 100%; height: 100%; object-fit: cover;
+            object-position: center center; display: block;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
+            z-index: 1;
+        }
+        .hero-text {
+            position: absolute; top: 12%; left: 5%; transform: none;
+            width: 55%; color: #FFFFFF; z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left;
+        }
+        .hero-text h1 {
+            font-family: 'Arial Black', 'Microsoft YaHei', sans-serif;
+            font-size: 2.4rem; margin: 0 0 12px 0; line-height: 1.2;
+        }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text p {
+            font-size: 1rem; margin: 0 0 22px 0; color: #F5EFE3;
+            letter-spacing: 0.5px; line-height: 1.5;
+        }
+        .hero-text .hero-cta {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s;
+        }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        /* ===== Job 双栏布局 ===== */
+        .job-page {
+            max-width: 1200px; margin: 30px auto 60px; padding: 0 20px;
+            display: grid; grid-template-columns: 240px 1fr;
+            gap: 40px; align-items: start;
+        }
+
+        .side-menu {
+            position: sticky; top: 20px; background: #F9F7EC;
+            padding: 20px 16px; border-radius: 6px; border-left: 4px solid #996633;
+        }
+        .side-menu h2 {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 1.1rem; color: #996633; margin: 0 0 14px; text-align: left;
+        }
+        .side-menu ul { list-style: none; padding: 0; margin: 0; }
+        .side-menu li { margin-bottom: 10px; }
+        .side-menu li a {
+            display: block; font-size: 0.92rem; color: #333;
+            padding: 6px 0 6px 12px; border-left: 2px solid #E5DFD0;
+            transition: color .2s, border-color .2s, padding-left .2s;
+        }
+        .side-menu li a:hover,
+        .side-menu li a.active {
+            color: #996633; border-left-color: #996633;
+            padding-left: 16px; font-weight: 600;
+        }
+
+        .content-section { padding: 30px 0; border-top: 1px solid #F0E6D6; }
+        .content-section:first-of-type { border-top: none; padding-top: 0; }
+        .content-section h2 {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 1.3rem; color: #996633; margin: 0 0 6px;
+        }
+        .content-section .subtitle {
+            font-size: 0.9rem; color: #888; font-style: italic; margin-bottom: 20px;
+        }
+        .content-section h3 { font-size: 1.05rem; color: #333; margin: 20px 0 10px; }
+        .content-section h4 { font-size: 0.95rem; color: #996633; margin: 16px 0 8px; }
+        .content-section p { font-size: 0.92rem; color: #555; text-align: justify; }
+        .content-section ul { padding-left: 20px; margin: 10px 0; }
+        .content-section ul li { font-size: 0.92rem; color: #555; margin-bottom: 6px; }
+        .content-section .cta-row {
+            margin-top: 24px; padding-top: 16px; border-top: 1px dashed #EFE5D5;
+        }
+        .content-section .cta-row a {
+            color: #800000; margin-right: 30px; font-size: 0.9rem; font-weight: 600;
+        }
+        .content-section .cta-row a:hover { color: #996633; }
+
+        @media (max-width: 768px) {
+            /* Hero 手机端 */
+            .hero-banner { height: 38vh; min-height: 240px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.4rem; margin-bottom: 8px; }
+            .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            /* Job 页面手机端 */
+            .job-page {
+                grid-template-columns: 1fr; gap: 20px;
+                padding: 0 15px; margin: 20px auto 40px;
+            }
+            .side-menu {
+                position: static; padding: 15px 10px;
+                border-left: none; border-top: 4px solid #996633; border-radius: 6px;
+            }
+            .side-menu h2 { font-size: 1rem; text-align: center; }
+            .side-menu ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+            .side-menu li { margin-bottom: 0; }
+            .side-menu li a {
+                padding: 8px 14px; border-left: none;
+                border: 1px solid #E5DFD0; border-radius: 20px;
+                font-size: 0.85rem; white-space: nowrap;
+            }
+            .side-menu li a:hover,
+            .side-menu li a.active {
+                padding-left: 14px; border-left: none;
+                background: #996633; color: #FFFFFF; border-color: #996633;
+            }
+            .content-section { padding: 20px 0; }
+            .content-section h2 { font-size: 1.15rem; }
+            .content-section h3 { font-size: 1rem; }
+            .content-section h4 { font-size: 0.9rem; }
+            .content-section p, .content-section ul li { font-size: 0.88rem; }
+            .content-section .cta-row { text-align: center; }
+            .content-section .cta-row a { display: block; margin: 8px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/fortalent.jpg" alt="For Candidates" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>For <span class="gold">Candidates</span></h1>
+            <p>Full support for your career journey — from job recommendations and CV optimisation to compliance assurance and career planning.</p>
+            <a class="hero-cta" href="/job/positions.html">Browse Opening Positions</a>
+        </div>
+    </div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="job-page">
+
+        <aside class="side-menu">
+            <h2>For <span style="color: #996633">Individuals</span></h2>
+            <ul>
+                <li><a href="#positions" class="active">Find Our Opening Positions</a></li>
+                <li><a href="#upload">Upload Your CV</a></li>
+                <li><a href="#interview">Double Alpha Interview Guide</a></li>
+                <li><a href="#career">Career Development</a></li>
+                <li><a href="#security">Security &amp; Compliance</a></li>
+                <li><a href="#tips">Tips for Interview &amp; Development</a></li>
+            </ul>
+        </aside>
+
+        <main>
+
+            <section class="content-section" id="positions">
+                <h2>Find Our Opening Positions</h2>
+                <p class="subtitle">Find the Right Position for You</p>
+
+                <p>Browse our current opening positions across a wide range of industries and locations. Whether you are an experienced professional or just starting your career, we may have an opportunity that fits you.</p>
+
+                <h3>Our Candidate Promise: Your Career's Double Alpha</h3>
+                <p>We believe your career journey should deliver its own "Double Alpha"—maximizing your professional growth while ensuring your opportunities are secure and aligned with your values.</p>
+
+                <h4>We commit to our Candidates:</h4>
+                <p><strong>Strategic Career Advancement:</strong> We don't just find you a job; we connect you with roles that accelerate your career trajectory, offering genuine growth potential and opportunities to leverage your unique "Alpha" skills.</p>
+                <p><strong>Access to Exclusive Opportunities:</strong> Gain entry to a curated selection of unadvertised positions within high-performing, compliant organisations that are actively seeking top-tier talent.</p>
+                <p><strong>Advocacy Negotiation Expertise:</strong> We act as your trusted advocate, ensuring your compensation package (salary, benefits, equity) accurately reflects your market value and the impact you bring.</p>
+                <p><strong>Confidentiality &amp; Respect:</strong> Your privacy is paramount. We handle your professional journey with the utmost discretion and provide constructive feedback at every stage of the process.</p>
+                <p><strong>Security &amp; Compliance Assurance:</strong> We vet client organisations to ensure they meet employment standards, providing you with confidence that your next career move is not only ambitious but also secure and fully protected. Let us help you achieve your career's full "Double Alpha" potential.</p>
+
+                <div class="cta-row">
+                    <a href="/job/positions.html">Browse Opening Positions</a>
+                </div>
+            </section>
+
+            <section class="content-section" id="upload">
+                <h2>Upload Your CV</h2>
+                <p class="subtitle">Let Your Next Opportunity Find You</p>
+
+                <p>Upload your CV and let our talent consultants match you with the most suitable opportunities at the earliest opportunity. Your CV information is kept strictly confidential and used solely for job matching and recruitment services. This section is a placeholder; please replace it with the specific upload process, supported file formats, and privacy notes.</p>
+
+                <h4>What You Can Expect:</h4>
+                <ul>
+                    <li>Strict confidentiality under PIPL and applicable laws</li>
+                    <li>Proactive matching with suitable roles</li>
+                    <li>Dedicated consultant support</li>
+                    <li>Timely updates on new opportunities</li>
+                </ul>
+
+                <div class="cta-row" style="text-align: left">
+                    <a href="/cv/index.html">Upload Your CV</a>
+                </div>
+            </section>
+
+            <section class="content-section" id="interview">
+                <h2>Double Alpha Interview Guide</h2>
+                <p class="subtitle">Prepare, Perform, and Succeed</p>
+
+                <p>Our Interview Guide covers preparation before the interview, techniques for the day itself, and follow-up advice afterwards — helping you navigate every step of your job search with confidence. This section is a placeholder; please replace it with the specific chapters and content.</p>
+
+                <div class="cta-row">
+                    <a href="/job/interview%20guide.html">Read the Full Interview Guide</a>
+                </div>
+            </section>
+
+            <section class="content-section" id="career">
+                <h2>Career Development</h2>
+                <p class="subtitle">Plan and Manage Your Career to the Best</p>
+
+                <h3>Planning for Your Success in Career</h3>
+                <p>Career planning is essential to achieving success in your chosen career. Whether you are aiming to be a bookkeeper in a small business or the finance director of a multi-national corporation, knowing in which direction you are headed and what is required will help you to achieve your goal.</p>
+                <p>Planning is a basic, yet key principle used by successful business people. Managing your career, formulate plans to control your direction, make the best use of your resources and measure your progress or results.</p>
+
+                <h3>Sustainability of Our Consultancy</h3>
+                <p>As the world works to respond to the current climate crisis, sustainability professionals are more in-demand than ever before. Some of the biggest players in the business are looking for candidates who are passionate about sustainability and able to champion change at every level.</p>
+                <p>Here at Double Alpha, our sustainability experts know the ins and outs of the sector and will help you in your next venture with transparent and honest consultancy that you won't find anywhere else. Unlock a diverse range of opportunities within our specialist areas of environmental management, sustainable buildings, the circular economy, and corporate sustainability.</p>
+            </section>
+
+            <section class="content-section" id="security">
+                <h2>Security &amp; Compliance</h2>
+                <p class="subtitle">Ensure the employment and immigration compliance</p>
+                <p>We provide candidates with professional guidance on employment compliance and visa/immigration compliance, ensuring every career decision you make is stable and reliable. This section is a placeholder; please replace it with the specific scope of compliance services and process.</p>
+                <h4>Our Compliance Support Covers:</h4>
+                <ul>
+                    <li>Employment contract review &amp; compliance check</li>
+                    <li>Visa &amp; immigration advisory</li>
+                    <li>Background verification</li>
+                    <li>Global mobility support</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="tips">
+                <h2>Tips for Your Interview &amp; Development at Work</h2>
+                <p class="subtitle">Practical Insights to Grow Your Career</p>
+                <p>We have compiled practical interview tips and workplace development advice to help you grow quickly and keep progressing after you join. This section is a placeholder; please replace it with the specific article links or topics.</p>
+                <div class="cta-row">
+                    <a href="/resources.html">Explore Knowledge Base</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

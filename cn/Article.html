@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article | Double Alpha HR</title>
+  <style>
+    .article-detail {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #0b2d3b;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    }
+    .article-detail h1.title {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #e5eef4;
+      color: #0b2d3b;
+    }
+    .article-detail .back {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: #2d5be0;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .article-detail .back:hover { text-decoration: underline; }
+    .article-detail .body img { max-width: 100%; height: auto; }
+    .article-detail .body table { max-width: 100%; }
+    .article-detail .body a { color: #2d5be0; }
+    .article-detail .error {
+      padding: 2rem;
+      color: #c0392b;
+      text-align: center;
+      background: #fdeaea;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="article-detail">
+    <a class="back" href="../resources.html">← 返回文章列表</a>
+    <h1 class="title" id="articleTitle">加载中...</h1>
+    <div class="body" id="articleBody"></div>
+  </div>
+
+  <script>
+  (function() {
+      var params = new URLSearchParams(location.search);
+      var file = params.get('f');
+
+      if (!file) {
+          document.getElementById('articleBody').innerHTML =
+              '<div class="error">Lack of parameter f</div>';
+          return;
+      }
+
+      file = file.replace(/\\/g, '/');
+      if (file.indexOf('..') !== -1 || file.charAt(0) === '/') {
+          document.getElementById('articleBody').innerHTML =
+              '<div class="error">Parameter Error</div>';
+          return;
+      }
+
+      // 静态部署：文章位于 articles/ 目录下
+      var url = 'articles/' + file;
+
+      fetch(url)
+          .then(function(res) {
+              if (!res.ok) throw new Error('HTTP ' + res.status);
+              return res.text();
+          })
+          .then(function(html) {
+              var tMatch = html.match(/<title>(.*?)<\/title>/i);
+              var title = tMatch ? tMatch[1].trim() : file.split('/').pop().replace(/\.(html?|mhtml?|md)$/i, '');
+              document.getElementById('articleTitle').textContent = title;
+              document.title = title;
+
+              var bMatch = html.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+              var body = bMatch ? bMatch[1] : html;
+
+              body = body.replace(/<script[\s\S]*?<\/script>/gi, '');
+
+              document.getElementById('articleBody').innerHTML = body;
+          })
+          .catch(function(err) {
+              document.getElementById('articleBody').innerHTML =
+                  '<div class="error">❌ Load failed ' + err.message +
+                  '<br>Please confirm the path of the file ' + url + '</div>';
+          });
+  })();
+  </script>
+</body>
+</html>

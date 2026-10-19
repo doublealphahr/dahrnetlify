@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>反奴役与人口贩卖声明 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.8; }
+
+        /* ===== 本页样式 ===== */
+        .legal-page { max-width: 800px; margin: 30px auto 60px; padding: 0 20px; font-family: "Microsoft YaHei", Arial, sans-serif; color: #333; line-height: 1.8; }
+        .legal-page h1 { color: #996633; font-size: 1.6rem; text-align: center; margin-bottom: 30px; }
+        .legal-page h2 { color: #996633; font-size: 1.2rem; margin-top: 30px; border-bottom: 1px solid #EEE; padding-bottom: 8px; }
+        .legal-page p { margin-bottom: 15px; text-align: justify; }
+        .legal-page ul { margin-bottom: 15px; padding-left: 20px; }
+        .legal-page li { margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .legal-page { padding: 0 15px; margin: 20px auto 40px; }
+            .legal-page h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            .legal-page h2 { font-size: 1.1rem; margin-top: 24px; }
+            .legal-page p, .legal-page li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="legal-page">
+        <h1>反奴役与人口贩卖声明</h1>
+        <p>奴役和人口贩卖是严重侵犯人权的行为，在我们的业务或供应链中绝无立足之地。秉承我们的宗旨和价值观，我们致力于负责任地经营业务，并坚持最高标准的行为准则。</p>
+
+        <p>本声明依据中华人民共和国相关法律法规（如《劳动法》、《劳动合同法》等）以及国际劳工标准发布，重点阐述了 Double Alpha HR Consulting 为降低业务和供应链中的现代奴役风险所采取的措施。本声明列出了我们已采取的缓解措施以及未来一年的计划。</p>
+
+        <h2>我们的承诺</h2>
+        <p>我们承诺：</p>
+        <ul>
+            <li>在所有业务往来中，坚决反对任何形式的强迫劳动、债役劳动和人口贩卖；</li>
+            <li>确保我们的招聘流程透明、合法，不向求职者收取任何不合理的费用；</li>
+            <li>对供应商和合作伙伴进行尽职调查，确保其遵守相关的劳动法律法规；</li>
+            <li>为员工提供安全和公平的工作环境。</li>
+        </ul>
+
+        <h2>我们采取的措施</h2>
+        <p>为了识别和降低风险，我们采取了以下措施：</p>
+        <ul>
+            <li>制定了内部政策和程序，明确禁止现代奴役行为；</li>
+            <li>对员工进行相关培训，提高他们对现代奴役迹象的认识；</li>
+            <li>在供应链管理中纳入反奴役条款，要求供应商遵守相关标准；</li>
+            <li>建立了举报机制，鼓励员工和外部人员报告任何可疑行为。</li>
+        </ul>
+
+        <h2>未来计划</h2>
+        <p>我们计划在接下来的一年中继续加强以下方面的工作：</p>
+        <ul>
+            <li>进一步深化供应链风险评估；</li>
+            <li>扩大员工培训范围，覆盖更多业务领域；</li>
+            <li>与行业伙伴合作，共同打击现代奴役行为。</li>
+        </ul>
+
+        <h2>联系我们</h2>
+        <p>如果您对本声明有任何疑问，或希望举报任何可疑的现代奴役行为，请通过 <a href="mailto:Business@doublealphahr.com">Business@doublealphahr.com</a> 与我们联系。</p>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

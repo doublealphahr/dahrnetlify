@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>招聘流程 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== 页面样式 ===== */
+        .process-page {
+            max-width: 1100px; margin: 30px auto 60px; padding: 0 20px;
+            display: grid; grid-template-columns: 240px 1fr;
+            gap: 40px; align-items: start;
+        }
+        .side-menu {
+            position: sticky; top: 20px;
+            background: #F9F7EC; padding: 20px 16px;
+            border-radius: 6px; border-left: 4px solid #996633;
+        }
+        .side-menu ul { list-style: none; padding: 0; margin: 0; }
+        .side-menu li { margin-bottom: 10px; }
+        .side-menu li a {
+            display: block; font-size: 0.95rem; color: #333;
+            padding: 6px 0 6px 12px; border-left: 2px solid #E5DFD0;
+            transition: color .2s, border-color .2s, padding-left .2s;
+        }
+        .side-menu li a:hover, .side-menu li a.active {
+            color: #996633; border-left-color: #996633; padding-left: 16px; font-weight: 600;
+        }
+
+        .process-content h1 {
+            font-family: "Arial Black", "Microsoft YaHei", sans-serif;
+            font-size: 1.8rem; color: #996633; margin: 0 0 20px;
+        }
+        .process-content h3 {
+            color: #996633; font-size: 1.15rem; font-weight: 700;
+            margin-top: 30px; margin-bottom: 10px;
+            padding-top: 10px; border-top: 1px solid #EEE;
+        }
+        .process-content h3:first-of-type { border-top: none; padding-top: 0; }
+        .process-content p {
+            margin-bottom: 15px; text-align: justify;
+            color: #555; font-size: 0.95rem; line-height: 1.8;
+        }
+
+        .flow-img-wrap { text-align: center; margin: 20px auto 30px; }
+        .flow-img {
+            display: block; max-width: 100%; height: auto;
+            margin: 0 auto; cursor: zoom-in;
+            border-radius: 6px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .flow-img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(153,102,51,0.18);
+        }
+        .flow-img-hint {
+            display: block; text-align: center;
+            font-size: 0.82rem; color: #999;
+            margin-top: 8px; font-style: italic;
+        }
+
+        .img-lightbox {
+            display: none; position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 99999;
+            align-items: center; justify-content: center;
+            cursor: zoom-out; padding: 20px; box-sizing: border-box;
+        }
+        .img-lightbox.active { display: flex; }
+        .img-lightbox img {
+            max-width: 100%; max-height: 100%;
+            object-fit: contain;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            border-radius: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .process-page {
+                grid-template-columns: 1fr; gap: 20px;
+                padding: 0 15px; margin: 20px auto 40px;
+            }
+            .side-menu {
+                position: static; padding: 15px 10px;
+                border-left: none; border-top: 4px solid #996633; border-radius: 6px;
+            }
+            .side-menu ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+            .side-menu li { margin-bottom: 0; }
+            .side-menu li a {
+                padding: 8px 14px; border-left: none;
+                border: 1px solid #E5DFD0; border-radius: 20px;
+                font-size: 0.85rem; white-space: nowrap;
+            }
+            .side-menu li a:hover, .side-menu li a.active {
+                padding-left: 14px; border-left: none;
+                background: #996633; color: #FFFFFF; border-color: #996633;
+            }
+            .process-content h1 { font-size: 1.4rem; text-align: center; }
+            .process-content h3 { font-size: 1.05rem; }
+            .process-content p { font-size: 0.88rem; }
+            .flow-img-wrap { margin: 16px 0 24px; }
+            .flow-img { width: 100%; max-width: 100%; box-shadow: none; border: 1px solid #eee; }
+            .flow-img-hint { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="process-page">
+
+        <aside class="side-menu">
+            <ul>
+                <li><a href="/cn/employer/process.html" class="active">招聘流程</a></li>
+                <li><a href="/cn/employer/HRS.html">人力资源服务</a></li>
+                <li><a href="/cn/employer/otherservices.html">其他服务</a></li>
+            </ul>
+        </aside>
+
+        <main class="process-content">
+            <h1>招聘流程</h1>
+
+            <div class="flow-img-wrap">
+                <img class="flow-img" alt="招聘流程图" src="/pics/hiringprocess-cn.jpg" />
+                <span class="flow-img-hint">📱 手机上点击图片可放大查看</span>
+            </div>
+
+            <h3>1. 分析职位与理想候选人画像</h3>
+            <p>组织的首席执行官、公司董事或人力资源负责人就关键职位的招聘需求与我们接洽，并提供清晰、明确的职位描述，这一点至关重要。</p>
+            <p>此外，客户方还应准备一份职位指南，涵盖合同、企业文化、亮点、品牌形象、保密协议等信息。对于大型组织的高层管理人员而言，从现任到新任员工的过渡必须严格保密。</p>
+
+            <h3>2. 搜寻合适的被动候选人</h3>
+            <p>我们致力于根据客户提供的需求数据，搜寻与职位高度匹配的候选人。</p>
+
+            <h3>3. 筛选与评估候选人</h3>
+            <p>一旦我们找到与职位描述高度匹配的候选人名单，便会通过必要的渠道与技术对其进行筛选，剔除可能不具备相关技能或资格的候选人，并从搜寻名单中筛选出最匹配的简历。</p>
+
+            <h3>4. 联系入围候选人</h3>
+            <p>资格审核完成后，我们开始通过电话和电子邮件联系候选人，与其约定时间并安排面试。</p>
+
+            <h3>5. 制作并向客户提交候选人名单</h3>
+            <p>在完成面试和背景调查阶段后，我们会整理出一份符合标准的候选人名单，其中包括可能成为客户首选候选人的应聘者。</p>
+            <p>随后，我们将合适的候选人名单提交给客户，并提供组织客户面试与谈判的延伸服务。</p>
+
+            <h3>6. 持续跟进</h3>
+            <p>候选人确认入职后，我们将持续跟进后续环节——从移民手续办理、正式入职签约，到试用期评估与在职表现……全程陪伴，确保顺利过渡。</p>
+        </main>
+
+    </div>
+
+    <div class="img-lightbox" id="imgLightbox">
+        <img id="imgLightboxImg" src="" alt="放大查看" />
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 页面专属脚本 (图片放大) ================= -->
+    <script>
+    (function() {
+        const lightbox = document.getElementById('imgLightbox');
+        const lightboxImg = document.getElementById('imgLightboxImg');
+        document.querySelectorAll('.flow-img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('active');
+            });
+        });
+        lightbox.addEventListener('click', function() {
+            lightbox.classList.remove('active');
+            lightboxImg.src = '';
+        });
+    })();
+    </script>
+
+    <!-- ================= 5. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

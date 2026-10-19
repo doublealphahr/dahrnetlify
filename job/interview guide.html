@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Double Alpha Interview Guide | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== 页面内容 ===== */
+        .page-title {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 1.8rem;
+            color: #996633;
+            text-align: center;
+            margin: 30px auto 20px;
+        }
+        .interview-guide {
+            max-width: 900px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            line-height: 1.8;
+            color: #333;
+            font-size: 0.95rem;
+        }
+        .interview-guide h3 {
+            color: #996633;
+            font-size: 1.15rem;
+            margin: 24px 0 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #EEE;
+        }
+        .interview-guide p { margin: 12px 0; text-align: justify; color: #555; }
+
+        .flow-img-wrap { text-align: center; margin: 20px auto; }
+        .flow-img {
+            display: block; max-width: 70%; height: auto;
+            margin: 0 auto; border-radius: 6px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+        }
+        .flow-img-hint {
+            display: block; text-align: center;
+            font-size: 0.82rem; color: #999;
+            margin-top: 8px; font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 1.4rem; margin: 20px auto 15px; padding: 0 15px; }
+            .interview-guide { padding: 0 15px; }
+            .interview-guide h3 { font-size: 1.05rem; }
+            .interview-guide p { font-size: 0.88rem; }
+
+            .flow-img-wrap { margin: 16px 0; }
+            .flow-img { max-width: 100%; width: 100%; box-shadow: none; border: 1px solid #eee; }
+            .flow-img-hint { font-size: 0.75rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <main>
+        <h1 class="page-title">Double Alpha Interview Guide</h1>
+
+        <div class="interview-guide">
+            <h3>Your guide to a successful job interview</h3>
+
+            <p>Congratulations on landing a job interview! To support you through this next stage of your job search, we have prepared this complete guide full of job interview tips.</p>
+
+            <p>In our guide, you'll find all the advice you need to ensure a successful job interview – whether it's taking place in-person, over video or on a phone call. From how to prepare for a job interview to how to answer job interview questions, here you can access your complete guide to success.</p>
+
+            <p>Our Interview Process will be like this:</p>
+
+            <div class="flow-img-wrap">
+                <img src="/pics/hiringprocess.jpg" class="flow-img" alt="Interview Process"/>
+                <span class="flow-img-hint">📱 Tap the image on mobile to view it larger</span>
+            </div>
+
+            <p><strong>What's inside?</strong></p>
+
+            <p>For candidates, the following points should be noticed:</p>
+
+            <p><strong>Part 1:</strong> Before the interview. This includes your pre-interview to do list and the four things you need to speak to your recruiter about to get interview-ready. Advice on how to introduce yourself, answer common job interview questions, the STAR technique and suitable questions to ask in a job interview are also shared.</p>
+
+            <p><strong>Part 2:</strong> On the day of the interview. This covers what to do on the day of your interview, including how to make the best first impression possible, build rapport with your interviewer and what to do if your mind goes blank.</p>
+
+            <p><strong>Part 3:</strong> After your interview – what's next? Once your interview is over, there are several dos and don'ts to follow while you wait to hear back from your interviewer or recruiter. In this section we explore your next steps, such as how to follow up, signs your interview went well, what to do if your interview didn't go as planned and how to prepare if you've been invited back for a second interview.</p>
+        </div>
+    </main>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

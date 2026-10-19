@@ -1,0 +1,102 @@
+﻿/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ⚠️ 注意：这里不再写 body 的样式，避免污染整个首页 */
+
+.wrapper {
+  position: fixed;
+  bottom: 30px;
+  right: -450px;              /* 默认藏在屏幕右侧外 */
+  max-width: 400px;
+  width: calc(100% - 40px);
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  transition: right 0.4s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  z-index: 2147483647;
+}
+.wrapper.show {
+  right: 20px;                /* 显示时滑入右下角 */
+}
+
+.wrapper header {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin-bottom: 10px;
+}
+
+header i {
+  color: #4070f4;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+header strong {
+  color: #4070f4;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.wrapper .data {
+  margin-top: 5px;
+}
+
+.wrapper .data p {
+  color: #333;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.data p a {
+  color: #4070f4;
+  text-decoration: none;
+}
+
+.data p a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .buttons {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.buttons .button {
+  border: none;
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 4px;
+  background: #4070f4;
+  cursor: pointer;
+  width: calc(100% / 2 - 5px);
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.buttons #acceptBtn:hover {
+  background-color: #034bf1;
+}
+
+#declineBtn {
+  border: 2px solid #4070f4;
+  background-color: #fff;
+  color: #4070f4;
+}
+
+#declineBtn:hover {
+  background-color: #4070f4;
+  color: #fff;
+}

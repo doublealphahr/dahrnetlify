@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Opening Positions | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== 职位列表页面专属样式 ===== */
+        .job-title-block { text-align: center; margin: 1.2rem 0 0; }
+        .job-title-block h1 { font-family: "Arial Black", Arial, sans-serif; font-size: xx-large; font-weight: bold; margin: 0; }
+        .job-title-block h1 span.gold { color: #996633; }
+
+        .job-search-bar {
+            display: flex; flex-wrap: wrap; gap: .6rem; align-items: center;
+            max-width: 1200px; margin: 1.2rem auto 1rem; padding: 0 .5rem;
+        }
+        .job-search-bar input {
+            flex: 1 1 200px; padding: .65rem 1rem; border: 1px solid #ccc;
+            border-radius: 40px; font-size: .95rem; outline: none;
+        }
+        .job-search-bar input:focus { border-color: #996633; box-shadow: 0 0 0 3px #99663322; }
+        .job-search-bar button {
+            padding: .65rem 1.6rem; border: none; border-radius: 40px;
+            background: #996633; color: #fff; cursor: pointer; font-size: .95rem;
+        }
+        .job-search-bar button.reset { background: #fff; color: #996633; border: 1px solid #996633; }
+        .job-search-bar button:hover { opacity: .9; }
+        .job-search-bar .upload-link { white-space: nowrap; font-size: 0.9rem; }
+
+        .job-table-wrap { width: 98%; margin: 0 auto 2rem; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .job-table { width: 100%; border-collapse: collapse; font-family: Arial, sans-serif; }
+        .job-table th {
+            background: #996633; color: #fff; padding: .8rem .6rem;
+            font-size: .9rem; text-align: left; cursor: pointer; user-select: none;
+            white-space: nowrap;
+        }
+        .job-table th .arrow { font-size: .7rem; margin-left: 4px; opacity: .7; }
+        .job-table th.active .arrow { opacity: 1; }
+        .job-table td { padding: .75rem .6rem; font-size: .9rem; border-bottom: 1px solid #eee; }
+        .job-table tr:nth-child(even) td { background: #fafafd; }
+        .job-table tr:hover td { background: #f5f0ea; }
+        .job-table .posno { color: #996633; font-weight: bold; font-family: 'Courier New', monospace; }
+        .job-table .posno a { color: #996633; text-decoration: none; border-bottom: 1px dashed #99663388; }
+        .job-table .posno a:hover { border-bottom-color: #996633; }
+        .job-table .empty { text-align: center; padding: 3rem 1rem; color: #999; }
+        .job-count { text-align: right; width: 98%; margin: -.5rem auto .6rem; color: #888; font-size: .82rem; }
+
+        .job-table .download-link {
+            color: #996633;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid #996633;
+            transition: color .2s, border-color .2s;
+        }
+        .job-table .download-link:hover { color: #7a522a; border-bottom-color: #7a522a; }
+        .job-table .download-link::before { content: "⬇ "; font-size: .85em; }
+
+        @media (max-width: 768px) {
+            .job-title-block h1 { font-size: 1.5rem; }
+
+            .job-search-bar {
+                flex-direction: column;
+                padding: 0 15px;
+                margin: 1rem auto .8rem;
+            }
+            .job-search-bar input { flex: 1 1 100%; width: 100%; }
+            .job-search-bar button { width: 100%; }
+            .job-search-bar .upload-link { display: block; text-align: center; margin-top: 6px; }
+
+            .job-count { width: 90%; }
+
+            .job-table-wrap { width: 100%; padding: 0 10px; box-sizing: border-box; }
+            .job-table { min-width: 720px; }
+            .job-table th, .job-table td { font-size: .82rem; padding: .6rem .5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <main>
+        <div class="job-title-block">
+            <h1>Opening <span class="gold">Job Positions</span></h1>
+        </div>
+
+        <div class="job-search-bar">
+            <input type="text" id="searchTitle" placeholder="Search by key word(s) of Title" />
+            <input type="text" id="searchLocation" placeholder="Search by Location" />
+            <button id="btnSearch">🔍 Search</button>
+            <button id="btnReset" class="reset">↻ Reset</button>
+            <a class="upload-link" href="/cv/index.html"><strong>Upload your CV</strong></a>
+        </div>
+
+        <div class="job-count" id="jobCount">Loading…</div>
+
+        <div class="job-table-wrap">
+            <table class="job-table" id="jobTable">
+                <thead>
+                    <tr>
+                        <th data-sort="posNo">Position No. <span class="arrow">▼</span></th>
+                        <th data-sort="title">Position Title <span class="arrow">▼</span></th>
+                        <th data-sort="location">Location <span class="arrow">▼</span></th>
+                        <th data-sort="date">Date <span class="arrow">▼</span></th>
+                        <th>Description</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="jobBody">
+                    <tr><td colspan="6" class="empty">Loading position list...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+    (function () {
+        var allData = [];
+        var filtered = [];
+        var sortField = 'date';
+        var sortDir = 'desc';
+
+        var tbody = document.getElementById('jobBody');
+        var countEl = document.getElementById('jobCount');
+        var inputTitle = document.getElementById('searchTitle');
+        var inputLoc = document.getElementById('searchLocation');
+
+        function esc(s) {
+            if (!s) return '';
+            return String(s).replace(/[&<>"']/g, function (c) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+            });
+        }
+
+        function render() {
+            var kwT = inputTitle.value.trim().toLowerCase();
+            var kwL = inputLoc.value.trim().toLowerCase();
+
+            filtered = allData.filter(function (it) {
+                var t = (it.title || '').toLowerCase();
+                var l = (it.location || '').toLowerCase();
+                var p = (it.posNo || '').toLowerCase();
+                var mt = !kwT || t.indexOf(kwT) >= 0 || p.indexOf(kwT) >= 0;
+                var ml = !kwL || l.indexOf(kwL) >= 0;
+                return mt && ml;
+            });
+
+            filtered.sort(function (a, b) {
+                var va, vb, dir = sortDir === 'asc' ? 1 : -1;
+                switch (sortField) {
+                    case 'posNo':    va = a.posNo || ''; vb = b.posNo || ''; return dir * va.localeCompare(vb);
+                    case 'title':    va = (a.title || '').toLowerCase(); vb = (b.title || '').toLowerCase(); return dir * va.localeCompare(vb);
+                    case 'location': va = (a.location || '').toLowerCase(); vb = (b.location || '').toLowerCase(); return dir * va.localeCompare(vb);
+                    default:         return dir * ((a.dateSort || 0) - (b.dateSort || 0));
+                }
+            });
+
+            countEl.textContent = 'Total ' + filtered.length + ' position(s)';
+
+            if (!filtered.length) {
+                tbody.innerHTML = '<tr><td colspan="6" class="empty">No matching position</td></tr>';
+                return;
+            }
+
+            var html = '';
+            filtered.forEach(function (it) {
+                var link = it.filePath || '#';
+                var downloadName = (it.posNo + ' - ' + (it.title || '') + ' - ' + (it.location || ''))
+                                    .replace(/[\\/:*?"<>|]/g, '')
+                                    .trim() + '.pdf';
+
+                html += '<tr>' +
+                    '<td class="posno"><a href="' + esc(link) + '" target="_blank">' + esc(it.posNo) + '</a></td>' +
+                    '<td>' + esc(it.title) + '</td>' +
+                    '<td>' + esc(it.location || '—') + '</td>' +
+                    '<td>' + esc(it.dateStr || '—') + '</td>' +
+                    '<td><a class="download-link" href="' + esc(link) + '" download="' + esc(downloadName) + '">Download</a></td>' +
+                    '<td><a class="posno" href="' + esc(link) + '" target="_blank">Browse</a></td>' +
+                    '</tr>';
+            });
+            tbody.innerHTML = html;
+
+            document.querySelectorAll('#jobTable th[data-sort]').forEach(function (th) {
+                th.classList.remove('active');
+                if (th.getAttribute('data-sort') === sortField) {
+                    th.classList.add('active');
+                    th.querySelector('.arrow').textContent = sortDir === 'asc' ? '▲' : '▼';
+                } else {
+                    th.querySelector('.arrow').textContent = '▼';
+                }
+            });
+        }
+
+        function load() {
+            // 使用绝对路径获取 JSON 数据
+            fetch('/job/positions.json?t=' + Date.now(), { cache: 'no-store' })
+                .then(function (r) {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.json();
+                })
+                .then(function (data) {
+                    allData = data || [];
+                    render();
+                })
+                .catch(function (e) {
+                    tbody.innerHTML = '<tr><td colspan="6" class="empty">Load failed：' + esc(e.message) + '</td></tr>';
+                });
+        }
+
+        document.getElementById('btnSearch').addEventListener('click', render);
+        document.getElementById('btnReset').addEventListener('click', function () {
+            inputTitle.value = ''; inputLoc.value = ''; render();
+        });
+        inputTitle.addEventListener('input', render);
+        inputLoc.addEventListener('input', render);
+
+        document.querySelectorAll('#jobTable th[data-sort]').forEach(function (th) {
+            th.addEventListener('click', function () {
+                var f = th.getAttribute('data-sort');
+                if (sortField === f) {
+                    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+                } else {
+                    sortField = f;
+                    sortDir = (f === 'date') ? 'desc' : 'asc';
+                }
+                render();
+            });
+        });
+
+        load();
+    })();
+    </script>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

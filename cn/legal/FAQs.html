@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>常见问题 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.8; }
+
+        /* ===== 本页样式 ===== */
+        .legal-page { max-width: 800px; margin: 30px auto 60px; padding: 0 20px; font-family: "Microsoft YaHei", Arial, sans-serif; color: #333; line-height: 1.8; }
+        .legal-page h1 { color: #996633; font-size: 1.6rem; text-align: center; margin-bottom: 30px; }
+        .faq-item { margin-bottom: 25px; }
+        .faq-item h3 { color: #996633; font-size: 1.1rem; margin-bottom: 8px; }
+        .faq-item p { margin-top: 0; text-align: justify; }
+        .faq-item a { color: #996633; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .legal-page { padding: 0 15px; margin: 20px auto 40px; }
+            .legal-page h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            .faq-item h3 { font-size: 1rem; }
+            .faq-item p { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="legal-page">
+        <h1>常见问题 (FAQs)</h1>
+
+        <div class="faq-item">
+            <h3>1. 你们的服务是免费的吗？</h3>
+            <p>对于求职者（个人用户），我们提供的大部分服务（如简历上传、职位浏览、职业咨询）是完全免费的。对于企业雇主，我们根据具体的猎头或招聘咨询项目收取服务费用，具体请通过邮件联系我们。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>2. 我上传的简历信息安全吗？</h3>
+            <p>非常安全。我们严格遵守中国大陆《个人信息保护法》的规定，您的简历信息仅用于职位匹配和招聘服务，绝不会在未经您明确同意的情况下泄露给无关的第三方。关于详细信息，请参阅我们的<a href="/cn/legal/privacy-policy.html">《隐私政策》</a>。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>3. 我人在海外，可以申请中国大陆的职位吗？</h3>
+            <p>当然可以。我们拥有丰富的跨境人才服务经验，专门为海外华人及外籍人士提供回国或在华工作的机会。请在"所在地"填写您当前的国家/城市，并在反馈中注明您的求职意向。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>4. 提交反馈后，多久会收到回复？</h3>
+            <p>我们通常会在 1-2 个工作日内处理您的反馈。如果您在提交反馈时留下了邮箱，我们会优先通过邮件回复您。如遇紧急情况，您也可以直接发送邮件至 <a href="mailto:Business@doublealphahr.com">Business@doublealphahr.com</a>。</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>5. 网站上的"CV Upload"功能总是失败怎么办？</h3>
+            <p>如果上传失败，可能是因为您的文件格式（建议使用 PDF 或 Word）或文件大小超出了系统限制。您可以尝试压缩文件后重新上传，或者直接通过邮件将简历发送给我们。</p>
+        </div>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

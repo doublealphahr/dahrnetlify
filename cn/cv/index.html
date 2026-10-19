@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>简历上传 | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+
+        /* ===== 主体 ===== */
+        .main-wrapper { 
+            width: 99%; 
+            max-width: 1200px; 
+            margin: 20px auto; 
+            min-height: 70vh; /* 保证内容不够时页脚在下面 */
+        }
+        .main-wrapper iframe {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+            display: block;
+            overflow: hidden; /* 防止出现双重滚动条 */
+        }
+
+        @media (max-width: 768px) {
+            .main-wrapper { width: 100%; margin: 8px auto; padding: 0 6px; box-sizing: border-box; }
+            .main-wrapper iframe { min-height: 1200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位（只会加载一次） ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 2. 主体内容 ================= -->
+    <div class="main-wrapper">
+        <iframe name="I1" id="I1" src="cvupload.html" title="CV Upload Form">
+            您的浏览器不支持嵌入式框架。
+        </iframe>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位（只会加载一次） ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 加载器与高度自适应 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+
+    // ===== iframe 自动适应高度 =====
+    (function () {
+        const iframe = document.getElementById('I1');
+        if (!iframe) return;
+        const DEFAULT_HEIGHT = 800;
+        const MOBILE_HEIGHT = 1200;
+        const EXTRA_PADDING = 20;
+        let lastHeight = 0;
+        let resizeObserver = null;
+
+        function getDefaultHeight() { return window.innerWidth <= 768 ? MOBILE_HEIGHT : DEFAULT_HEIGHT; }
+
+        function adjustHeight() {
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                if (!doc || !doc.body) return;
+                const bodyHeight = doc.body.scrollHeight;
+                const docHeight = doc.documentElement ? doc.documentElement.scrollHeight : 0;
+                const h = Math.max(bodyHeight, docHeight) + EXTRA_PADDING;
+                
+                if (h > 0 && Math.abs(h - lastHeight) > 20) {
+                    iframe.style.height = h + 'px';
+                    lastHeight = h;
+                }
+            } catch (e) {
+                if (!lastHeight) {
+                    iframe.style.height = getDefaultHeight() + 'px';
+                    lastHeight = getDefaultHeight();
+                }
+            }
+        }
+
+        function setupResizeObserver() {
+            if (resizeObserver) { resizeObserver.disconnect(); resizeObserver = null; }
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                if (!doc || !doc.body || typeof ResizeObserver === 'undefined') return;
+                resizeObserver = new ResizeObserver(function () { adjustHeight(); });
+                resizeObserver.observe(doc.body);
+                if (doc.documentElement) resizeObserver.observe(doc.documentElement);
+            } catch (e) {}
+        }
+
+        iframe.addEventListener('load', function () { adjustHeight(); setupResizeObserver(); });
+        window.addEventListener('resize', function () { lastHeight = 0; adjustHeight(); });
+        
+        // 注意：这里彻底删除了 setInterval(adjustHeight, 800); 防止无限刷新
+    })();
+    </script>
+
+</body>
+</html>

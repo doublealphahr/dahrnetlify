@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <!-- ================= Cookie 告知条样式 ================= -->
+    <style type="text/css">
+        #cookie-notice {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: #FFFFFF; border-bottom: 2px solid #B89162;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08); z-index: 99999;
+            padding: 12px 20px; font-family: Arial, "Microsoft YaHei", sans-serif;
+            color: #333; font-size: 0.85rem; display: none;
+            transform: translateY(-100%); transition: transform 0.3s ease;
+        }
+        #cookie-notice.cn-visible { display: block; transform: translateY(0); }
+        .cn-inner {
+            max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap;
+            align-items: center; justify-content: space-between; gap: 12px;
+        }
+        .cn-inner p { margin: 0; line-height: 1.5; }
+        .cn-inner a { color: #996633; text-decoration: underline; }
+        .cn-btn {
+            background: #B89162; color: #FFFFFF; border: none;
+            padding: 8px 22px; border-radius: 4px; font-size: 0.85rem;
+            font-weight: 600; cursor: pointer; font-family: inherit; white-space: nowrap;
+        }
+        .cn-btn:hover { background: #996633; }
+        body.cn-open { padding-top: 60px; transition: padding-top 0.3s ease; }
+        @media (max-width: 768px) { body.cn-open { padding-top: 100px; } }
+    </style>
+
+    <!-- ================= 主样式 ================= -->
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF; margin: 0; padding: 0;
+            font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000;
+        }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.6; }
+
+        /* ===== 头部 ===== */
+        .header-table{width:99%;margin:0 auto;border-collapse:collapse;}
+        .header-logo-cell{width:350px;text-align:left;vertical-align:middle;padding:5px;}
+        .header-logo-cell img{max-width:100%;height:auto;}
+        .header-nav-cell{text-align:center;vertical-align:middle;padding:5px;position:relative;}
+        .nav-menu{display:flex;justify-content:center;align-items:center;gap:36px;}
+        .nav-menu > a, .nav-menu .nav-dropdown > a{
+            font-size:medium;color:#000000;display:inline-block;
+            white-space:nowrap;padding:0;margin:0;
+        }
+        .nav-menu > a:hover, .nav-menu .nav-dropdown > a:hover{color:#996633;}
+        .header-lang-cell{width:119px;text-align:right;vertical-align:middle;padding:5px;white-space:nowrap;}
+        .header-lang-cell a { display: inline-block; margin-left: 5px; }
+
+        .nav-dropdown{position:relative;display:inline-block;}
+        .dropdown-content{
+            display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);
+            background-color:#FFFFFF;min-width:160px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.1);
+            border:1px solid #eee;border-radius:4px;z-index:1000;
+            padding:8px 0;margin-top:0;
+        }
+        .dropdown-content a{display:block;padding:10px 20px;color:#000000;font-size:15px;text-align:left;margin:0;white-space:nowrap;transition:background 0.2s,color 0.2s;}
+        .dropdown-content a:hover{background-color:#f5f0e8;color:#996633;}
+        .nav-dropdown:hover .dropdown-content{display:block;}
+
+        .menu-toggle{
+            display:none;background:none;border:none;cursor:pointer;
+            padding:0; margin:0; flex-direction:column; gap:5px;
+            align-items:center;justify-content:center;
+        }
+        .menu-toggle span{display:block;width:25px;height:3px;background-color:#000000;border-radius:2px;transition:0.3s;}
+
+        /* ===== 轮播图 ===== */
+        .banner-container {
+            width: 100%; max-width: 1400px; height: 60vh; min-height: 350px;
+            margin: 20px auto; overflow: hidden; position: relative;
+            border-radius: 8px; background-color: #f0f0f0;
+        }
+        .banner-track { display: flex; width: 100%; height: 100%; transition: transform 1.2s ease-in-out; }
+        .banner-slide { flex: 0 0 100%; width: 100%; height: 100%; position: relative; }
+        .banner-slide a { display: block; width: 100%; height: 100%; }
+        .banner-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+
+        /* ===== 轮播图文字 ===== */
+        .banner-text {
+            position: absolute; top: 12%; left: 5%; right: auto; transform: none;
+            width: 50%; color: #FFFFFF; text-align: left;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.7); z-index: 2; pointer-events: none;
+        }
+        .banner-text h2 {
+            font-family: 'Arial Black', Arial, sans-serif;
+            font-size: 2.8rem; margin: 0 0 15px 0; line-height: 1.2; text-transform: uppercase;
+        }
+        .banner-text p { font-size: 1.1rem; margin: 0 0 25px 0; line-height: 1.5; }
+        .banner-btn {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            pointer-events: auto; transition: background-color 0.3s;
+            text-shadow: none; font-size: 0.95rem;
+        }
+        .banner-btn:hover { background-color: #996633; }
+
+        /* ===== 圆点/箭头 ===== */
+        .banner-dots { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+        .banner-dot { width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.5); border-radius: 50%; cursor: pointer; transition: background-color 0.3s, transform 0.3s; }
+        .banner-dot.active { background-color: #ffffff; transform: scale(1.2); }
+
+        .banner-arrow { position: absolute; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; z-index: 10; padding: 10px; opacity: 0.7; transition: opacity 0.3s; }
+        .banner-arrow:hover { opacity: 1; }
+        .banner-arrow svg { width: 40px; height: 40px; fill: none; stroke: #ffffff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3)); }
+        .banner-arrow.prev { left: 20px; }
+        .banner-arrow.next { right: 20px; }
+
+        /* ===== 主体/底部 ===== */
+        .main-wrapper { width: 99%; margin: 0 auto; }
+        .footer-wrapper { background-color: #F9F7EC; padding: 20px 0; margin-top: 30px; }
+        .footer-table { width: 98%; margin: 0 auto; border-collapse: collapse; }
+        .footer-table td { vertical-align: top; padding: 8px; }
+        .footer-heading { font-family: "Noto Serif SC Black", "Times New Roman", serif; font-size: medium; color: #000000; letter-spacing: 1px; text-transform: uppercase; margin: 0 0 10px 0; }
+        .footer-links p { font-family: Arial, sans-serif; font-size: small; margin: 6px 0; }
+        .footer-links a { color: #000000; font-size: small; }
+        .footer-links a:hover { color: #996633; }
+        .footer-social p { margin: 8px 0; }
+        .footer-social span { font-size: xx-small; color: #000000; margin-left: 4px; }
+        .footer-copyright { text-align: center; font-size: small; color: #000000; margin-top: 20px; }
+
+        .style1 { vertical-align: middle; text-align: left; padding: 5px; }
+        .style2 { text-align: center; }
+        .style12 { color: #996633; text-align: center; font-size: large; }
+        .style15 { color: #996633; text-align: center; font-size: x-large; }
+        .style19 { color: #996633; }
+        .style20 { text-align: left; }
+        .style21 { font-size: small; }
+        .style23 { color: #B89162; font-size: xx-large; }
+        .style24 { font-family: "Arial Black"; }
+        .style25 { color: #B89162; font-size: xx-large; font-family: "Arial Black"; }
+        .style26 { text-transform: uppercase; letter-spacing: 1px; }
+        .style30 { text-align: left; font-size: xx-large; }
+        .style32 { display: inline-block; color: #FFFFFF; font-weight: bold; border-radius: 4px; pointer-events: auto; transition: background-color 0.3s; text-shadow: none; font-size: medium; padding: 8px 18px; background-color: #B89162; }
+        .style33 { text-align: left; font-size: large; }
+        .style34 { color: #B89162; font-size: large; }
+        .style35 { font-size: medium; }
+        .style36 { text-align: left; font-size: medium; }
+        .style37 { font-size: x-large; }
+
+        /* ============================================= */
+        /* ===== 移动端响应式优化 (屏幕宽度 ≤ 768px) ===== */
+        /* ============================================= */
+        @media (max-width: 768px) {
+            .header-table { display: flex; align-items: center; justify-content: space-between; width: 100% !important; padding: 10px 15px; box-sizing: border-box; border-bottom: 1px solid #eee; }
+            .header-table tbody, .header-table tr { display: flex; width: 100%; align-items: center; justify-content: space-between; }
+            .header-logo-cell, .style1 { display: flex; justify-content: flex-start; align-items: center; padding: 0; width: auto !important; }
+            .header-logo-cell img, .style1 img { float: none !important; display: inline-block; max-height: 40px; margin-top: 0; }
+            .header-nav-cell { display: contents; }
+            
+            .nav-menu { position: absolute; top: 60px; left: 0; width: 100%; background-color: #FFFFFF; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 999; flex-direction: column; padding: 10px 0; border-top: 1px solid #eee; gap: 0; display: none; }
+            .nav-menu.active { display: flex; }
+            .nav-menu a { display: block; padding: 12px 0; margin: 0; font-size: 15px; border-bottom: 1px solid #f5f5f5; text-align: center; }
+            .nav-menu a:last-child { border-bottom: none; }
+            .nav-dropdown { display: block; width: 100%; }
+            .nav-dropdown > a { display: block; padding: 12px 0; margin: 0; border-bottom: 1px solid #f5f5f5; }
+            .dropdown-content { position: static; display: none; box-shadow: none; border: none; background-color: #f9f9f9; padding: 0; transform: none; left: 0; }
+            .nav-dropdown.open .dropdown-content { display: block; }
+            .dropdown-content a { padding: 10px 0; font-size: 14px; color: #666; }
+
+            .menu-toggle { display: flex; flex-direction: column; justify-content: center; align-items: center; height: 30px; width: 30px; padding: 0; margin-left: auto; margin-right: 15px; background: transparent; border: none; outline: none; box-sizing: border-box; position: relative; top: -1px; }
+            .header-lang-cell { display: flex; justify-content: flex-end; align-items: center; padding: 0; width: auto !important; gap: 6px; margin: 0; }
+            .header-lang-cell img { height: 20px; width: auto; margin-left: 0; display: block; }
+            .header-lang-cell a { margin: 0; }
+
+            .banner-container { height: 45vh; min-height: 280px; border-radius: 0; margin: 10px auto; }
+            .banner-arrow svg { width: 28px; height: 28px; }
+            .banner-arrow.prev { left: 10px; }
+            .banner-arrow.next { right: 10px; }
+            .banner-dots { bottom: 10px; gap: 6px; }
+            .banner-dot { width: 8px; height: 8px; }
+            .banner-text { width: 90%; left: 5%; right: auto; top: 10%; text-align: left; }
+            .banner-text h2 { font-size: 1.6rem; margin-bottom: 8px; }
+            .banner-text p { font-size: 0.85rem; margin-bottom: 15px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+            .banner-btn { padding: 8px 18px; font-size: 0.85rem; }
+
+            .footer-table, .footer-table tbody, .footer-table tr, .footer-table td { display: block; width: 100% !important; text-align: center; padding: 12px 0; }
+            .footer-table td { border-bottom: 1px solid #e5e0d0; }
+            .footer-table td:last-child { border-bottom: none; }
+            .footer-heading { margin-bottom: 12px; }
+            .footer-social p { justify-content: center; display: flex; align-items: center; gap: 4px; }
+            .footer-links a, .footer-links p, .footer-social span { font-size: 14px; }
+            .footer-copyright { padding: 0 15px; line-height: 1.6; margin-top: 15px; }
+
+            .main-wrapper table[style*="width: 98%"] { display: block; width: 100% !important; }
+            .main-wrapper table[style*="width: 98%"] tbody, .main-wrapper table[style*="width: 98%"] tr, .main-wrapper table[style*="width: 98%"] td { display: block; width: 100% !important; text-align: center; padding: 0; }
+            .main-wrapper table[style*="width: 98%"] td:first-child { padding-bottom: 20px; }
+            .main-wrapper table[style*="width: 98%"] td:first-child h2 { text-align: center; }
+            .main-wrapper table[style*="width: 98%"] td:first-child img { margin: 0 auto; display: inline-block; }
+            .main-wrapper table[style*="width: 98%"] td[rowspan="2"] { text-align: left; padding: 0 10px; font-size: 14px; }
+            .main-wrapper table[style*="width: 98%"] td[rowspan="2"] h2 { text-align: center; font-size: 22px; line-height: 1.3; }
+            .main-wrapper table[style*="width: 98%"] td[style*="width: 49px"], .main-wrapper table[style*="width: 98%"] td[style*="width: 10%"] { display: none; }
+            .main-wrapper .style2 { font-size: 22px !important; padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 2. 主体内容 ================= -->
+    <div class="main-wrapper">
+
+        <!-- 轮播图 -->
+        <div class="banner-container" id="banner-container">
+            <div class="banner-track" id="banner-track">
+                <!-- 幻灯片 1 -->
+                <div class="banner-slide">
+                    <a href="/cn/about.html">
+                        <img src="/pics/image1.jpg" alt="关于我们" draggable="false">
+                        <div class="banner-text">
+                            <h2 class="style20"><span class="style34">欢迎来到</span></h2>
+                            <h1 class="style30">Double Alpha</h1>
+                            <p class="style33"><span class="style35">您成功路上值得信赖的 HR 合作伙伴</span></p>
+                            <p class="style33">&nbsp;</p>
+                            <p class="style33">&nbsp;</p>
+                            <span class="style32">了解更多</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- 幻灯片 2 -->
+                <div class="banner-slide">
+                    <a href="/cn/services.html">
+                        <img src="/pics/image2.jpg" alt="我们的Alpha服务" draggable="false">
+                        <div class="banner-text">
+                            <h2 class="style20"><span class="style34">我们的服务</span></h2>
+                            <p class="style36">为企业与候选人打造<span class="style37"><strong>双向 "Alpha" 优势</strong></span></p>
+                            <p class="style36">&nbsp;</p>
+                            <p class="style36">&nbsp;</p>
+                            <p class="style36">&nbsp;</p>
+                            <span class="banner-btn">免费咨询</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- 幻灯片 3 -->
+                <div class="banner-slide">
+                    <a href="/cn/job/positions.html">
+                        <img src="/pics/image3.jpg" alt="在聘职位" draggable="false">
+                        <div class="banner-text">
+                            <h2 class="style20"><span class="style34">在聘职位</span></h2>
+                            <p class="style20"><span class="style35">覆盖</span><span class="style37"><strong>英国、欧洲、北美及亚太地区</strong></span></p>
+                            <p class="style20">涵盖广泛行业</p>
+                            <p class="style20">&nbsp;</p>
+                            <p class="style20">&nbsp;</p>
+                            <span class="banner-btn">查看职位</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- 幻灯片 4 -->
+                <div class="banner-slide">
+                    <a href="/cn/cv/index.html">
+                        <img src="/pics/image4.jpg" alt="上传简历" draggable="false">
+                        <div class="banner-text">
+                            <h2 class="style20"><span class="style34">上传</span></h2>
+                            <h1 class="style30">您的简历</h1>
+                            <p class="style36">让我们助您实现职业跃升</p>
+                            <p class="style20">&nbsp;</p>
+                            <br>
+                            <span class="banner-btn">即刻上传</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- 幻灯片 5 -->
+                <div class="banner-slide">
+                    <a href="/cn/resources.html">
+                        <img src="/pics/image5.jpg" alt="资源中心" draggable="false">
+                        <div class="banner-text">
+                            <h2 class="style20"><span class="style34">探索</span></h2>
+                            <h1 class="style30">HRM 资源</h1>
+                            <p class="style36">洞察、法规与实用 HR 知识</p>
+                            <p class="style36">—— 一站式获取。</p>
+                            <p class="style20">&nbsp;</p>
+                            <span class="banner-btn">立即探索</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 左右箭头 -->
+            <button class="banner-arrow prev" id="btn-prev" aria-label="Previous Slide">
+                <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="banner-arrow next" id="btn-next" aria-label="Next Slide">
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+
+            <!-- 底部圆点 -->
+            <div class="banner-dots" id="banner-dots"></div>
+        </div>
+
+        <!-- 页面中间内容 -->
+                                    <p class="style26">&nbsp;</p>
+                                    <table style="width: 98%" align="center">
+                                        <tr>
+                                            <td style="width: 18%" valign="top">
+                                                <h2><span class="style12"><span>&nbsp;</span></span><span class="style15">Double Alpha<span>:</span></span></h2>
+                                                <p class="style2">
+                                                <img alt="" src="/pics/5stars.jpg" width="128" height="24"></p>
+                                            </td>
+                                            <td rowspan="2" valign="top" style="width: 49px">&nbsp;</td>
+                                            <td rowspan="2" valign="top" style="width: 1608px">
+                                                <h2><span class="style24">您值得信赖的 </span><span class="style25">HR 合作伙伴</span><span class="style23"><span class="style24"></span></span><span class="style24">&nbsp;助您成功</span></h2>
+                                                <span>
+                                                <br>
+                                                    <span class="style21">“Alpha” 代表超越市场的卓越表现。<br><br>
+                                                如今人力资源（HR）的定位已从后台行政职能转变为至关重要的战略战场。无论您是需要为关键职位锁定人才，还是需要根据不断更新的合规标准进行人力审计，我们都能通过我们的双向定位优势，确保您的业务顺利开展，又能得到全面保障。<br><br>
+                                                <!-- 【已修改】使用绝对路径 -->
+                                                <img alt="" src="/pics/arrow.png" width="15" height="15"><span></span>
+                                                <a href="/cn/about.html" class="style19">了解更多</a> 并
+                                                <a href="/cn/contact.html" class="style19">与我们合作</a>
+                                                    ，期待您的 “Double Alpha” 卓越表现。 </span>
+                                            </td>
+                                            <td rowspan="2" class="style20" valign="top" style="width: 10%">&nbsp;</td>
+                                        </tr>
+                                        <tr><td style="width: 15%" valign="top">&nbsp; </td></tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wp-block-group alignfull has-surface-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-2b1af6da wp-block-group-is-layout-constrained" style="margin-top:0;margin-bottom:0;padding-top:70px;padding-bottom:100px">
+                        <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+                            <div class="wp-block-column is-vertically-aligned-center is-layout-flow wp-container-core-column-is-layout-360d14ef wp-block-column-is-layout-flow" style="flex-basis:60%">
+                                <div class="wp-block-group has-global-padding is-layout-constrained wp-container-core-group-is-layout-c40a8074 wp-block-group-is-layout-constrained">
+                                    <h2 style="font-family: 'Arial Black'; font-size: xx-large;" class="style2">为您提供 <span style="color: #B89163;">服务</span></h2>
+                                    <p class="style2">覆盖英国、欧洲、<span>北美</span>、南美及亚太地区</p>
+                                </div>
+                            </div>
+                            <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:15%"></div>
+                        </div>
+                        <div class="wp-block-query is-layout-flow wp-block-query-is-layout-flow">
+                            <div style="background-color: #000000; color: #FFFFFF; padding: 60px 15px; text-align: center;">
+                                <p style="letter-spacing: 1px; text-transform: uppercase;">需要获取解决方案支持？</p>
+                                <h2 style="font-family: 'Arial Black'; font-size: xx-large; color: #FFFFFF;">获取您应得的 <span style="color: #D3BFA4;">HR 支持</span></h2>
+                                <p style="margin: 20px auto;"><a style="background-color: #B89162; color: #FFFFFF; padding: 12px 24px; display: inline-block;" href="/cn/contact.html">免费咨询</a></p>
+                                <p>Email: <a href="mailto:Business@doublealphahr.com" style="color: #D3BFA4;">Business@doublealphahr.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </header>
+        </div>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('site-header').innerHTML = data;
+                const scripts = document.getElementById('site-header').querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('site-footer').innerHTML = data;
+                const scripts = document.getElementById('site-footer').querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+    <!-- ================= 5. 轮播图交互逻辑 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const track = document.getElementById('banner-track');
+        const slides = document.querySelectorAll('.banner-slide');
+        const dotsContainer = document.getElementById('banner-dots');
+        const prevBtn = document.getElementById('btn-prev');
+        const nextBtn = document.getElementById('btn-next');
+
+        if(!track) return;
+
+        const totalSlides = slides.length;
+        let currentIndex = 0;
+        let isTransitioning = false;
+        let autoPlayInterval;
+
+        const firstSlideClone = slides[0].cloneNode(true);
+        firstSlideClone.classList.add('clone');
+        track.appendChild(firstSlideClone);
+
+        function initDots() {
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('banner-dot');
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => { if (isTransitioning) return; goToSlide(i); });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateBanner(useTransition = true) {
+            if (useTransition) {
+                track.style.transition = 'transform 1.2s ease-in-out';
+            } else {
+                track.style.transition = 'none';
+            }
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            const dots = document.querySelectorAll('.banner-dot');
+            let dotIndex = currentIndex === totalSlides ? 0 : currentIndex;
+            dots.forEach((dot, index) => {
+                if (index === dotIndex) { dot.classList.add('active'); } else { dot.classList.remove('active'); }
+            });
+        }
+
+        function goToSlide(index) {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex = index;
+            updateBanner(true);
+            resetAutoPlay();
+        }
+
+        function nextSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            currentIndex++;
+            updateBanner(true);
+        }
+
+        function prevSlide() {
+            if (isTransitioning) return;
+            isTransitioning = true;
+            if (currentIndex === 0) {
+                currentIndex = totalSlides;
+                updateBanner(false);
+                void track.offsetWidth;
+                setTimeout(() => {
+                    currentIndex = totalSlides - 1;
+                    updateBanner(true);
+                }, 20);
+            } else {
+                currentIndex--;
+                updateBanner(true);
+            }
+            resetAutoPlay();
+        }
+
+        track.addEventListener('transitionend', function () {
+            if (currentIndex === totalSlides) {
+                currentIndex = 0;
+                updateBanner(false);
+            }
+            isTransitioning = false;
+        });
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                if (!isTransitioning) { nextSlide(); }
+            }, 6000);
+        }
+
+        function stopAutoPlay() { clearInterval(autoPlayInterval); }
+        function resetAutoPlay() { stopAutoPlay(); startAutoPlay(); }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        const container = document.getElementById('banner-container');
+        container.addEventListener('mouseenter', stopAutoPlay);
+        container.addEventListener('mouseleave', startAutoPlay);
+
+        initDots();
+        startAutoPlay();
+    });
+    </script>
+
+</body>
+</html>

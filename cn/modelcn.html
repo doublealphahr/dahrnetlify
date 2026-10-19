@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF; margin: 0; padding: 0;
+            font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000;
+        }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.6; }
+
+        /* ===== 主体/底部 ===== */
+        .main-wrapper { width: 99%; margin: 0 auto; }
+
+        .style1 { vertical-align: middle; text-align: left; padding: 5px; }
+        .style2 { text-align: center; }
+        .style12 { color: #996633; text-align: center; font-size: large; }
+        .style15 { color: #996633; text-align: center; font-size: x-large; }
+        .style19 { color: #996633; }
+        .style20 { text-align: left; }
+        .style21 { font-size: small; }
+        .style23 { color: #B89162; font-size: xx-large; }
+        .style24 { font-family: "Arial Black"; }
+        .style25 { color: #B89162; font-size: xx-large; font-family: "Arial Black"; }
+        .style26 { text-transform: uppercase; letter-spacing: 1px; }
+        .style30 { text-align: left; font-size: xx-large; }
+        .style32 { display: inline-block; color: #FFFFFF; font-weight: bold; border-radius: 4px; pointer-events: auto; transition: background-color 0.3s; text-shadow: none; font-size: medium; padding: 8px 18px; background-color: #B89162; }
+        .style33 { text-align: left; font-size: large; }
+        .style34 { color: #B89162; font-size: large; }
+        .style35 { font-size: medium; }
+        .style36 { text-align: left; font-size: medium; }
+        .style37 { font-size: x-large; }
+
+        @media (max-width: 768px) {
+            .main-wrapper table[style*="width: 98%"] { display: block; width: 100% !important; }
+            .main-wrapper table[style*="width: 98%"] tbody, .main-wrapper table[style*="width: 98%"] tr, .main-wrapper table[style*="width: 98%"] td { display: block; width: 100% !important; text-align: center; padding: 0; }
+            .main-wrapper table[style*="width: 98%"] td:first-child { padding-bottom: 20px; }
+            .main-wrapper table[style*="width: 98%"] td:first-child h2 { text-align: center; }
+            .main-wrapper table[style*="width: 98%"] td:first-child img { margin: 0 auto; display: inline-block; }
+            .main-wrapper table[style*="width: 98%"] td[rowspan="2"] { text-align: left; padding: 0 10px; font-size: 14px; }
+            .main-wrapper table[style*="width: 98%"] td[rowspan="2"] h2 { text-align: center; font-size: 22px; line-height: 1.3; }
+            .main-wrapper table[style*="width: 98%"] td[style*="width: 49px"], .main-wrapper table[style*="width: 98%"] td[style*="width: 10%"] { display: none; }
+            .main-wrapper .style2 { font-size: 22px !important; padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 2. 主体内容 ================= -->
+    <div class="main-wrapper">
+
+        <!-- 这里是你 modelcn.html 原本的主体内容（如果需要添加） -->
+
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

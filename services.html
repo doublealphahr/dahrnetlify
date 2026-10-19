@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>"Alpha" Services | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.6; }
+
+        /* ===== Hero ===== */
+        .hero-banner {
+            position: relative; width: 100%; height: 55vh; min-height: 320px;
+            overflow: hidden; background-color: #f0f0f0; margin-top: 20px;
+        }
+        .hero-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.05) 100%);
+            z-index: 1;
+        }
+        .hero-text {
+            position: absolute; top: 12%; left: 5%; transform: none;
+            width: 55%; color: #FFFFFF; z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left;
+        }
+        .hero-text h1 { font-family: 'Arial Black', 'Microsoft YaHei', sans-serif; font-size: 2.6rem; margin: 0 0 12px 0; line-height: 1.2; }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text h2 { font-size: 1.1rem; font-weight: normal; margin: 0 0 22px 0; color: #F5EFE3; letter-spacing: 0.5px; }
+        .hero-text h2 .gold { color: #E4C28A; font-weight: 600; }
+        .hero-text .hero-cta {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s;
+        }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        .page-title { text-align: center; margin: 30px 0 10px; }
+        .page-title h1 { font-family: "Arial Black", Arial, sans-serif; font-size: 1.6rem; color: #000; margin: 0 0 6px; }
+        .page-title h1 .gold { color: #996633; }
+        .page-title h2 { font-size: 1rem; font-weight: normal; color: #555; margin: 0; }
+        .page-title h2 .gold { color: #996633; font-weight: 600; }
+
+        .services-wrapper { max-width: 1200px; margin: 0 auto 60px; padding: 0 20px; }
+        .block {
+            display: grid; grid-template-columns: 240px 1fr;
+            gap: 30px; padding: 36px 0; border-top: 1px solid #F0E6D6;
+        }
+        .block:first-of-type { border-top: none; }
+        .block-label {
+            font-family: "Noto Serif SC Black", "Times New Roman", serif;
+            font-size: 1.25rem; color: #996633; line-height: 1.4;
+            padding-left: 12px; border-left: 4px solid #996633;
+            align-self: start; position: sticky; top: 20px;
+        }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card {
+            background: #FBFAF6; border: 1px solid #E5DFD0; border-radius: 10px;
+            padding: 22px 20px; transition: box-shadow .2s, transform .2s;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { box-shadow: 0 8px 22px rgba(153,102,51,0.10); transform: translateY(-2px); }
+        .card-icon { width: 60px; height: 60px; object-fit: contain; margin-bottom: 12px; }
+        .card h3 { font-size: 1.05rem; color: #996633; margin: 0 0 8px; font-weight: 700; }
+        .card h3 a { color: #996633; }
+        .card h3 a:hover { color: #7a522a; }
+        .card p { font-size: 0.88rem; color: #666; margin: 0 0 16px; flex: 1; line-height: 1.7; }
+        .card .cta {
+            align-self: flex-start; display: inline-block;
+            background: #996633; color: #fff; padding: 6px 16px;
+            border-radius: 40px; font-size: 0.82rem;
+            letter-spacing: .5px; transition: background .2s;
+        }
+        .card .cta:hover { background: #7a522a; color: #fff; }
+
+        @media (max-width: 768px) {
+            /* Hero */
+            .hero-banner { height: 45vh; min-height: 260px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.5rem; margin-bottom: 8px; }
+            .hero-text h2 { font-size: 0.85rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            .page-title { margin: 20px 0 8px; padding: 0 15px; }
+            .page-title h1 { font-size: 1.3rem; }
+            .page-title h2 { font-size: 0.9rem; }
+
+            .services-wrapper { padding: 0 15px; margin: 0 auto 40px; }
+            .block { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+            .block-label {
+                position: static; text-align: center; font-size: 1.1rem;
+                padding-left: 0; border-left: none;
+                border-bottom: 2px solid #996633; padding-bottom: 8px;
+            }
+            .card-grid { grid-template-columns: 1fr; gap: 16px; }
+            .card { padding: 18px 16px; }
+            .card h3 { font-size: 1rem; }
+            .card p { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/image2.jpg" alt="Alpha Services" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h2><strong>Our</strong></h2>
+            <h1>"Alpha" Services</h1>
+            <h2>for Both <span class="gold">Organisations</span> and <span class="gold">Individuals</span></h2>
+        </div>
+    </div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="services-wrapper">
+
+        <!-- 企业服务 -->
+        <section class="block">
+            <div class="block-label">For Employers&nbsp;</div>
+            <div class="card-grid">
+
+                <div class="card">
+                    <img class="card-icon" src="/employer/recruit.jpg" alt="Recruitment Service" />
+                    <h3><a href="/employer.html">Recruitment Service</a></h3>
+                    <p>Secure your Alpha talents. We help you find and attract the ideal talent you truly need.</p>
+                    <a class="cta" href="/employer.html">Learn more</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/employer/permanentrecruit.jpg" alt="HR Outsourcing" />
+                    <h3><a href="/employer.html">HR Outsourcing (HRO)</a></h3>
+                    <p>Focus on growing your business — leave the functions to us. HR outsourcing, payroll, and more.</p>
+                    <a class="cta" href="/employer.html">Learn more</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/employer/solution.jpg" alt="Training Service" />
+                    <h3><a href="/employer.html">Training Service</a></h3>
+                    <p>Ensure long-term growth and foster employees' career success through management &amp; professional training.</p>
+                    <a class="cta" href="/employer.html">Learn more</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/images/solutions.jpg" alt="HRM Solutions" />
+                    <h3><a href="/employer.html">HRM Solutions</a></h3>
+                    <p>Backed by our professional expertise, we safeguard your growth and competitiveness with tailored solutions.</p>
+                    <a class="cta" href="/employer.html">Learn more</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 个人服务 -->
+        <section class="block">
+            <div class="block-label">For Candidates&nbsp;</div>
+            <div class="card-grid">
+
+                <div class="card">
+                    <img class="card-icon" src="/job/jobseeking.jpg" alt="Job Hunting" />
+                    <h3><a href="/job.html">Job Hunting</a></h3>
+                    <p>Find the right job position for you — from job recommendations and CV optimisation to interview coaching.</p>
+                    <a class="cta" href="/job.html">Learn more</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/job/sustainability.jpg" alt="Career Planning" />
+                    <h3><a href="/job.html">Career Planning</a></h3>
+                    <p>Help you plan and manage your career development to the best. Move forward with clarity.</p>
+                    <a class="cta" href="/job.html">Learn more</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/job/careerplanning.jpg" alt="Security &amp; Compliance" />
+                    <h3><a href="/job.html">Security &amp; Compliance</a></h3>
+                    <p>Ensure employment and immigration compliance — so every choice you make is stable and reliable.</p>
+                    <a class="cta" href="/job.html">Learn more</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HRM 专业内容 -->
+        <section class="block">
+            <div class="block-label">HRM Expertise&nbsp;</div>
+            <div class="card-grid">
+
+                <div class="card">
+                    <img class="card-icon" src="/articles/HRMknowledge.jpg" alt="HRM Knowledge" />
+                    <h3><a href="/resources.html">HRM Knowledge, Tips &amp; Reports</a></h3>
+                    <p>Insights, practical tips and industry reports on HR management — for HR professionals and managers.</p>
+                    <a class="cta" href="/resources.html">Learn more</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/articles/global.jpg" alt="Global Employment Guide" />
+                    <h3><a href="/resources.html">Global Employment Guide</a></h3>
+                    <p>Employment regulations and compliance practices from around the world — supporting your global business.</p>
+                    <a class="cta" href="/resources.html">Learn more</a>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

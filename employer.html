@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>For Organisations | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== Hero 区（带文字覆盖层）：左上对齐 ===== */
+        .hero-banner {
+            position: relative; width: 100%; height: 50vh; min-height: 300px;
+            overflow: hidden; background-color: #f0f0f0; margin-top: 20px;
+        }
+        .hero-banner img {
+            width: 100%; height: 100%; object-fit: cover;
+            object-position: center center; display: block;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
+            z-index: 1;
+        }
+        .hero-text {
+            position: absolute; top: 12%; left: 5%; transform: none;
+            width: 55%; color: #FFFFFF; z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left;
+        }
+        .hero-text h1 {
+            font-family: 'Arial Black', 'Microsoft YaHei', sans-serif;
+            font-size: 2.4rem; margin: 0 0 12px 0; line-height: 1.2;
+        }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text p {
+            font-size: 1rem; margin: 0 0 22px 0; color: #F5EFE3;
+            letter-spacing: 0.5px; line-height: 1.5;
+        }
+        .hero-text .hero-cta {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s;
+        }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        /* ===== Employer 双栏布局 ===== */
+        .employer-page {
+            max-width: 1200px;
+            margin: 30px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .side-menu {
+            position: sticky;
+            top: 20px;
+            background: #F9F7EC;
+            padding: 20px 16px;
+            border-radius: 6px;
+            border-left: 4px solid #996633;
+        }
+        .side-menu h2 {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 1.1rem;
+            color: #996633;
+            margin: 0 0 14px;
+            text-align: left;
+        }
+        .side-menu ul { list-style: none; padding: 0; margin: 0; }
+        .side-menu li { margin-bottom: 10px; }
+        .side-menu li a {
+            display: block;
+            font-size: 0.92rem;
+            color: #333;
+            padding: 6px 0 6px 12px;
+            border-left: 2px solid #E5DFD0;
+            transition: color .2s, border-color .2s, padding-left .2s;
+        }
+        .side-menu li a:hover,
+        .side-menu li a.active {
+            color: #996633;
+            border-left-color: #996633;
+            padding-left: 16px;
+            font-weight: 600;
+        }
+
+        .content-section {
+            padding: 30px 0;
+            border-top: 1px solid #F0E6D6;
+        }
+        .content-section:first-of-type { border-top: none; padding-top: 0; }
+        .content-section h2 {
+            font-family: "Arial Black", Arial, sans-serif;
+            font-size: 1.3rem;
+            color: #996633;
+            margin: 0 0 6px;
+        }
+        .content-section .subtitle {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        .content-section h3 {
+            font-size: 1.05rem;
+            color: #333;
+            margin: 20px 0 10px;
+        }
+        .content-section h4 {
+            font-size: 0.95rem;
+            color: #996633;
+            margin: 16px 0 8px;
+        }
+        .content-section p {
+            font-size: 0.92rem;
+            color: #555;
+            text-align: justify;
+        }
+        .content-section ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .content-section ul li {
+            font-size: 0.92rem;
+            color: #555;
+            margin-bottom: 6px;
+        }
+        .content-section .cta-row {
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px dashed #EFE5D5;
+        }
+        .content-section .cta-row a {
+            color: #800000;
+            margin-right: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .content-section .cta-row a:hover { color: #996633; }
+
+        @media (max-width: 768px) {
+            /* Hero 手机端 */
+            .hero-banner { height: 38vh; min-height: 240px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.4rem; margin-bottom: 8px; }
+            .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            /* Employer 页面手机端 */
+            .employer-page {
+                grid-template-columns: 1fr; gap: 20px;
+                padding: 0 15px; margin: 20px auto 40px;
+            }
+            .side-menu {
+                position: static; padding: 15px 10px;
+                border-left: none; border-top: 4px solid #996633;
+                border-radius: 6px;
+            }
+            .side-menu h2 { font-size: 1rem; text-align: center; }
+            .side-menu ul {
+                display: flex; flex-wrap: wrap;
+                justify-content: center; gap: 6px;
+            }
+            .side-menu li { margin-bottom: 0; }
+            .side-menu li a {
+                padding: 8px 14px; border-left: none;
+                border: 1px solid #E5DFD0; border-radius: 20px;
+                font-size: 0.85rem; white-space: nowrap;
+            }
+            .side-menu li a:hover,
+            .side-menu li a.active {
+                padding-left: 14px; border-left: none;
+                background: #996633; color: #FFFFFF; border-color: #996633;
+            }
+            .content-section { padding: 20px 0; }
+            .content-section h2 { font-size: 1.15rem; }
+            .content-section h3 { font-size: 1rem; }
+            .content-section h4 { font-size: 0.9rem; }
+            .content-section p,
+            .content-section ul li { font-size: 0.88rem; }
+            .content-section .cta-row { text-align: center; }
+            .content-section .cta-row a { display: block; margin: 8px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/4organ.jpg" alt="For Employers" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>For <span class="gold">Employers</span></h1>
+            <p>Your partner in people and talent solutions — with unmatched market insight, deep industry experience, and local compliance expertise to help your business grow sustainably.</p>
+            <a class="hero-cta" href="/contact.html">Get in Touch</a>
+        </div>
+    </div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="employer-page">
+
+        <aside class="side-menu">
+            <h2>For <span style="color: #996633">Organisations</span></h2>
+            <ul>
+                <li><a href="#recruitment" class="active">Recruitment Service</a></li>
+                <li><a href="#training">Training Service</a></li>
+                <li><a href="#outsourcing">Outsourcing Service</a></li>
+                <li><a href="#hrm">HRM Solutions</a></li>
+                <li><a href="#global">Global Employment Guide</a></li>
+            </ul>
+        </aside>
+
+        <main>
+
+            <section class="content-section" id="recruitment">
+                <h2>Recruitment Service</h2>
+                <p class="subtitle">Find the Right Talent for Your Organisation</p>
+
+                <h3>Our Recruitment Charter: Securing Your Alpha Talent</h3>
+                <p>We understand that in 2026, talent is your ultimate competitive advantage. Our Precision Recruitment services are designed to deliver the "Performance Alpha" to your organisation, ensuring every hire is a strategic asset, not just a filled seat.</p>
+
+                <h4>We commit to our Clients:</h4>
+                <p><strong>Strategic Partnership:</strong> We go beyond job descriptions. We immerse ourselves in your strategic objectives, company culture, and long-term vision to identify the true impact a new hire must make.</p>
+                <p><strong>"Alpha" Candidate Sourcing:</strong> We leverage advanced analytics and an unparalleled network to identify, engage, and attract top-tier leaders and specialists—individuals who consistently deliver measurable ROI and accelerate your growth.</p>
+                <p><strong>Skills-First Vetting:</strong> Our rigorous assessment process evaluates beyond traditional qualifications, focusing on verified competencies, practical experience, and the adaptability essential for your dynamic work environment.</p>
+                <p><strong>Efficiency &amp; Transparency:</strong> We streamline the recruitment lifecycle, providing clear communication, timely updates, and data-backed insights, reducing your time-to-hire for critical roles.</p>
+
+                <h3>Permanent Recruitment</h3>
+                <p>Permanent employees are a long-term investment that can bring immense value to your business. We will identify your custom requirements and help you find the perfect long-term fit. We focus on cultural fit and retention, ensuring your investment in new talent yields sustained performance and contributes to a robust, future-ready team. Partner with us to transform your recruitment from a process into a powerful strategic advantage.</p>
+                <p>At the core of every organisation is its people, and we make sure you always have the right people for the job. If you're looking for a permanent employee to spearhead a new area, add to your team or help grow the company strategically, our dedicated recruiting experts can help you find the perfect fit through bespoke campaigns tailored to suit your unique business needs and timeframes.</p>
+                <p>With a multi-national network, we bring together international expertise and on-the-ground regional experience to offer you premium access to the best talent on the market. Our holistic approach and one-stop-shop capabilities cover everything from candidate attraction to recruitment and employee retainment.</p>
+
+                <h4>Our permanent recruitment solutions include:</h4>
+                <ul>
+                    <li>Targeted candidate sourcing</li>
+                    <li>Candidate application screening</li>
+                    <li>Ongoing candidate management</li>
+                    <li>And more</li>
+                </ul>
+
+                <h4>Register Your Job with Double Alpha's Sustainability Team</h4>
+                <p>With society now working hard to tackle climate change, uncontrollable energy consumption, and a global water crisis, businesses should prioritise paving the path to net zero. But transformational change at an enterprise level requires talented professionals who can harmonise environmental, social and economic priorities in order to promote sustainability.</p>
+                <p>As specialist recruiters in sustainability, within the emerging areas of sustainable buildings, the circular economy, environmental roles, and corporate sustainability, we understand that sustainability requires a multi-faceted approach. However you are planning on developing your sustainability agenda, at Double Alpha we can find the right people to help you succeed.</p>
+                <p><a href="/employer/process.html" style="color:#996633;font-weight:600;">See the Double Alpha Hiring Process</a></p>
+                <p>&nbsp;</p>
+            </section>
+
+            <section class="content-section" id="training">
+                <h2>Training Service</h2>
+                <p class="subtitle">Ensure long-term growth and foster employees' career success</p>
+                <p>Double Alpha's Training Service covers management training, professional skills development, and customised corporate training programmes — helping organisations build a sustainable talent pipeline. This section is a placeholder; please replace it with the specific curriculum framework and delivery methods.</p>
+                <h4>Our Training Solutions Include:</h4>
+                <ul>
+                    <li>Management &amp; Leadership Training</li>
+                    <li>Professional Skills Development</li>
+                    <li>Customised Corporate Training</li>
+                    <li>And more</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="outsourcing">
+                <h2>Outsourcing Service</h2>
+                <p class="subtitle">Focus on growing your business — leave the functions to us</p>
+                <h3>Enterprise Solutions</h3>
+                <p>Combining meaningful innovation, the scale of our knowledge and a deep understanding of the world of work.</p>
+                <p>Human Resource Services we provide for you are dedicated entities that provide professional guidance and comprehensive support in human resource management.</p>
+                <p>Their primary objective is to help organizations unlock their HR potential, enhance efficiency, and ensure compliance with regulations. These services are designed to meet the diverse needs of businesses ranging from startups to multinational corporations.</p>
+                <p>Whether your organization is small or large, our HR services can be immensely beneficial.</p>
+                <p>For small to medium-sized businesses that lack a fully established HR department, these services become an invaluable resource. They offer the expertise and guidance needed to navigate complex HR challenges without the need for a dedicated in-house team.</p>
+                <p>Even larger corporations rely on HR consultants to augment their existing HR departments or to tap into specialized knowledge and experience. These services bring fresh perspectives and strategic insights that complement internal resources, ensuring a well-rounded approach to human resource management.</p>
+                <h4>Our Outsourcing Solutions Include:</h4>
+                <ul>
+                    <li>HR Outsourcing (HRO)</li>
+                    <li>Payroll Outsourcing</li>
+                    <li>Recruitment Process Outsourcing (RPO)</li>
+                    <li>Managed Service Provider (MSP) Programs</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="hrm">
+                <h2>HRM Solutions</h2>
+                <p class="subtitle">Backed by our professional expertise, we safeguard your growth and competitiveness</p>
+                <p>HRM Solutions combines organisational diagnosis, compensation and performance design, talent development, and organisational change modules to deliver tailored solutions for your organisation. This section is a placeholder; please replace it with the specific service modules and methodologies.</p>
+                <h4>Our HRM Solutions Include:</h4>
+                <ul>
+                    <li>Organisational Diagnosis &amp; Design</li>
+                    <li>Compensation &amp; Performance Management</li>
+                    <li>Talent Development &amp; Succession Planning</li>
+                    <li>HR Digital Transformation</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="global">
+                <h2>Global Employment Guide</h2>
+                <p class="subtitle">Employment regulations and compliance practices from around the world</p>
+                <p>The Global Employment Guide compiles employment regulations and compliance practices from around the world, helping multinational organisations operate reliably across different jurisdictions. This section is a placeholder; please replace it with the specific countries and regions covered.</p>
+                <div class="cta-row">
+                    <a href="/employer/process.html">Double Alpha's Hiring Process</a>
+                    <a href="/resources.html">Global Employment Guide</a>
+                    <a href="/contact.html">Partner with Us</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

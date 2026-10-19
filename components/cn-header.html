@@ -1,0 +1,233 @@
+﻿<!-- ================= Header 专属样式 ================= -->
+<style>
+    /* ===== 电脑端基础样式 ===== */
+    .header-table{width:99%;margin:0 auto;border-collapse:collapse;}
+    .header-logo-cell{width:350px;text-align:left;vertical-align:middle;padding:5px;}
+    .header-logo-cell img{max-width:100%;height:auto;}
+    .header-nav-cell{text-align:center;vertical-align:middle;padding:5px;position:relative;}
+    .nav-menu{display:flex;justify-content:center;align-items:center;gap:36px;}
+    .nav-menu > a, .nav-menu .nav-dropdown > a{
+        font-size:medium;color:#000000;display:inline-block;
+        white-space:nowrap;padding:0;margin:0;
+    }
+    .nav-menu > a:hover, .nav-menu .nav-dropdown > a:hover{color:#996633;}
+    .header-lang-cell{width:119px;text-align:right;vertical-align:middle;padding:5px;white-space:nowrap;}
+    .header-lang-cell a { display: inline-block; margin-left: 5px; }
+    
+    .nav-dropdown{position:relative;display:inline-block;}
+    .dropdown-content{
+        display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);
+        background-color:#FFFFFF;min-width:160px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.1);
+        border:1px solid #eee;border-radius:4px;z-index:1000;
+        padding:8px 0;margin-top:0;
+    }
+    .dropdown-content a{display:block;padding:10px 20px;color:#000000;font-size:15px;text-align:left;margin:0;white-space:nowrap;transition:background 0.2s,color 0.2s;}
+    .dropdown-content a:hover{background-color:#f5f0e8;color:#996633;}
+    .nav-dropdown:hover .dropdown-content{display:block;}
+
+    .menu-toggle{
+        display:none;background:none;border:none;cursor:pointer;
+        padding:0; margin:0; flex-direction:column; gap:5px;
+        align-items:center;justify-content:center;
+    }
+    .menu-toggle span{display:block;width:25px;height:3px;background-color:#000000;border-radius:2px;transition:0.3s;}
+
+    /* ================= Cookie 告知条基础样式 ================= */
+    #cookie-notice {
+        position: fixed; top: 0; left: 0; right: 0;
+        background: #FFFFFF; border-bottom: 2px solid #B89162;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.08); z-index: 99999;
+        padding: 12px 20px; font-family: Arial, "Microsoft YaHei", sans-serif;
+        color: #333; font-size: 0.85rem; display: none;
+        transform: translateY(-100%); transition: transform 0.3s ease;
+    }
+    #cookie-notice.cn-visible { display: block; transform: translateY(0); }
+    .cn-inner {
+        max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap;
+        align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .cn-inner p { margin: 0; line-height: 1.5; }
+    .cn-inner a { color: #996633; text-decoration: underline; }
+    .cn-btn {
+        background: #B89162; color: #FFFFFF; border: none;
+        padding: 8px 22px; border-radius: 4px; font-size: 0.85rem;
+        font-weight: 600; cursor: pointer; font-family: inherit; white-space: nowrap;
+    }
+    .cn-btn:hover { background: #996633; }
+    body.cn-open { padding-top: 60px; transition: padding-top 0.3s ease; }
+
+    /* ===== 移动端变形样式 ===== */
+    @media (max-width: 768px) {
+        .header-table {
+            display: flex; align-items: center; justify-content: space-between;
+            width: 100% !important; padding: 10px 15px;
+            box-sizing: border-box; border-bottom: 1px solid #eee;
+        }
+        .header-table tbody, .header-table tr {
+            display: flex; width: 100%; align-items: center; justify-content: space-between; 
+        }
+        .header-logo-cell, .style1 {
+            display: flex; justify-content: flex-start; align-items: center;
+            padding: 0; width: auto !important; 
+        }
+        .header-logo-cell img, .style1 img { 
+            display: inline-block; max-height: 40px; margin-top: 0;
+        }
+        .header-nav-cell { display: contents; }
+
+        .nav-menu {
+            position: absolute; top: 60px; left: 0; width: 100%; 
+            background-color: #FFFFFF; box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            z-index: 999; flex-direction: column; padding: 10px 0; 
+            border-top: 1px solid #eee; gap: 0; display: none; 
+        }
+        .nav-menu.active { display: flex; }
+        .nav-menu a {
+            display: block; padding: 12px 0; margin: 0; font-size: 15px; 
+            border-bottom: 1px solid #f5f5f5; text-align: center;
+        }
+        .nav-menu a:last-child { border-bottom: none; }
+        
+        .nav-dropdown { display: block; width: 100%; }
+        .nav-dropdown > a {
+            display: block; padding: 12px 0; margin: 0; border-bottom: 1px solid #f5f5f5;
+        }
+        .dropdown-content {
+            position: static; display: none; box-shadow: none;
+            border: none; background-color: #f9f9f9; padding: 0;
+            transform: none; left: 0;
+        }
+        .nav-dropdown.open .dropdown-content { display: block; }
+        .dropdown-content a { padding: 10px 0; font-size: 14px; color: #666; }
+
+        .menu-toggle { 
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            height: 30px; width: 30px; padding: 0; margin-left: auto; margin-right: 15px; 
+            background: transparent; border: none; outline: none;
+            box-sizing: border-box; position: relative; top: -1px; 
+        }
+
+        .header-lang-cell {
+            display: flex; justify-content: flex-end; align-items: center;
+            padding: 0; width: auto !important; gap: 6px; margin: 0;
+        }
+        .header-lang-cell img { 
+            height: 20px; width: auto; margin-left: 0; display: block;
+        }
+        .header-lang-cell a { margin: 0; }
+        body.cn-open { padding-top: 100px; }
+    }
+</style>
+
+<!-- ================= Cookie 告知条 ================= -->
+<div id="cookie-notice" role="region" aria-label="Cookie 使用告知">
+    <div class="cn-inner">
+        <p>
+            本网站仅使用必要的 Cookie 以确保正常运行。我们不使用任何分析、追踪或广告Cookie。
+            <a href="/legal/cookies-policy.html">了解详情</a>
+        </p>
+        <button id="cn-got-it" class="cn-btn" type="button">我知道了</button>
+    </div>
+</div>
+
+<!-- ================= 统一头部 ================= -->
+<div style="text-align: center;">
+    <table class="header-table" cellpadding="0" cellspacing="0">
+        <tr>
+            <!-- 1. 最左边：Logo -->
+            <td class="style1 header-logo-cell">
+                <a href="/cn/index.html">
+                    <img alt="logo" src="/pics/cn-logo.jpg" />
+                </a>
+            </td>
+            
+            <!-- 2. 中间：导航区域 -->
+            <td class="header-nav-cell">
+                <!-- 汉堡按钮（手机端显示） -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <!-- 导航菜单 -->
+                <div class="nav-menu" id="nav-menu">
+                    <a href="/cn/index.html">首页</a>
+                    <a href="/cn/about.html">关于</a>
+                    <span class="nav-dropdown">
+                        <a href="/cn/services.html">服务</a>
+                        <div class="dropdown-content">
+                            <a href="/cn/employer.html">机构服务</a>
+                            <a href="/cn/job.html">个人服务</a>
+                        </div>
+                    </span>
+                    <a href="/cn/job/positions.html">职位</a>
+                    <a href="/cn/cv/index.html">上传简历</a>
+                    <a href="/cn/resources.html">资源中心</a>
+                </div>
+            </td>
+
+            <!-- 3. 最右侧：语言选择器 -->
+            <td class="header-lang-cell">
+                <!-- 统一绝对路径 -->
+                <a href="/index.html"><img alt="English" src="/pics/uk2.jpg" width="46" height="30"></a>
+                <a href="/cn/index.html"><img style="border: 0;" id="img1" src="/pics/cn2.jpg" alt="中 文" width="46" height="30" /></a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- ================= 交互逻辑 ================= -->
+<script>
+(function() {
+    // ===== 1. 汉堡菜单逻辑 =====
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navDropdown = document.querySelector('.nav-dropdown');
+
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    if (navDropdown) {
+        const dropdownLink = navDropdown.querySelector('a');
+        dropdownLink.addEventListener('click', function (e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                navDropdown.classList.toggle('open');
+            }
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+        if (navMenu && navMenu.classList.contains('active')) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                if (navDropdown) navDropdown.classList.remove('open');
+            }
+        }
+    });
+
+    // ===== 2. Cookie 告知条逻辑 =====
+    const cookieNotice = document.getElementById('cookie-notice');
+    const cnBtn = document.getElementById('cn-got-it');
+    
+    if (cookieNotice && cnBtn) {
+        if (!localStorage.getItem('cookieConsent')) {
+            setTimeout(() => {
+                cookieNotice.classList.add('cn-visible');
+                document.body.classList.add('cn-open');
+            }, 500);
+        }
+
+        cnBtn.addEventListener('click', function() {
+            cookieNotice.classList.remove('cn-visible');
+            document.body.classList.remove('cn-open');
+            localStorage.setItem('cookieConsent', 'true');
+        });
+    }
+})();
+</script>

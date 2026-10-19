@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>联系我们 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        /* ===== 全局 ===== */
+        body{background-color:#FFFFFF;margin:0;padding:0;font-family:Arial,"Microsoft YaHei",sans-serif;color:#000000;}
+        a{color:#000000;text-decoration:none;}
+        a:hover{color:#996633;}
+        img{border:0;max-width:100%;}
+        p{margin:8px 0;line-height:1.7;}
+
+        /* ===== 联系我们页面样式 ===== */
+        .contact-page {
+            max-width: 900px;
+            margin: 30px auto 60px;
+            padding: 0 20px;
+        }
+        .contact-page h1 {
+            font-family: "Arial Black", "Microsoft YaHei", sans-serif;
+            font-size: 1.8rem;
+            color: #996633;
+            text-align: center;
+            margin: 0 0 30px;
+        }
+        .contact-page table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .contact-page td {
+            vertical-align: top;
+            padding: 12px 8px;
+        }
+        .contact-label {
+            width: 240px;
+            font-family: "Times New Roman", "Microsoft YaHei", serif;
+            font-size: 1.15rem;
+            color: #000000;
+            font-weight: bold;
+        }
+        .contact-value {
+            font-size: 1rem;
+            color: #333;
+        }
+        .contact-value a { color: #996633; text-decoration: underline; }
+
+        /* CTA 按钮 */
+        .contact-cta-wrap {
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+        .contact-cta-btn {
+            display: inline-block;
+            background-color: #996633;
+            color: #FFFFFF !important;
+            padding: 11px 24px;
+            margin: 6px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+        .contact-cta-btn:hover {
+            background-color: #7a522a;
+            color: #FFFFFF !important;
+        }
+
+        @media (max-width: 768px) {
+            /* 联系我们页面手机端 */
+            .contact-page { padding: 0 15px; margin: 20px auto 40px; }
+            .contact-page h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            .contact-page td { display: block; width: 100% !important; padding: 8px 0; text-align: left; }
+            .contact-label { font-size: 1rem; padding-bottom: 4px; border-bottom: 1px dashed #EFE5D5; margin-bottom: 6px; }
+            .contact-value { font-size: 0.92rem; }
+            .contact-cta-wrap { margin: 20px 0 10px; }
+            .contact-cta-btn { display: block; margin: 8px auto; max-width: 260px; padding: 12px 20px; font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <main class="contact-page">
+
+        <h1>联系我们</h1>
+
+        <table>
+            <tr>
+                <td class="contact-label">地址：</td>
+                <td class="contact-value">
+                    英国<br>
+                    美国<br>
+                    中国
+                </td>
+            </tr>
+            <tr>
+                <td class="contact-label">电话：</td>
+                <td class="contact-value">+44-</td>
+            </tr>
+            <tr>
+                <td class="contact-label">邮箱地址：</td>
+                <td class="contact-value"><a href="mailto:business@doublealphahr.com">business@doublealphahr.com</a></td>
+            </tr>
+        </table>
+
+        <!-- CTA 按钮 -->
+        <div class="contact-cta-wrap">
+            <a href="/cn/contact.html" class="contact-cta-btn">联系我们获取咨询和服务</a>
+            <a href="/cn/job/positions.html" class="contact-cta-btn">查看正在招聘职位</a>
+            <a href="/cn/cv/index.html" class="contact-cta-btn">发送简历</a>
+        </div>
+
+    </main>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CV Upload | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        /* ===== 基础样式 ===== */
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== 主体内容容器 ===== */
+        .main-wrapper { 
+            width: 99%; 
+            max-width: 1200px;
+            margin: 20px auto; 
+            min-height: 70vh; /* 保证内容不够时页脚在下面 */
+        }
+        .main-wrapper iframe {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+            display: block;
+        }
+
+        /* ===== 移动端适配 ===== */
+        @media (max-width: 768px) {
+            .main-wrapper { 
+                width: 100%; 
+                margin: 10px auto; 
+                padding: 0 10px; 
+                box-sizing: border-box; 
+            }
+            .main-wrapper iframe { 
+                min-height: 1200px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位（由JS加载） ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 2. 主体内容：纯净的表单 iframe ================= -->
+    <div class="main-wrapper">
+        <iframe name="I1" id="I1" src="cvupload.html" title="CV Upload Form">
+            Your browser does not support inline frames.
+        </iframe>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位（由JS加载） ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 脚本：加载组件与自适应高度 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. 加载英文页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                // 重新执行加载进来的 script
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 2. 加载英文页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                // 重新执行加载进来的 script (比如 Cookie 提示)
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+
+    // 3. iframe 高度自适应逻辑
+    (function () {
+        const iframe = document.getElementById('I1');
+        if (!iframe) return;
+        
+        function adjustHeight() {
+            try {
+                const doc = iframe.contentDocument || iframe.contentWindow.document;
+                if (doc && doc.body) {
+                    iframe.style.height = (doc.body.scrollHeight + 20) + 'px';
+                }
+            } catch (e) {}
+        }
+        iframe.addEventListener('load', adjustHeight);
+        window.addEventListener('resize', adjustHeight);
+    })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Feedback | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body{background-color:#FFFFFF;margin:0;padding:0;font-family:Arial,"Helvetica Neue",sans-serif;color:#000000;}
+        a{color:#000000;text-decoration:none;}
+        a:hover{color:#996633;}
+        img{border:0;max-width:100%;}
+        p{margin:8px 0;line-height:1.6;}
+
+        /* ===== Feedback 页面 ===== */
+        .fb-page{max-width:720px;margin:30px auto 60px;padding:0 20px;font-family:Arial,"Helvetica Neue",sans-serif;color:#333;line-height:1.7;}
+        .fb-page h1{color:#996633;font-family:"Arial Black",Arial,sans-serif;font-weight:bold;font-size:1.6rem;text-align:center;margin:0 0 6px;}
+        .fb-page .fb-intro{text-align:center;color:#666;font-size:0.9rem;margin:0 0 30px;padding-bottom:20px;border-bottom:1px solid #EEE;}
+        .fb-page .fb-form{background:#FBFAF6;border:1px solid #E5DFD0;border-radius:6px;padding:26px 24px;}
+        .fb-field{margin-bottom:18px;}
+        .fb-field label{display:block;font-size:0.9rem;color:#000;font-weight:600;margin-bottom:6px;}
+        .fb-field label .required{color:#C0392B;margin-left:4px;}
+        .fb-field input[type="text"],.fb-field input[type="email"],.fb-field select,.fb-field textarea{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #DDD;border-radius:4px;font-size:0.92rem;font-family:inherit;color:#333;background:#FFFFFF;transition:border-color 0.2s;}
+        .fb-field input:focus,.fb-field select:focus,.fb-field textarea:focus{outline:none;border-color:#B89162;}
+        .fb-field textarea{min-height:120px;resize:vertical;}
+        .fb-field .fb-hint{font-size:0.8rem;color:#888;margin-top:4px;}
+        .fb-radio-group{display:flex;flex-wrap:wrap;gap:18px;padding-top:4px;}
+        .fb-radio-group label{display:inline-flex;align-items:center;font-weight:normal;font-size:0.9rem;color:#333;margin:0;cursor:pointer;}
+        .fb-radio-group input[type="radio"]{margin-right:6px;accent-color:#B89162;}
+        .fb-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;padding-top:20px;border-top:1px dashed #E5DFD0;}
+        .fb-btn{padding:11px 28px;border-radius:4px;font-size:0.92rem;font-weight:600;cursor:pointer;border:none;font-family:inherit;transition:background 0.2s,color 0.2s;}
+        .fb-btn-primary{background:#B89162;color:#FFFFFF;}
+        .fb-btn-primary:hover{background:#996633;}
+        .fb-btn-primary:disabled{background:#C9B79B;cursor:not-allowed;}
+        .fb-btn-secondary{background:transparent;color:#000;border:1px solid #B89162;}
+        .fb-btn-secondary:hover{background:#F9F7EC;}
+        .fb-alert{padding:12px 16px;border-radius:4px;font-size:0.9rem;margin-bottom:20px;}
+        .fb-alert-success{background:#EBF5EC;border-left:4px solid #4CAF50;color:#2E7D32;}
+        .fb-alert-error{background:#FDECEA;border-left:4px solid #C0392B;color:#922B21;}
+        .fb-privacy{font-size:0.82rem;color:#666;margin-top:20px;line-height:1.6;}
+        .fb-privacy a{color:#996633;text-decoration:underline;}
+        .fb-honeypot{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;}
+
+        /* ============================================= */
+        /* ===== 移动端响应式优化 (屏幕宽度 ≤ 768px) ===== */
+        /* ============================================= */
+        @media (max-width: 768px) {
+            /* Feedback 页面手机端优化 */
+            .fb-page { margin: 20px auto 40px; padding: 0 15px; }
+            .fb-page h1 { font-size: 1.3rem; }
+            .fb-page .fb-intro { font-size: 0.85rem; margin-bottom: 20px; padding-bottom: 15px; }
+            .fb-page .fb-form { padding: 20px 16px; }
+
+            /* 表单字段字号微调 */
+            .fb-field label { font-size: 0.88rem; }
+            .fb-field input[type="text"],
+            .fb-field input[type="email"],
+            .fb-field select,
+            .fb-field textarea { font-size: 0.9rem; padding: 9px 11px; }
+            .fb-field textarea { min-height: 100px; }
+
+            /* 单选按钮垂直排列 */
+            .fb-radio-group { flex-direction: column; gap: 8px; }
+
+            /* 按钮全宽 */
+            .fb-actions { flex-direction: column; }
+            .fb-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="fb-page">
+
+        <h1>Feedback</h1>
+        <p class="fb-intro">
+            Thank you for taking the time to share your thoughts with us. Your feedback helps us improve our services for you and other users.
+        </p>
+
+        <div id="fbMessage" class="fb-alert" style="display:none;"></div>
+
+        <!-- ★ action 指向 Formspree；method 用 POST -->
+        <form id="feedbackForm" class="fb-form" action="https://formspree.io/f/xljgaywj" method="post" novalidate>
+
+            <!-- Formspree 邮件主题（已改为纯英文防止乱码） -->
+            <input type="hidden" name="_subject" value="Double Alpha HR - New Feedback Submission" />
+
+            <div class="fb-honeypot" aria-hidden="true">
+                <label for="fbHoneypot">Do not fill in this field</label>
+                <input type="text" id="fbHoneypot" name="_gotcha" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="fb-field">
+                <label for="txtName">Name <span class="required">*</span></label>
+                <input type="text" id="txtName" name="txtName" maxlength="80" placeholder="Please enter your name" required />
+            </div>
+
+            <div class="fb-field">
+                <label for="txtEmail">Email <span class="required">*</span></label>
+                <!-- ★ 已将 _replyto 改为 email，以便直接回复 -->
+                <input type="email" id="txtEmail" name="email" maxlength="120" placeholder="example@domain.com" required />
+            </div>
+
+            <div class="fb-field">
+                <label for="txtPhone">Phone (optional)</label>
+                <input type="text" id="txtPhone" name="txtPhone" maxlength="30" placeholder="+44 or +86 phone number" />
+            </div>
+
+            <div class="fb-field">
+                <label for="txtLocation">Location (Country / Region) <span class="required">*</span></label>
+                <input type="text" id="txtLocation" name="txtLocation" maxlength="80" placeholder="e.g. China / United Kingdom / Germany / California, USA" required />
+                <div class="fb-hint">Please enter the country or region you are currently in, so we can better understand your background.</div>
+            </div>
+
+            <div class="fb-field">
+                <label for="ddlType">Feedback Type</label>
+                <select id="ddlType" name="ddlType">
+                    <option value="Service Suggestion">Service Suggestion</option>
+                    <option value="Website Issue">Website Issue</option>
+                    <option value="Job Seeker Enquiry">Job Seeker Enquiry</option>
+                    <option value="Employer Enquiry">Employer Enquiry</option>
+                    <option value="Complaint">Complaint</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="fb-field">
+                <label>Overall Satisfaction</label>
+                <div class="fb-radio-group">
+                    <label><input type="radio" name="rblRating" value="5" /> Very satisfied</label>
+                    <label><input type="radio" name="rblRating" value="4" /> Satisfied</label>
+                    <label><input type="radio" name="rblRating" value="3" checked /> Neutral</label>
+                    <label><input type="radio" name="rblRating" value="2" /> Dissatisfied</label>
+                    <label><input type="radio" name="rblRating" value="1" /> Very dissatisfied</label>
+                </div>
+            </div>
+
+            <div class="fb-field">
+                <label for="txtMessage">Message <span class="required">*</span></label>
+                <textarea id="txtMessage" name="txtMessage" maxlength="2000" placeholder="Please describe your suggestions, comments, or issues in detail..." required></textarea>
+                <div class="fb-hint">Up to 2,000 characters</div>
+            </div>
+
+            <div class="fb-actions">
+                <button type="submit" class="fb-btn fb-btn-primary">Submit Feedback</button>
+                <!-- 给清空按钮加个 id 方便绑定事件 -->
+                <button type="reset" id="btnReset" class="fb-btn fb-btn-secondary">Clear</button>
+            </div>
+
+            <p class="fb-privacy">
+                By submitting, you agree that we may process your information in accordance with our
+                <a href="/legal/privacy-policy.html" target="_blank">Privacy Policy</a>.
+                We will use your feedback solely to improve our services, and will not use it for marketing
+                or share it with third parties.
+                If you prefer not to leave an email address, you can also email us directly at
+                <a href="mailto:Business@doublealphahr.com">Business@doublealphahr.com</a>.
+            </p>
+
+        </form>
+
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 页面专属脚本 (表单逻辑) ================= -->
+    <script>
+    (function () {
+        // ===== 自动填充 Location 逻辑封装 =====
+        function autoFillLocation() {
+            var locEl = document.getElementById('txtLocation');
+            // 只有当为空时才自动填充
+            if (locEl && !locEl.value) {
+                var tzMap = {
+                    'Asia/Shanghai':'China','Asia/Chongqing':'China','Asia/Harbin':'China','Asia/Urumqi':'China',
+                    'Asia/Hong_Kong':'Hong Kong SAR, China','Asia/Macau':'Macau SAR, China','Asia/Taipei':'Taiwan, China',
+                    'Europe/London':'United Kingdom','Europe/Berlin':'Germany','Europe/Paris':'France','Europe/Amsterdam':'Netherlands',
+                    'Europe/Madrid':'Spain','Europe/Rome':'Italy','Europe/Zurich':'Switzerland','Europe/Stockholm':'Sweden',
+                    'America/New_York':'United States','America/Chicago':'United States','America/Denver':'United States','America/Los_Angeles':'United States',
+                    'America/Toronto':'Canada','America/Vancouver':'Canada',
+                    'Australia/Sydney':'Australia','Australia/Melbourne':'Australia',
+                    'Asia/Singapore':'Singapore','Asia/Kuala_Lumpur':'Malaysia','Asia/Tokyo':'Japan','Asia/Seoul':'South Korea',
+                    'Asia/Bangkok':'Thailand','Asia/Jakarta':'Indonesia','Asia/Manila':'Philippines','Asia/Ho_Chi_Minh':'Vietnam','Asia/Dubai':'United Arab Emirates'
+                };
+                try { 
+                    var tz = Intl.DateTimeFormat().resolvedOptions().timeZone; 
+                    if (tzMap[tz]) locEl.value = tzMap[tz]; 
+                } catch (e) {}
+            }
+        }
+
+        // 页面加载时填充一次
+        autoFillLocation();
+
+        // ===== 表单提交 =====
+        var form = document.getElementById('feedbackForm');
+        if (!form) return;
+
+        var msgBox = document.getElementById('fbMessage');
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var resetBtn = document.getElementById('btnReset');
+
+        // 点击 Clear 按钮后，让浏览器稍微等一下再重新填充 Location
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                setTimeout(autoFillLocation, 50);
+            });
+        }
+
+        function showMessage(type, text) {
+            if (!msgBox) return;
+            msgBox.className = 'fb-alert fb-alert-' + type;
+            msgBox.textContent = text;
+            msgBox.style.display = 'block';
+            msgBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // ===== 前端验证 =====
+            var nameEl = document.getElementById('txtName');
+            var emailEl = document.getElementById('txtEmail');
+            var locEl2 = document.getElementById('txtLocation');
+            var msgEl = document.getElementById('txtMessage');
+            var errors = [];
+            if (!nameEl.value.trim()) errors.push('Please enter your name.');
+            if (!emailEl.value.trim()) { errors.push('Please enter your email.'); }
+            else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailEl.value.trim())) { errors.push('The email format is invalid.'); }
+            if (!locEl2.value.trim()) errors.push('Please enter your location (country / region).');
+            if (!msgEl.value.trim()) errors.push('Please enter your message.');
+            if (msgEl.value.length > 2000) errors.push('The message cannot exceed 2,000 characters.');
+
+            if (errors.length > 0) {
+                showMessage('error', errors.join(' '));
+                return;
+            }
+
+            // ===== AJAX 提交到 Formspree =====
+            var formData = new FormData(form);
+            if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Submitting...'; }
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(function (response) {
+                if (response.ok) {
+                    form.reset();
+                    // 提交成功清空表单后，也重新填充一下 Location
+                    setTimeout(autoFillLocation, 50);
+                    
+                    showMessage('success', 'Thank you! Your feedback has been submitted successfully. We will review it shortly.');
+                    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Feedback'; }
+                } else {
+                    return response.json().then(function (data) {
+                        var errText = 'Submission failed. Please try again later.';
+                        if (data && data.errors && data.errors.length) {
+                            errText = data.errors.map(function (x) { return x.message; }).join(' ');
+                        }
+                        showMessage('error', errText);
+                        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Feedback'; }
+                    });
+                }
+            })
+            .catch(function () {
+                showMessage('error', 'Network error. Please check your connection and try again.');
+                if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Submit Feedback'; }
+            });
+        });
+    })();
+    </script>
+
+    <!-- ================= 5. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

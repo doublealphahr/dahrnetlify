@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>机构服务 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* Hero：左上对齐 */
+        .hero-banner {
+            position: relative; width: 100%; height: 50vh; min-height: 300px;
+            overflow: hidden; background-color: #f0f0f0; margin-top: 20px;
+        }
+        .hero-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
+            z-index: 1;
+        }
+        .hero-text {
+            position: absolute; top: 12%; left: 5%; transform: none;
+            width: 55%; color: #FFFFFF; z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left;
+        }
+        .hero-text h1 { font-family: 'Arial Black', 'Microsoft YaHei', sans-serif; font-size: 2.4rem; margin: 0 0 12px 0; line-height: 1.2; }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text p { font-size: 1rem; margin: 0 0 22px 0; color: #F5EFE3; letter-spacing: 0.5px; line-height: 1.5; }
+        .hero-text .hero-cta {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s;
+        }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        .employer-page {
+            max-width: 1200px; margin: 30px auto 60px; padding: 0 20px;
+            display: grid; grid-template-columns: 240px 1fr;
+            gap: 40px; align-items: start;
+        }
+        .side-menu {
+            position: sticky; top: 20px; background: #F9F7EC;
+            padding: 20px 16px; border-radius: 6px; border-left: 4px solid #996633;
+        }
+        .side-menu h2 { font-family: "Arial Black", Arial, sans-serif; font-size: 1.1rem; color: #996633; margin: 0 0 14px; text-align: left; }
+        .side-menu ul { list-style: none; padding: 0; margin: 0; }
+        .side-menu li { margin-bottom: 10px; }
+        .side-menu li a {
+            display: block; font-size: 0.92rem; color: #333;
+            padding: 6px 0 6px 12px; border-left: 2px solid #E5DFD0;
+            transition: color .2s, border-color .2s, padding-left .2s;
+        }
+        .side-menu li a:hover, .side-menu li a.active {
+            color: #996633; border-left-color: #996633; padding-left: 16px; font-weight: 600;
+        }
+
+        .content-section { padding: 30px 0; border-top: 1px solid #F0E6D6; }
+        .content-section:first-of-type { border-top: none; padding-top: 0; }
+        .content-section h2 { font-family: "Arial Black", Arial, sans-serif; font-size: 1.3rem; color: #996633; margin: 0 0 6px; }
+        .content-section .subtitle { font-size: 0.9rem; color: #888; font-style: italic; margin-bottom: 20px; }
+        .content-section h3 { font-size: 1.05rem; color: #333; margin: 20px 0 10px; }
+        .content-section h4 { font-size: 0.95rem; color: #996633; margin: 16px 0 8px; }
+        .content-section p { font-size: 0.92rem; color: #555; text-align: justify; }
+        .content-section ul { padding-left: 20px; margin: 10px 0; }
+        .content-section ul li { font-size: 0.92rem; color: #555; margin-bottom: 6px; }
+        .content-section .cta-row { margin-top: 24px; padding-top: 16px; border-top: 1px dashed #EFE5D5; }
+        .content-section .cta-row a { color: #800000; margin-right: 30px; font-size: 0.9rem; font-weight: 600; }
+        .content-section .cta-row a:hover { color: #996633; }
+
+        @media (max-width: 768px) {
+            /* Hero 手机端 */
+            .hero-banner { height: 38vh; min-height: 240px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.4rem; margin-bottom: 8px; }
+            .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            /* Employer 页面手机端 */
+            .employer-page {
+                grid-template-columns: 1fr; gap: 20px;
+                padding: 0 15px; margin: 20px auto 40px;
+            }
+            .side-menu {
+                position: static; padding: 15px 10px;
+                border-left: none; border-top: 4px solid #996633;
+                border-radius: 6px;
+            }
+            .side-menu h2 { font-size: 1rem; text-align: center; }
+            .side-menu ul {
+                display: flex; flex-wrap: wrap;
+                justify-content: center; gap: 6px;
+            }
+            .side-menu li { margin-bottom: 0; }
+            .side-menu li a {
+                padding: 8px 14px; border-left: none;
+                border: 1px solid #E5DFD0; border-radius: 20px;
+                font-size: 0.85rem; white-space: nowrap;
+            }
+            .side-menu li a:hover,
+            .side-menu li a.active {
+                padding-left: 14px; border-left: none;
+                background: #996633; color: #FFFFFF; border-color: #996633;
+            }
+            .content-section { padding: 20px 0; }
+            .content-section h2 { font-size: 1.15rem; }
+            .content-section h3 { font-size: 1rem; }
+            .content-section h4 { font-size: 0.9rem; }
+            .content-section p,
+            .content-section ul li { font-size: 0.88rem; }
+            .content-section .cta-row { text-align: center; }
+            .content-section .cta-row a { display: block; margin: 8px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/4organ.jpg" alt="机构服务" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>面向<span class="gold">机构</span></h1>
+            <p>我们是您的员工与人才解决方案伙伴——凭借无与伦比的市场洞察、深厚的行业经验与本地法规合规能力，助您持续发展。</p>
+            <a class="hero-cta" href="/cn/contact.html">立即咨询</a>
+        </div>
+    </div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="employer-page">
+
+        <aside class="side-menu">
+            <h2>面向<span style="color: #996633">机构</span></h2>
+            <ul>
+                <li><a href="#recruitment" class="active">招聘服务</a></li>
+                <li><a href="#training">培训服务</a></li>
+                <li><a href="#outsourcing">外包服务</a></li>
+                <li><a href="#hrm">HRM 解决方案</a></li>
+                <li><a href="#global">全球雇佣指南</a></li>
+            </ul>
+        </aside>
+
+        <main>
+
+            <section class="content-section" id="recruitment">
+                <h2>招聘服务</h2>
+                <p class="subtitle">为您的组织找到最合适的人才</p>
+
+                <h3>招聘宗旨：为您锁定 "Alpha" 人才</h3>
+                <p>我们深知，2026 年人才是企业最核心的竞争力。我们的精准招聘服务致力于为您的组织带来 "Performance Alpha"——让每一次招聘都成为战略性资产，而不只是填补一个岗位。</p>
+
+                <h4>我们对客户的承诺：</h4>
+                <p><strong>战略合作伙伴：</strong>我们不止步于职位描述。我们深入了解您的战略目标、企业文化与长期愿景，明确新员工必须带来的实际价值。</p>
+                <p><strong>"Alpha" 候选人搜寻：</strong>我们运用先进的数据分析和广泛的人脉网络，识别、接触并吸引顶尖领导者与专业人才——他们能够持续创造可量化的投资回报，加速您的增长。</p>
+                <p><strong>技能优先筛选：</strong>我们严谨的评估流程超越传统的资历评判，重点关注已核实的能力、实践经验，以及应对动态工作环境所需的适应力。</p>
+                <p><strong>高效与透明：</strong>我们简化招聘流程，提供清晰的沟通、及时的更新与有数据支撑的洞察，缩短关键岗位的招聘周期。</p>
+
+                <h3>长期职位招聘</h3>
+                <p>长期员工是一项长期投资，能为您的企业带来巨大的价值。我们将明确您的定制化需求，帮助您找到最合适的长期人选。我们注重文化契合度与留任率，确保您对新人的投资能够带来持续的业绩表现，并打造一支稳健、面向未来的团队。与我们合作，将招聘流程转化为强大的战略优势。</p>
+                <p>每个组织的核心都是人，我们确保您始终拥有适合岗位的人才。如果您正在寻找一位长期员工来开拓新领域、补充团队或从战略上推动公司发展，我们专业的招聘专家将通过量身定制的招聘活动，帮助您找到最合适的人选。</p>
+                <p>凭借跨国网络，我们整合国际专业知识与本土实践经验，让您优先接触市场上最优秀的人才。我们的一体化方法覆盖从候选人吸引、招聘到员工留任的全流程。</p>
+
+                <h4>我们的长期招聘解决方案包括：</h4>
+                <ul>
+                    <li>精准的候选人搜寻</li>
+                    <li>候选人申请筛选</li>
+                    <li>持续的候选人管理</li>
+                    <li>更多服务</li>
+                </ul>
+
+                <h4>与 Double Alpha 可持续发展团队合作发布职位</h4>
+                <p>面对气候变化、能源消耗失控与全球水资源危机，企业应优先推动净零排放之路。但企业层面的变革转型需要能够协调环境、社会与经济优先事项的专业人才。</p>
+                <p>作为可持续发展领域的专业招聘顾问，我们深耕绿色建筑、循环经济、环境岗位与企业可持续发展等新兴领域，深知可持续发展需要多维度的专业方法。无论您如何规划可持续发展议程，Double Alpha 都能帮您找到合适的人才。</p>
+                <p><a href="/cn/employer/process.html" style="color:#996633;font-weight:600;">查看 Double Alpha 面试流程</a></p>
+                <p>&nbsp;</p>
+            </section>
+
+            <section class="content-section" id="training">
+                <h2>培训服务</h2>
+                <p class="subtitle">确保企业长期发展，促进员工职业成就</p>
+                <p>Double Alpha 的培训服务涵盖管理培训、专业技能培训与定制化企业内训，帮助企业打造可持续的人才梯队。本段落为占位内容，请替换为具体的课程体系与培训方式。</p>
+                <h4>我们的培训方案包括：</h4>
+                <ul>
+                    <li>管理与领导力培训</li>
+                    <li>专业技能发展</li>
+                    <li>定制化企业内训</li>
+                    <li>更多服务</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="outsourcing">
+                <h2>外包服务</h2>
+                <p class="subtitle">您专注于业务增长，职能交给我们</p>
+                <h3>企业级解决方案</h3>
+                <p>我们将有意义的创新、深厚的知识规模与对职场的深入理解融为一体。</p>
+                <p>我们提供的人力资源服务，是致力于在人力资源管理方面提供专业指导与全面支持的专门业务单元。</p>
+                <p>其首要目标是帮助组织释放 HR 潜能、提升效率并确保合规。这些服务旨在满足从初创企业到跨国公司的多样化需求。</p>
+                <p>无论您的组织规模大小，我们的 HR 服务都能为您带来巨大价值。</p>
+                <p>对于尚未建立完整 HR 部门的中小型企业而言，这些服务尤为宝贵。它们提供了应对复杂 HR 挑战所需的专业知识与指导，无需组建专门的内部团队。</p>
+                <p>即便是大型企业，也依赖 HR 顾问来补充现有 HR 部门或获取专业知识与经验。这些服务带来新的视角与战略洞察，与内部资源互补，确保人力资源管理的全面性。</p>
+                <h4>我们的外包解决方案包括：</h4>
+                <ul>
+                    <li>人力资源外包（HRO）</li>
+                    <li>薪酬外包</li>
+                    <li>招聘流程外包（RPO）</li>
+                    <li>管理服务提供商（MSP）项目</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="hrm">
+                <h2>HRM 解决方案</h2>
+                <p class="subtitle">依托我们的专业优势，为您的增长与竞争力保驾护航</p>
+                <p>HRM 解决方案结合组织诊断、薪酬与绩效设计、人才发展与组织变革等模块，为您的组织提供量身定制的解决方案。本段落为占位内容，请替换为具体的服务模块与方法论。</p>
+                <h4>我们的 HRM 解决方案包括：</h4>
+                <ul>
+                    <li>组织诊断与设计</li>
+                    <li>薪酬与绩效管理</li>
+                    <li>人才发展与继任规划</li>
+                    <li>HR 数字化转型</li>
+                </ul>
+            </section>
+
+            <section class="content-section" id="global">
+                <h2>全球雇佣指南</h2>
+                <p class="subtitle">汇集世界各地的雇佣法规与合规实践</p>
+                <p>全球雇佣指南汇集世界各地的雇佣法规与合规实践，帮助跨国企业在不同司法管辖区内稳健地开展业务。本段落为占位内容，请替换为具体覆盖的国家和地区。</p>
+                <div class="cta-row">
+                    <a href="/cn/employer/process.html">Double Alpha 招聘流程</a>
+                    <a href="/cn/resources.html">全球雇佣指南</a>
+                    <a href="/cn/contact.html">与我们合作</a>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

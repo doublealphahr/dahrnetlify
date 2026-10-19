@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>服务条款 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.8; }
+
+        /* ===== 本页样式 ===== */
+        .legal-page { max-width: 800px; margin: 30px auto 60px; padding: 0 20px; font-family: "Microsoft YaHei", Arial, sans-serif; color: #333; line-height: 1.8; }
+        .legal-page h1 { color: #996633; font-size: 1.6rem; text-align: center; margin-bottom: 30px; }
+        .legal-page h2 { color: #996633; font-size: 1.2rem; margin-top: 30px; border-bottom: 1px solid #EEE; padding-bottom: 8px; }
+        .legal-page p { margin-bottom: 15px; text-align: justify; }
+        .legal-page ul { margin-bottom: 15px; padding-left: 20px; }
+        .legal-page li { margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .legal-page { padding: 0 15px; margin: 20px auto 40px; }
+            .legal-page h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            .legal-page h2 { font-size: 1.1rem; margin-top: 24px; }
+            .legal-page p, .legal-page li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="legal-page">
+        <h1>服务条款</h1>
+        <p>欢迎访问 Double Alpha HR Consulting 网站。通过访问或使用本网站，您同意接受以下条款和条件的约束。如果您不同意这些条款，请勿使用本网站。</p>
+
+        <h2>1. 服务说明</h2>
+        <p>本网站提供人力资源咨询、职位发布、简历上传及反馈收集等服务。我们保留随时修改或中断服务而不需通知用户的权利。</p>
+        <p><b>特别声明：</b>本网站提供的所有信息仅供参考，不构成任何形式的职业中介或劳务派遣服务。任何基于本网站信息做出的决策，由用户自行承担风险。</p>
+
+        <h2>2. 用户行为规范</h2>
+        <p>您同意在使用本网站时遵守中华人民共和国相关法律法规，不得利用本网站从事以下活动：</p>
+        <ul>
+            <li>上传、发布或传播任何违法、侵权、淫秽、暴力或含有病毒的文件；</li>
+            <li>冒充任何人或机构，或以虚伪不实的方式谎称与任何人或机构有关；</li>
+            <li>干扰或破坏本网站的正常运行，或非法侵入他人计算机系统。</li>
+        </ul>
+
+        <h2>3. 知识产权</h2>
+        <p>本网站包含的所有内容（包括但不限于文字、图形、Logo、代码）的知识产权归 Double Alpha HR Consulting 所有，受中国和国际版权法保护。未经书面许可，不得擅自复制、修改或用于商业用途。</p>
+
+        <h2>4. 免责声明</h2>
+        <p>本网站按"现状"提供，我们不保证网站不会中断或没有错误。对于因使用或无法使用本网站而导致的任何直接、间接、附带或惩罚性的损害，我们不承担任何责任。</p>
+
+        <h2>5. 第三方链接</h2>
+        <p>本网站可能包含指向第三方网站的链接。我们不对这些第三方网站的内容、隐私政策或做法负责。</p>
+
+        <h2>6. 法律适用与争议解决</h2>
+        <p>本条款的解释、效力及争议的解决均适用中华人民共和国法律。如双方就本条款内容或其执行发生任何争议，双方应尽量友好协商解决；协商不成时，任何一方均可向 Double Alpha HR Consulting 所在地有管辖权的人民法院提起诉讼。</p>
+
+        <h2>7. 条款修改</h2>
+        <p>我们保留随时修改这些条款的权利。修改后的条款将在本页面上公布，并自公布之日起生效。</p>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,852 @@
+{
+  "generatedAt": "2026-10-16T11:28:09.118Z",
+  "categories": [
+    {
+      "key": "hrm",
+      "label": "HRM Base: Knowledge & Tips",
+      "icon": "👥",
+      "articles": [
+        {
+          "title": "How Loneliness Could Be Killing Productivity in Your Business",
+          "file": "how-loneliness-could-be-killing-productivity-in-your-business.html",
+          "url": "hrm/how-loneliness-could-be-killing-productivity-in-your-business.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:58:16.796Z"
+        },
+        {
+          "title": "How Leaders Can Demonstrate Trust in Their People During Difficult Times",
+          "file": "how-leaders-can-demonstrate-trust-in-their-people-during-difficult-times-cn.html",
+          "url": "hrm/how-leaders-can-demonstrate-trust-in-their-people-during-difficult-times-cn.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:56:33.221Z"
+        },
+        {
+          "title": "How Business Leaders Can Avoid Proximity Bias Affecting Their Hybrid Workforce",
+          "file": "how-business-leaders-can-avoid-proximity-bias-affecting-their-hybrid-workforce.html",
+          "url": "hrm/how-business-leaders-can-avoid-proximity-bias-affecting-their-hybrid-workforce.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:53:20.049Z"
+        },
+        {
+          "title": "How a Neurodiverse Workforce Can Benefit Your Organisation",
+          "file": "how-a-neurodiverse-workforce-can-benefit-your-organisation.html",
+          "url": "hrm/how-a-neurodiverse-workforce-can-benefit-your-organisation.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:52:37.080Z"
+        },
+        {
+          "title": "Customer Centricity, Strong Partnerships and Innovation Key to Overcoming Workforce Challenges",
+          "file": "customer-centricity-strong-partnerships-and-innovation-key-to-overcoming-workforce-challenges.html",
+          "url": "hrm/customer-centricity-strong-partnerships-and-innovation-key-to-overcoming-workforce-challenges.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:50:47.794Z"
+        },
+        {
+          "title": "Avoid Greenwashing: Attraction & Retention Suffer if Sustainability Practices Lack Authenticity",
+          "file": "avoid-greenwashing.html",
+          "url": "hrm/avoid-greenwashing.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:48:49.492Z"
+        },
+        {
+          "title": "5 Ways to Maintain Your Workplace Culture Remotely",
+          "file": "5 ways to maintain your workplace culture remotely.html",
+          "url": "hrm/5 ways to maintain your workplace culture remotely.html",
+          "ext": "html",
+          "mtime": "2026-10-11T21:45:12.616Z"
+        },
+        {
+          "title": "Using Mindfulness to Improve How We Work Together",
+          "file": "Using mindfulness to improve how we work together.html",
+          "url": "hrm/Using mindfulness to improve how we work together.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:19:00.519Z"
+        },
+        {
+          "title": "6 Reasons Why You Should Be Job Hunting Right Now",
+          "file": "job-hunting-six-reasons.html",
+          "url": "hrm/job-hunting-six-reasons.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:18:10.547Z"
+        },
+        {
+          "title": "How to Give a Presentation at Work? 10 Tips for Success",
+          "file": "how-to-give-a-presentation-at-work-10-tips-for-success.html",
+          "url": "hrm/how-to-give-a-presentation-at-work-10-tips-for-success.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:16:55.763Z"
+        },
+        {
+          "title": "How Graduates Can Boost their Employability in a Tough Jobs Market",
+          "file": "how-graduates-can-boost-their-employability-in-a-tough-jobs-market.html",
+          "url": "hrm/how-graduates-can-boost-their-employability-in-a-tough-jobs-market.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:15:32.030Z"
+        },
+        {
+          "title": "How to Stand Out from the Crowd",
+          "file": "How to stand out from the crowd .html",
+          "url": "hrm/How to stand out from the crowd .html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:14:52.521Z"
+        },
+        {
+          "title": "How to Make a Good Impression on Your First Day",
+          "file": "How to make a good impression on your first day.html",
+          "url": "hrm/How to make a good impression on your first day.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:14:37.520Z"
+        },
+        {
+          "title": "How to deal with multiple job offers ",
+          "file": "How to deal with multiple job offers .html",
+          "url": "hrm/How to deal with multiple job offers .html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:14:24.065Z"
+        },
+        {
+          "title": "How to deal with a counter offer ",
+          "file": "How to deal with a counter offer .html",
+          "url": "hrm/How to deal with a counter offer .html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:14:09.438Z"
+        },
+        {
+          "title": "How to Be a Good Mentee",
+          "file": "How to be a good mentee.html",
+          "url": "hrm/How to be a good mentee.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:13:53.461Z"
+        },
+        {
+          "title": "A Guide to References",
+          "file": "guide to references.html",
+          "url": "hrm/guide to references.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:13:36.425Z"
+        },
+        {
+          "title": "5 Attributes that Multi-lingual Candidates Can Offer Any Organisation",
+          "file": "5 attributes-that-multi-lingual-candidates-can-offer-any-organisation.html",
+          "url": "hrm/5 attributes-that-multi-lingual-candidates-can-offer-any-organisation.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:12:50.565Z"
+        },
+        {
+          "title": "Does the 100 year life equal a 100 page CV?",
+          "file": "does-the-100-year-life-equal-a-100-page-cv.html",
+          "url": "hrm/does-the-100-year-life-equal-a-100-page-cv.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:12:10.982Z"
+        },
+        {
+          "title": "Discussing your salary expectations",
+          "file": "Discussing your salary expectations.html",
+          "url": "hrm/Discussing your salary expectations.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:11:47.406Z"
+        },
+        {
+          "title": "Discover the best CV writing tips with our guide",
+          "file": "Discover the best CV writing tips with our guide.html",
+          "url": "hrm/Discover the best CV writing tips with our guide.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:10:47.068Z"
+        },
+        {
+          "title": "Career Planning",
+          "file": "career-planning.html",
+          "url": "hrm/career-planning.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:08:09.954Z"
+        },
+        {
+          "title": "By Setting Sustainability Goals Business Are Better Positioned to Attract and Retain Key Talent",
+          "file": "by-setting-sustainability-goals-businesses-are-better-positioned-to-attract-and-retain-key-talent.html",
+          "url": "hrm/by-setting-sustainability-goals-businesses-are-better-positioned-to-attract-and-retain-key-talent.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:07:56.863Z"
+        },
+        {
+          "title": "Build Your Own Social Network",
+          "file": "build-your-own-social-network.html",
+          "url": "hrm/build-your-own-social-network.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:07:33.053Z"
+        },
+        {
+          "title": "Building Your Personal Brand and Online Profile",
+          "file": "Building your personal brand and online profile.html",
+          "url": "hrm/Building your personal brand and online profile.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:07:13.408Z"
+        },
+        {
+          "title": "Become More Mindful, Inside and Outside of Work",
+          "file": "become-more-mindful-inside-and-outside-of-work-cn.html",
+          "url": "hrm/become-more-mindful-inside-and-outside-of-work-cn.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:06:57.245Z"
+        },
+        {
+          "title": "25 Tried-and-Tested Interview Tips to Land the Job",
+          "file": "25 Interview Tips.html",
+          "url": "hrm/25 Interview Tips.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:06:35.684Z"
+        },
+        {
+          "title": "Are You the Problem?",
+          "file": "are-you-the-problem-.html",
+          "url": "hrm/are-you-the-problem-.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:06:01.575Z"
+        },
+        {
+          "title": "Are You Getting These Basics Wrong?",
+          "file": "are-you-getting-these-basics-wrong.html",
+          "url": "hrm/are-you-getting-these-basics-wrong.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:05:48.132Z"
+        },
+        {
+          "title": "Are You “Learning Agile”",
+          "file": "Are you‘learning agile'.html",
+          "url": "hrm/Are you‘learning agile'.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:05:34.690Z"
+        },
+        {
+          "title": "5 reasons why you should be job hunting right now",
+          "file": "5-reasons-why-you-should-be-job-hunting-right-now.html",
+          "url": "hrm/5-reasons-why-you-should-be-job-hunting-right-now.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:03:22.990Z"
+        },
+        {
+          "title": "5 Ways to Ace Your First Performance Appraisal",
+          "file": "5 Ways to Ace Your First Performance Appraisal.html",
+          "url": "hrm/5 Ways to Ace Your First Performance Appraisal.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:02:53.975Z"
+        },
+        {
+          "title": "4 Steps to Help You Succeed in A Developing Market",
+          "file": "4 Steps to Help You Succeed in A Developing Market.html",
+          "url": "hrm/4 Steps to Help You Succeed in A Developing Market.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:02:17.330Z"
+        },
+        {
+          "title": "4 Reasons Why You Need a Millennial Mentor",
+          "file": "4 Reasons Why You Need a Millennial Mentor.html",
+          "url": "hrm/4 Reasons Why You Need a Millennial Mentor.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:01:57.092Z"
+        },
+        {
+          "title": "4 Steps to Plan Your Career",
+          "file": "4 Steps to Plan Your Career.html",
+          "url": "hrm/4 Steps to Plan Your Career.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:00:54.000Z"
+        },
+        {
+          "title": "Writing a Great Cover Letter",
+          "file": "Writing a great cover letter.html",
+          "url": "hrm/Writing a great cover letter.html",
+          "ext": "html",
+          "mtime": "2026-10-07T00:06:03.181Z"
+        },
+        {
+          "title": "Top Tips for the Perfect Telephone Interview",
+          "file": "top-tips-for-the-perfect-telephone-interview.html",
+          "url": "hrm/top-tips-for-the-perfect-telephone-interview.html",
+          "ext": "html",
+          "mtime": "2026-10-07T00:03:31.375Z"
+        },
+        {
+          "title": "The word you are saying too much in job interviews",
+          "file": "The word you are saying too much in job interviews.html",
+          "url": "hrm/The word you are saying too much in job interviews.html",
+          "ext": "html",
+          "mtime": "2026-10-07T00:02:43.187Z"
+        },
+        {
+          "title": "How to optimise your CV for the algorithms",
+          "file": "optimise your CV for the algorithms.html",
+          "url": "hrm/optimise your CV for the algorithms.html",
+          "ext": "html",
+          "mtime": "2026-10-07T00:00:12.882Z"
+        },
+        {
+          "title": "Human Resources: Key Roles and Responsibilities in Business",
+          "file": "HR -Key Roles and Responsibilities in Business.html",
+          "url": "hrm/HR -Key Roles and Responsibilities in Business.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:57:40.178Z"
+        },
+        {
+          "title": "How to Write High-converting Job Adverts",
+          "file": "how-to-write-high-converting-job-adverts.html",
+          "url": "hrm/how-to-write-high-converting-job-adverts.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:54:36.391Z"
+        },
+        {
+          "title": "How to Negotiate a Higher Salary for a New Job",
+          "file": "how-to-negotiate-a-higher-salary-for-a-new-job.html",
+          "url": "hrm/how-to-negotiate-a-higher-salary-for-a-new-job.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:53:23.595Z"
+        },
+        {
+          "title": "10 Ways to Improve Your Communication Skills",
+          "file": "10 Ways to Improve Your Communication Skills.html",
+          "url": "hrm/10 Ways to Improve Your Communication Skills.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:51:33.000Z"
+        },
+        {
+          "title": "How to Impress in Your Video Interview Advice from Recruiting Experts",
+          "file": "how-to-impress-in-your-video-interview-advice-from-recruiting-experts-cn.html",
+          "url": "hrm/how-to-impress-in-your-video-interview-advice-from-recruiting-experts-cn.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:45:46.775Z"
+        },
+        {
+          "title": "How to Find Your Next Job Using a Recruiter",
+          "file": "how-to-find-your-next-job-using-a-recruiter.html",
+          "url": "hrm/how-to-find-your-next-job-using-a-recruiter.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:38:36.757Z"
+        },
+        {
+          "title": "How to Engage and Motivate Your Team Remotely",
+          "file": "how-to-engage-and-motivate-your-team-remotely.html",
+          "url": "hrm/how-to-engage-and-motivate-your-team-remotely.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:36:25.996Z"
+        },
+        {
+          "title": "How to Answer the Common Questions During Interview",
+          "file": "how-to-answer-the-common-questions-during-interview.html",
+          "url": "hrm/how-to-answer-the-common-questions-during-interview.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:22:02.781Z"
+        },
+        {
+          "title": "Future-proof Your Employability",
+          "file": "future-proof-your-employability.html",
+          "url": "hrm/future-proof-your-employability.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:13:09.033Z"
+        },
+        {
+          "title": "Business Leaders Must Embed Sustainability into Their Organisations to Attract and Retain Talent",
+          "file": "business-leaders-must-embed-sustainability-into-their-organisations-to-attract-and-retain-talent.html",
+          "url": "hrm/business-leaders-must-embed-sustainability-into-their-organisations-to-attract-and-retain-talent.html",
+          "ext": "html",
+          "mtime": "2026-10-06T23:04:52.604Z"
+        },
+        {
+          "title": "Answering competency-based interview questions",
+          "file": "Answering competency-based interview questions.html",
+          "url": "hrm/Answering competency-based interview questions.html",
+          "ext": "html",
+          "mtime": "2026-10-06T22:52:44.662Z"
+        },
+        {
+          "title": "Answering Behavioural Job Interview Questions",
+          "file": "Answering behavioural job interview questions.html",
+          "url": "hrm/Answering behavioural job interview questions.html",
+          "ext": "html",
+          "mtime": "2026-10-06T22:52:18.525Z"
+        }
+      ]
+    },
+    {
+      "key": "news",
+      "label": "HRM News & Reports",
+      "icon": "📰",
+      "articles": [
+        {
+          "title": "Report Sees Working World Changing Forever Post Pandemic",
+          "file": "working-world-changing-forever-post-pandemic.html",
+          "url": "news/working-world-changing-forever-post-pandemic.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:24:46.067Z"
+        },
+        {
+          "title": "Young People Do not Have the Necessary Skills for Today's World of Work",
+          "file": "young-people-do-not-have-the-necessary-skills-for-today-s-world-of-work.html",
+          "url": "news/young-people-do-not-have-the-necessary-skills-for-today-s-world-of-work.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:24:14.910Z"
+        },
+        {
+          "title": "How to Be Super Productive when Working from Home",
+          "file": "how-to-be-super-productive-from-home-cn.html",
+          "url": "news/how-to-be-super-productive-from-home-cn.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:15:23.939Z"
+        },
+        {
+          "title": "Professionals want praise not perks",
+          "file": "Professionals want praise not perks .html",
+          "url": "news/Professionals want praise not perks .html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:15:09.952Z"
+        },
+        {
+          "title": "Tariff Conflicts Intensify Recruitment Challenges in Europe and the US",
+          "file": "Tariff Conflicts Intensify Recruitment Challenges in Europe and the US.html",
+          "url": "news/Tariff Conflicts Intensify Recruitment Challenges in Europe and the US.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:14:35.069Z"
+        },
+        {
+          "title": "Nearly 40% of Employees Say Their Mental Health Has Been Impacted Negatively During the Covid-19 Pandemic<",
+          "file": "nearly-four-out-of-ten-employees-say-their-mental-health-has-been-impacted-negatively-during-the-covid-19-pandemic-1.html",
+          "url": "news/nearly-four-out-of-ten-employees-say-their-mental-health-has-been-impacted-negatively-during-the-covid-19-pandemic-1.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:13:04.918Z"
+        },
+        {
+          "title": "Majority of Asian Professionals Believe Data Is Key to Attracting Diverse Talent: Employers yet to Match Expectation",
+          "file": "Key to Attracting Diverse Talent.html",
+          "url": "news/Key to Attracting Diverse Talent.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:09:02.826Z"
+        },
+        {
+          "title": "How to Elevate Your Employer Brand with Sustainability",
+          "file": "how-to-elevate-your-employer-brand-with-sustainability.html",
+          "url": "news/how-to-elevate-your-employer-brand-with-sustainability.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:08:32.830Z"
+        },
+        {
+          "title": "Communication Skills Is the Biggest Soft Skill Gen Z Need to Develop for the World of Work",
+          "file": "communication-skills-is-the-biggest-soft-skill-gen-z-need-to-develop-for-the-world-of-work.html",
+          "url": "news/communication-skills-is-the-biggest-soft-skill-gen-z-need-to-develop-for-the-world-of-work.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:06:22.202Z"
+        },
+        {
+          "title": "44 per cent of professionals in China do not expect a raise in 2026, the highest percentage in Asia",
+          "file": "44-percent-of-professionals-in-china-do-not-expect-a-raise-in-2026-the-highest-percentage-in-asia.html",
+          "url": "news/44-percent-of-professionals-in-china-do-not-expect-a-raise-in-2026-the-highest-percentage-in-asia.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:05:31.722Z"
+        },
+        {
+          "title": "43% of Professionals in Asia Still Believe Diversity to Be a Barrier to Career Progression at Their Organisations",
+          "file": "43-of-professionals-in-asia-still-believe-diversity-to-be-a-barrier-to-career-progression-at-their-organisations.html",
+          "url": "news/43-of-professionals-in-asia-still-believe-diversity-to-be-a-barrier-to-career-progression-at-their-organisations.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:02:58.649Z"
+        },
+        {
+          "title": "McKinsey: Survey of Current HRM Status in America and Europe",
+          "file": "McKinsey Survey of Current HRM Status in America and Europe.html",
+          "url": "news/McKinsey Survey of Current HRM Status in America and Europe.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:49:48.000Z"
+        },
+        {
+          "title": "McKinsey: HR Monitor 2025",
+          "file": "McKinsey HR Monitor 2025.html",
+          "url": "news/McKinsey HR Monitor 2025.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:48:28.000Z"
+        },
+        {
+          "title": "How to Build Sustainability into Your Organisation's Covid-19 Recovery",
+          "file": "how-to-build-sustainability-into-your-organisation-s-covid-19-recovery.html",
+          "url": "news/how-to-build-sustainability-into-your-organisation-s-covid-19-recovery.html",
+          "ext": "html",
+          "mtime": "2026-10-07T00:07:32.000Z"
+        }
+      ]
+    },
+    {
+      "key": "regulations",
+      "label": "Global Employment Reguraltions",
+      "icon": "📜",
+      "articles": [
+        {
+          "title": "Argentina Employment Guide 2026",
+          "file": "EmploymentGuide-Taiwan.html",
+          "url": "regulations/EmploymentGuide-Taiwan.html",
+          "ext": "html",
+          "mtime": "2026-10-16T08:13:39.570Z"
+        },
+        {
+          "title": "Argentina Employment Guide 2026",
+          "file": "EmploymentGuide-Argentina.html",
+          "url": "regulations/EmploymentGuide-Argentina.html",
+          "ext": "html",
+          "mtime": "2026-10-16T08:08:08.941Z"
+        },
+        {
+          "title": "UK Employment Guide 2026",
+          "file": "EmploymentGuide-UK.html",
+          "url": "regulations/EmploymentGuide-UK.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:22:53.839Z"
+        },
+        {
+          "title": "Turkey Employment Guide 2026",
+          "file": "EmploymentGuide-Turkey.html",
+          "url": "regulations/EmploymentGuide-Turkey.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:21:49.199Z"
+        },
+        {
+          "title": "Thailand Employment Guide 2026",
+          "file": "EmploymentGuide-Thailand.html",
+          "url": "regulations/EmploymentGuide-Thailand.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:19:10.380Z"
+        },
+        {
+          "title": "Switzerland Employment Guide 2026",
+          "file": "EmploymentGuide-Switzerland.html",
+          "url": "regulations/EmploymentGuide-Switzerland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:16:11.876Z"
+        },
+        {
+          "title": "Sweden Employment Guide 2026",
+          "file": "EmploymentGuide-Sweden.html",
+          "url": "regulations/EmploymentGuide-Sweden.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:15:17.858Z"
+        },
+        {
+          "title": "Spain Employment Guide 2026",
+          "file": "EmploymentGuide-Spain.html",
+          "url": "regulations/EmploymentGuide-Spain.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:14:31.833Z"
+        },
+        {
+          "title": "South Korea Employment Guide 2026",
+          "file": "EmploymentGuide-SouthKorea.html",
+          "url": "regulations/EmploymentGuide-SouthKorea.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:13:36.107Z"
+        },
+        {
+          "title": "Singapore Employment Guide 2026",
+          "file": "EmploymentGuide-Singapore.html",
+          "url": "regulations/EmploymentGuide-Singapore.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:11:58.421Z"
+        },
+        {
+          "title": "Saudi Arabia Employment Guide 2026",
+          "file": "EmploymentGuide-Saudi.html",
+          "url": "regulations/EmploymentGuide-Saudi.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:11:04.529Z"
+        },
+        {
+          "title": "Russia Employment Guide 2026",
+          "file": "EmploymentGuide-Russia.html",
+          "url": "regulations/EmploymentGuide-Russia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T06:10:04.191Z"
+        },
+        {
+          "title": "Romania Employment Guide 2026",
+          "file": "EmploymentGuide-Romania.html",
+          "url": "regulations/EmploymentGuide-Romania.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:32:51.357Z"
+        },
+        {
+          "title": "Portugal Employment Guide 2026",
+          "file": "EmploymentGuide-Portugal.html",
+          "url": "regulations/EmploymentGuide-Portugal.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:31:49.565Z"
+        },
+        {
+          "title": "Poland Employment Guide 2026",
+          "file": "EmploymentGuide-Poland.html",
+          "url": "regulations/EmploymentGuide-Poland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:29:28.716Z"
+        },
+        {
+          "title": "Philippines Employment Guide 2026",
+          "file": "EmploymentGuide-Philippines.html",
+          "url": "regulations/EmploymentGuide-Philippines.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:28:22.604Z"
+        },
+        {
+          "title": "Norway Employment Guide 2026",
+          "file": "EmploymentGuide-Norway.html",
+          "url": "regulations/EmploymentGuide-Norway.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:27:09.303Z"
+        },
+        {
+          "title": "New Zealand Employment Guide 2026",
+          "file": "EmploymentGuide-NewZealand.html",
+          "url": "regulations/EmploymentGuide-NewZealand.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:26:15.071Z"
+        },
+        {
+          "title": "Netherlands Employment Guide 2026",
+          "file": "EmploymentGuide-Netherlands.html",
+          "url": "regulations/EmploymentGuide-Netherlands.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:25:01.691Z"
+        },
+        {
+          "title": "Vietnam Employment Guide 2026",
+          "file": "EmploymentGuide-Vietnam.html",
+          "url": "regulations/EmploymentGuide-Vietnam.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:23:54.595Z"
+        },
+        {
+          "title": "USA Employment Guide 2026",
+          "file": "EmploymentGuide-USA.html",
+          "url": "regulations/EmploymentGuide-USA.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:22:48.158Z"
+        },
+        {
+          "title": "Ireland Employment Guide 2026",
+          "file": "EmploymentGuide-Ireland.html",
+          "url": "regulations/EmploymentGuide-Ireland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:11:30.965Z"
+        },
+        {
+          "title": "Indonesia Employment Guide 2026",
+          "file": "EmploymentGuide-Indonesia.html",
+          "url": "regulations/EmploymentGuide-Indonesia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:10:19.117Z"
+        },
+        {
+          "title": "India Employment Guide 2026",
+          "file": "EmploymentGuide-India.html",
+          "url": "regulations/EmploymentGuide-India.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:09:15.235Z"
+        },
+        {
+          "title": "Hungary Employment Guide 2026",
+          "file": "EmploymentGuide-Hungary.html",
+          "url": "regulations/EmploymentGuide-Hungary.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:08:13.257Z"
+        },
+        {
+          "title": "China Hong Kong Employment Guide 2026",
+          "file": "EmploymentGuide-Hongkong.html",
+          "url": "regulations/EmploymentGuide-Hongkong.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:07:19.097Z"
+        },
+        {
+          "title": "Morocco Employment Guide 2026",
+          "file": "EmploymentGuide-Morocco.html",
+          "url": "regulations/EmploymentGuide-Morocco.html",
+          "ext": "html",
+          "mtime": "2026-10-16T05:06:24.945Z"
+        },
+        {
+          "title": "Mexico Employment Guide 2026",
+          "file": "EmploymentGuide-Mexico.html",
+          "url": "regulations/EmploymentGuide-Mexico.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:58:38.246Z"
+        },
+        {
+          "title": "Malaysia Employment Guide 2026",
+          "file": "EmploymentGuide-Malaysia.html",
+          "url": "regulations/EmploymentGuide-Malaysia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:57:50.348Z"
+        },
+        {
+          "title": "Macao Employment Guide 2026",
+          "file": "EmploymentGuide-Macao.html",
+          "url": "regulations/EmploymentGuide-Macao.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:56:47.327Z"
+        },
+        {
+          "title": "Japan Employment Guide 2026",
+          "file": "EmploymentGuide-Japan.html",
+          "url": "regulations/EmploymentGuide-Japan.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:55:36.946Z"
+        },
+        {
+          "title": "Italy Employment Guide 2026",
+          "file": "EmploymentGuide-Italy.html",
+          "url": "regulations/EmploymentGuide-Italy.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:54:22.889Z"
+        },
+        {
+          "title": "Israel Employment Guide 2026",
+          "file": "EmploymentGuide-Israel.html",
+          "url": "regulations/EmploymentGuide-Israel.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:52:46.807Z"
+        },
+        {
+          "title": "Greece Employment Guide 2026",
+          "file": "EmploymentGuide-Greece.html",
+          "url": "regulations/EmploymentGuide-Greece.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:49:02.040Z"
+        },
+        {
+          "title": "Germany Employment Guide 2026",
+          "file": "EmploymentGuide-Germany.html",
+          "url": "regulations/EmploymentGuide-Germany.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:47:56.879Z"
+        },
+        {
+          "title": "France Employment Guide 2026",
+          "file": "EmploymentGuide-France.html",
+          "url": "regulations/EmploymentGuide-France.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:46:44.186Z"
+        },
+        {
+          "title": "Finland Employment Guide 2026",
+          "file": "EmploymentGuide-Finland.html",
+          "url": "regulations/EmploymentGuide-Finland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:45:12.762Z"
+        },
+        {
+          "title": "UAE / Debai Employment Guide 2026",
+          "file": "EmploymentGuide-Dubai.html",
+          "url": "regulations/EmploymentGuide-Dubai.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:44:06.562Z"
+        },
+        {
+          "title": "Denmark Employment Guide 2026",
+          "file": "EmploymentGuide-Denmark.html",
+          "url": "regulations/EmploymentGuide-Denmark.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:42:55.254Z"
+        },
+        {
+          "title": "Czech Employment Guide 2026",
+          "file": "EmploymentGuide-Czech.html",
+          "url": "regulations/EmploymentGuide-Czech.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:41:57.454Z"
+        },
+        {
+          "title": "Canada Employment Guide 2026",
+          "file": "EmploymentGuide-Canada.html",
+          "url": "regulations/EmploymentGuide-Canada.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:40:48.953Z"
+        },
+        {
+          "title": "Brazil Employment Guide 2026",
+          "file": "EmploymentGuide-Brasia.html",
+          "url": "regulations/EmploymentGuide-Brasia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:39:16.774Z"
+        },
+        {
+          "title": "Belgium Employment Guide 2026",
+          "file": "EmploymentGuide-Belgium.html",
+          "url": "regulations/EmploymentGuide-Belgium.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:38:13.975Z"
+        },
+        {
+          "title": "Austria Employment Guide 2026",
+          "file": "EmploymentGuide-Austria.html",
+          "url": "regulations/EmploymentGuide-Austria.html",
+          "ext": "html",
+          "mtime": "2026-10-16T04:02:56.366Z"
+        },
+        {
+          "title": "Australia Employment Guide 2026",
+          "file": "EmploymentGuide-Australia.html",
+          "url": "regulations/EmploymentGuide-Australia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T03:40:47.611Z"
+        },
+        {
+          "title": "Employment Regulations of the UK and Four Other European Countries in 2026: A Comprehensive Interpretation of New European HR Policies",
+          "file": "Employment Regulations of UK and Other Four European Countries in 2026.html",
+          "url": "regulations/Employment Regulations of UK and Other Four European Countries in 2026.html",
+          "ext": "html",
+          "mtime": "2026-10-15T20:00:21.993Z"
+        },
+        {
+          "title": "EOR and US Labor Law: Compliance Employment and Labor Dispute Practice Analysis",
+          "file": "EOR American Labor Law.html",
+          "url": "regulations/EOR American Labor Law.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:41:30.004Z"
+        },
+        {
+          "title": "2026 Global Employment Compliance Whitebook",
+          "file": "Global Employment Compliance Whitebook 2026.html",
+          "url": "regulations/Global Employment Compliance Whitebook 2026.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:37:16.898Z"
+        },
+        {
+          "title": "Research on Employment Laws and Regulations of Major European Countries",
+          "file": "Research on Employment Laws and Regulations of Mayor European Countires.html",
+          "url": "regulations/Research on Employment Laws and Regulations of Mayor European Countires.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:35:39.392Z"
+        },
+        {
+          "title": "Development of Occupational Safety and Health Acts in Europe and the US",
+          "file": "Development of Occupational Safety and Health Acts in Europe and US.html",
+          "url": "regulations/Development of Occupational Safety and Health Acts in Europe and US.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:24:45.000Z"
+        },
+        {
+          "title": "Global HR Compliance: Analysis of Labor Law Differences in Major Countries",
+          "file": "Global HR Compliance -Analysis of Labor Law Differences in Major Countries.html",
+          "url": "regulations/Global HR Compliance -Analysis of Labor Law Differences in Major Countries.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:03:12.000Z"
+        },
+        {
+          "title": "Core Trends in European and American HR Regulations 2024–2026",
+          "file": "Core Trends in European and American HR Regulations.html",
+          "url": "regulations/Core Trends in European and American HR Regulations.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:57:35.000Z"
+        },
+        {
+          "title": "Germany New Regulation 2026: Employers Must Give Written Notice of Free \"Fair Integration\" Legal Aid on Day One for Third-Country Employees",
+          "file": "Germany New Regulation 2026.html",
+          "url": "regulations/Germany New Regulation 2026.html",
+          "ext": "html",
+          "mtime": "2026-10-10T12:41:47.000Z"
+        }
+      ]
+    }
+  ]
+}

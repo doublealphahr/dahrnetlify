@@ -1,0 +1,189 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资源中心</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(145deg, #eef5f9, #dce8f0);
+      min-height: 100vh; padding: 2rem 1rem; color: #0b2d3b;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 1rem; }
+    header h1 { font-size: 2rem; font-weight: 700; }
+    header .sub { color: #4b5e71; font-size: 0.9rem; margin-top: 0.5rem; }
+    .search-box { max-width: 480px; margin: 1.5rem auto 2rem; }
+    .search-box input {
+      width: 100%; padding: 0.9rem 1.4rem;
+      border: 1.5px solid #d3e3ec; border-radius: 60px;
+      font-size: 0.95rem; outline: none; background: white;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .search-box input:focus {
+      border-color: #3ba3c7;
+      box-shadow: 0 0 0 4px rgba(59,163,199,0.12);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .category {
+      background: rgba(255,255,255,0.92);
+      border-radius: 1.8rem; padding: 1.6rem 1.5rem 1.2rem;
+      box-shadow: 0 12px 28px -14px rgba(0,20,30,0.25);
+      border: 1px solid rgba(255,255,255,0.7);
+    }
+    .category-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1rem; padding-bottom: 0.8rem;
+      border-bottom: 2px solid #e5eef4;
+    }
+    .category-header h2 {
+      font-size: 1.15rem; font-weight: 600;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .count {
+      font-size: 0.75rem; font-weight: 600;
+      background: #eef4ff; color: #2d5be0;
+      padding: 0.25rem 0.75rem; border-radius: 20px;
+    }
+    .article-list { list-style: none; }
+    .article-list li { border-bottom: 1px solid #eef4f8; }
+    .article-list li:last-child { border-bottom: none; }
+    .article-list a {
+      display: flex; align-items: center; gap: 0.7rem;
+      padding: 0.75rem 0.4rem; text-decoration: none;
+      color: #0b2d3b; border-radius: 8px;
+      transition: background 0.15s, transform 0.15s;
+    }
+    .article-list a:hover {
+      background: #f2fbff; transform: translateX(3px);
+    }
+    .article-list a:hover .title { color: #1f8b6b; }
+    .badge {
+      font-size: 0.65rem; font-weight: 700;
+      padding: 0.15rem 0.5rem; border-radius: 20px;
+      text-transform: uppercase; flex-shrink: 0;
+    }
+    .badge.html { background: #e3f5ef; color: #0d6b4d; }
+    .badge.md   { background: #eef4ff; color: #2d5be0; }
+    .title {
+      flex: 1; font-size: 0.95rem; font-weight: 500;
+      overflow: hidden; text-overflow: ellipsis;
+      white-space: nowrap; transition: color 0.15s;
+    }
+    .empty, .loading, .error {
+      text-align: center; padding: 1.5rem 0.5rem;
+      color: #8aa4b5; font-size: 0.85rem;
+    }
+    .error { color: #c0392b; }
+    mark { background: #ffe58a; padding: 0 2px; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 <span>资源中心</span></h1>
+      <p class="sub" id="subInfo"><span>加载中</span>...  </p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="🔍 搜索文章标题">
+    </div>
+
+    <div id="content">
+      <div class="loading">文章列表加载中...  </div>
+    </div>
+  </div>
+
+  <script>
+    let allData = [];
+
+    function escapeHtml(s) {
+      return String(s).replace(/[&<>"']/g, c => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[c]));
+    }
+    function highlight(text, kw) {
+      const safe = escapeHtml(text);
+      if (!kw) return safe;
+      const re = new RegExp('(' + kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+      return safe.replace(re, '<mark>$1</mark>');
+    }
+
+    function render(kw = '') {
+      const contentEl = document.getElementById('content');
+      const subEl = document.getElementById('subInfo');
+      kw = kw.trim().toLowerCase();
+
+      let totalAll = 0, totalShown = 0;
+
+      const html = allData.map(cat => {
+        totalAll += cat.articles.length;
+        const list = cat.articles.filter(a =>
+          !kw || a.title.toLowerCase().includes(kw) || a.file.toLowerCase().includes(kw)
+        );
+        totalShown += list.length;
+
+        const body = list.length === 0
+          ? `<li class="empty">${cat.articles.length === 0 ? '未找到相应文章' : '未找到相应文章'}</li>`
+          : list.map(a => {
+              const cls = a.ext === 'md' ? 'md' : 'html';
+              // 判断当前是本地还是线上，自动拼正确的路径
+var articleDetailUrl = (function() {
+    var path = window.location.pathname;   // 例如 /mysite4/articles/index.html
+    var idx = path.indexOf('/articles/');
+    var base = idx >= 0 ? path.substring(0, idx) : '';   // 得到 /mysite4 或 ''
+    return base + '/Article.aspx';
+})();
+
+// 生成链接时用这个变量
+return `<li><a href="${articleDetailUrl}?f=${encodeURIComponent(a.url)}" target="_top">
+               
+                <span class="title">${highlight(a.title, kw)}</span>
+              </a></li>`;
+            }).join('');
+
+        return `<section class="category">
+          <div class="category-header">
+            <h2><span>${cat.icon}</span>${escapeHtml(cat.label)}</h2>
+            <span class="count">${list.length} articles </span>
+          </div>
+          <ul class="article-list">${body}</ul>
+        </section>`;
+      }).join('');
+
+      contentEl.innerHTML = `<div class="grid">${html}</div>`;
+      subEl.textContent = kw
+        ? `共筛选出 ${totalShown} / 总计 ${totalAll} 篇文档`
+        : `共 ${totalAll} 篇文档， ${allData.length} 个类别`;
+    }
+
+    async function load() {
+      const contentEl = document.getElementById('content');
+      try {
+        // ⚠️ 唯一改动：articles.json 在根目录，index.html 在 articles/，所以用 ../
+        const res = await fetch('../articles.json?t=' + Date.now());
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        allData = data.categories || [];
+        render();
+      } catch (err) {
+        contentEl.innerHTML = `<div class="error">❌ Load failed：${err.message}<br>
+          Please run  <code>node generate-list.js</code> first，and confirm that articles.json is located in the root diretory of the website. </div>`;
+        document.getElementById('subInfo').textContent = '加载失败';
+      }
+    }
+
+    document.getElementById('searchInput').addEventListener('input', function() {
+      render(this.value);
+    });
+
+    load();
+  </script>
+</body>
+</html>

@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Resources Centre | Double Alpha HR Consulting</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.7; }
+
+        /* ===== Hero ===== */
+        .hero-banner { position: relative; width: 100%; height: 50vh; min-height: 300px; overflow: hidden; background-color: #f0f0f0; margin-top: 20px; }
+        .hero-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+        .hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to right, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.25) 60%, rgba(0,0,0,0.05) 100%); z-index: 1; }
+        .hero-text { position: absolute; top: 12%; left: 5%; transform: none; width: 55%; color: #FFFFFF; z-index: 2; text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left; }
+        .hero-text h1 { font-family: 'Arial Black', 'Microsoft YaHei', sans-serif; font-size: 2.4rem; margin: 0 0 12px 0; line-height: 1.2; }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text p { font-size: 1rem; margin: 0 0 22px 0; color: #F5EFE3; letter-spacing: 0.5px; line-height: 1.6; }
+        .hero-text .hero-cta { display: inline-block; background-color: #B89162; color: #FFFFFF; padding: 12px 28px; font-weight: bold; border-radius: 4px; font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s; }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        /* ===== 资源列表 ===== */
+        .resources-page { width: 98%; max-width: 1200px; margin: 0 auto; padding: 20px 10px; }
+        .page-meta { text-align: center; color: #666; font-size: 0.9rem; margin: 10px 0 15px; }
+        .search-box { max-width: 480px; margin: 0 auto 25px; }
+        .search-box input { width: 100%; padding: 12px 20px; border: 1.5px solid #ddd; border-radius: 40px; font-size: 0.95rem; outline: none; background: #fff; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
+        .search-box input:focus { border-color: #996633; box-shadow: 0 0 0 4px rgba(153,102,51,0.1); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px; }
+        .category { background: #FFFFFF; border-radius: 12px; padding: 18px 18px 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border: 1px solid #eee; display: flex; flex-direction: column; }
+        .category-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid #f2ede5; }
+        .category-header h2 { font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 6px; margin: 0; }
+        .category-header .count { font-size: 0.75rem; font-weight: 600; background: #f5f0e8; color: #996633; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+        .article-list { list-style: none; padding: 0; margin: 0 0 8px 0; flex: 1; }
+        .article-list li { border-bottom: 1px solid #f2f2f2; }
+        .article-list li:last-child { border-bottom: none; }
+        .article-list a { display: block; padding: 9px 6px; font-size: 0.92rem; color: #1a1a1a; border-radius: 6px; transition: background 0.15s, color 0.15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .article-list a:hover { background: #faf7f2; color: #996633; }
+        .article-list .empty { text-align: center; padding: 14px 0; color: #999; font-size: 0.85rem; }
+        .more-wrap { margin-top: 10px; text-align: right; }
+        .more-btn { display: inline-block; background: #996633; color: #fff !important; padding: 7px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+        .more-btn:hover { background: #7a522a; color: #fff !important; }
+        mark { background: #ffe58a; padding: 0 2px; border-radius: 3px; }
+        .notice-box { text-align: center; margin-top: 40px; padding: 18px 12px; background: #f9f7ec; border-radius: 8px; font-size: 0.9rem; color: #333; }
+        .notice-box a { color: #996633; font-weight: 600; }
+        .error { text-align: center; padding: 40px 16px; color: #c0392b; background: #fef5f5; border-radius: 8px; font-size: 0.95rem; }
+        .loading { text-align: center; padding: 40px 0; color: #888; }
+
+        /* ===== 分类页 ===== */
+        .category-page { width: 98%; max-width: 1000px; margin: 0 auto; padding: 20px 10px 10px; }
+        .category-page-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #f0e8dd; }
+        .category-page-header h2 { font-size: 1.4rem; margin: 0; display: flex; align-items: center; gap: 8px; }
+        .category-page-header .back-link { font-size: 0.9rem; color: #996633; font-weight: 600; }
+        .category-page-header .back-link:hover { text-decoration: underline; }
+        .category-meta { color: #666; font-size: 0.88rem; margin-bottom: 14px; }
+
+        .full-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+        .full-list li { border-bottom: 1px solid #f0f0f0; min-width: 0; }
+        .full-list a { display: block; padding: 12px 10px; font-size: 0.95rem; color: #1a1a1a; border-radius: 6px; transition: background 0.15s, color 0.15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .full-list a:hover { background: #faf7f2; color: #996633; }
+
+        .pagination { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 14px; margin-top: 28px; padding: 16px 0 8px; border-top: 1px solid #eee; }
+        .page-btn { background: #996633; color: #fff !important; border: none; padding: 8px 22px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s, opacity 0.2s; }
+        .page-btn:hover:not(:disabled) { background: #7a522a; }
+        .page-btn:disabled { background: #ccc; cursor: not-allowed; opacity: 0.6; }
+        .page-info { font-size: 0.9rem; color: #333; font-weight: 500; }
+        .page-info span { color: #996633; font-weight: 700; }
+
+        @media (max-width: 768px) {
+            /* Hero */
+            .hero-banner { height: 38vh; min-height: 240px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.4rem; margin-bottom: 8px; }
+            .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            /* 资源列表 */
+            .grid { grid-template-columns: 1fr; gap: 16px; }
+            .category { padding: 14px 14px 12px; }
+            .category-header h2 { font-size: 1rem; }
+            .article-list a { font-size: 0.88rem; padding: 8px 4px; }
+            .more-wrap { text-align: center; }
+            .more-btn { padding: 8px 24px; font-size: 0.85rem; }
+            .category-page-header h2 { font-size: 1.15rem; }
+            .full-list { grid-template-columns: 1fr; gap: 0; }
+            .full-list a { font-size: 0.9rem; padding: 11px 6px; }
+            .pagination { gap: 10px; }
+            .page-btn { padding: 7px 18px; font-size: 0.85rem; }
+            .page-info { font-size: 0.82rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/image5.jpg" alt="Resources Centre" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>📚 <span class="gold">Resources Centre</span></h1>
+            <p>Insights, regulations, and practical HR knowledge — all in one place.</p>
+        </div>
+    </div>
+
+    <!-- ================= 动态内容容器 ================= -->
+    <div id="app"></div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 资源列表渲染脚本 ================= -->
+    <script>
+        let allData = [];
+        let currentCategoryIndex = -1;
+        let currentPage = 1;
+        const PREVIEW_COUNT = 10;
+        const PAGE_SIZE = 20;
+
+        function escapeHtml(s) {
+            return String(s).replace(/[&<>"']/g, c => ({
+                '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+            }[c]));
+        }
+        function highlight(text, kw) {
+            const safe = escapeHtml(text);
+            if (!kw) return safe;
+            const re = new RegExp('(' + kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+            return safe.replace(re, '<mark>$1</mark>');
+        }
+        function getArticleUrl(article) {
+            return '/Article.html?f=' + encodeURIComponent(article.url);
+        }
+
+        async function loadData() {
+            const app = document.getElementById('app');
+            try {
+                const res = await fetch('/articles.json?t=' + Date.now());
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                allData = data.categories || [];
+                renderHomePage();
+            } catch (err) {
+                app.innerHTML = `<div class="error">❌ Load failed: ${err.message}<br>Please confirm that articles.json is located in the root directory of the website.</div>`;
+            }
+        }
+
+        function renderHomePage() {
+            const app = document.getElementById('app');
+            const totalArticles = allData.reduce((sum, cat) => sum + cat.articles.length, 0);
+
+            const html = `
+                <div class="resources-page">
+                    <p class="page-meta">Total ${totalArticles} articles, in ${allData.length} categories</p>
+                    <div class="search-box">
+                        <input type="text" id="searchInput" placeholder="🔍 Search article title...">
+                    </div>
+                    <div id="content">
+                        <div class="grid">
+                            ${allData.map((cat, idx) => {
+                                const preview = cat.articles.slice(0, PREVIEW_COUNT);
+                                const hasMore = cat.articles.length > PREVIEW_COUNT;
+                                const listItems = preview.length === 0
+                                    ? '<li class="empty">No articles</li>'
+                                    : preview.map(a => `
+                                        <li>
+                                            <a href="${getArticleUrl(a)}">${escapeHtml(a.title)}</a>
+                                        </li>
+                                    `).join('');
+
+                                return `
+                                    <section class="category">
+                                        <div class="category-header">
+                                            <h2><span>${cat.icon || '📄'}</span>${escapeHtml(cat.label)}</h2>
+                                            <span class="count">${cat.articles.length} articles</span>
+                                        </div>
+                                        <ul class="article-list">${listItems}</ul>
+                                        ${hasMore ? `
+                                            <div class="more-wrap">
+                                                <a class="more-btn" href="javascript:void(0)" data-category-index="${idx}">More →</a>
+                                            </div>
+                                        ` : ''}
+                                    </section>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                    <div class="notice-box">
+                        Can't find what you're looking for? Contact us at
+                        <a href="mailto:Business@doublealphahr.com">Business@doublealphahr.com</a>.
+                    </div>
+                </div>
+            `;
+
+            app.innerHTML = html;
+
+            document.querySelectorAll('.more-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const catIndex = parseInt(this.getAttribute('data-category-index'), 10);
+                    showCategoryList(catIndex);
+                });
+            });
+
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const kw = this.value.trim().toLowerCase();
+                    if (!kw) { renderHomePage(); return; }
+                    const filteredData = allData.map(cat => {
+                        const filtered = cat.articles.filter(a =>
+                            a.title.toLowerCase().includes(kw) ||
+                            a.file.toLowerCase().includes(kw)
+                        );
+                        return { ...cat, filteredArticles: filtered };
+                    }).filter(cat => cat.filteredArticles.length > 0);
+
+                    const totalShown = filteredData.reduce((sum, cat) => sum + cat.filteredArticles.length, 0);
+                    const contentEl = document.getElementById('content');
+                    const metaEl = document.querySelector('.page-meta');
+                    if (metaEl) metaEl.textContent = `Total selected ${totalShown} / Total ${totalArticles} articles`;
+
+                    if (filteredData.length === 0) {
+                        contentEl.innerHTML = `<div class="grid"><div class="category"><div class="empty" style="padding:30px;">No matched result</div></div></div>`;
+                        return;
+                    }
+
+                    contentEl.innerHTML = `<div class="grid">${filteredData.map(cat => {
+                        const preview = cat.filteredArticles.slice(0, PREVIEW_COUNT);
+                        const hasMore = cat.filteredArticles.length > PREVIEW_COUNT;
+                        const listItems = preview.map(a => `
+                            <li>
+                                <a href="${getArticleUrl(a)}">${highlight(a.title, kw)}</a>
+                            </li>
+                        `).join('');
+                        const origIdx = allData.findIndex(c => c.label === cat.label && c.icon === cat.icon);
+                        return `
+                            <section class="category">
+                                <div class="category-header">
+                                    <h2><span>${cat.icon || '📄'}</span>${escapeHtml(cat.label)}</h2>
+                                    <span class="count">${cat.filteredArticles.length} articles</span>
+                                </div>
+                                <ul class="article-list">${listItems}</ul>
+                                ${hasMore ? `
+                                    <div class="more-wrap">
+                                        <a class="more-btn" href="javascript:void(0)" data-category-index="${origIdx}">More →</a>
+                                    </div>
+                                ` : ''}
+                            </section>
+                        `;
+                    }).join('')}</div>`;
+
+                    document.querySelectorAll('.more-btn').forEach(btn => {
+                        btn.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            const catIndex = parseInt(this.getAttribute('data-category-index'), 10);
+                            showCategoryList(catIndex);
+                        });
+                    });
+                });
+            }
+        }
+
+        function showCategoryList(catIndex) {
+            currentCategoryIndex = catIndex;
+            currentPage = 1;
+            renderCategoryPage(catIndex, 1);
+        }
+
+        function renderCategoryPage(catIndex, page) {
+            const app = document.getElementById('app');
+            const cat = allData[catIndex];
+            if (!cat) return;
+
+            const totalArticles = cat.articles.length;
+            const totalPages = Math.max(1, Math.ceil(totalArticles / PAGE_SIZE));
+            page = Math.min(Math.max(1, page), totalPages);
+            currentPage = page;
+
+            const start = (page - 1) * PAGE_SIZE;
+            const end = Math.min(start + PAGE_SIZE, totalArticles);
+            const pageArticles = cat.articles.slice(start, end);
+
+            const listItems = pageArticles.length === 0
+                ? '<li class="empty">No articles in this category.</li>'
+                : pageArticles.map(a => `
+                    <li>
+                        <a href="${getArticleUrl(a)}">${escapeHtml(a.title)}</a>
+                    </li>
+                `).join('');
+
+            app.innerHTML = `
+                <div class="category-page">
+                    <div class="category-page-header">
+                        <h2><span>${cat.icon || '📄'}</span>${escapeHtml(cat.label)}</h2>
+                        <a class="back-link" href="javascript:void(0)">← Back to Resources</a>
+                    </div>
+                    <div class="category-meta">Total ${totalArticles} articles, page ${page} of ${totalPages}</div>
+                    <ul class="full-list">${listItems}</ul>
+                    <div class="pagination">
+                        <button class="page-btn" data-page-action="prev" ${page <= 1 ? 'disabled' : ''}>Previous</button>
+                        <span class="page-info">Page <span>${page}</span> of <span>${totalPages}</span></span>
+                        <button class="page-btn" data-page-action="next" ${page >= totalPages ? 'disabled' : ''}>Next</button>
+                    </div>
+                </div>
+            `;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            const backLink = app.querySelector('.back-link');
+            if (backLink) {
+                backLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    renderHomePage();
+                });
+            }
+            const prevBtn = app.querySelector('[data-page-action="prev"]');
+            const nextBtn = app.querySelector('[data-page-action="next"]');
+            if (prevBtn) {
+                prevBtn.addEventListener('click', function() {
+                    if (currentPage > 1) renderCategoryPage(currentCategoryIndex, currentPage - 1);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', function() {
+                    const total = Math.ceil(cat.articles.length / PAGE_SIZE);
+                    if (currentPage < total) renderCategoryPage(currentCategoryIndex, currentPage + 1);
+                });
+            }
+        }
+
+        window.renderHomePage = renderHomePage;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadData();
+        });
+    </script>
+
+    <!-- ================= 5. 通用加载器 ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载页头
+        fetch('/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载页脚
+        fetch('/components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

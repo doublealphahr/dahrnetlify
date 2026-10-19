@@ -1,0 +1,745 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="zh-cn" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>简历上传表单 | Double Alpha HR Consulting</title>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: linear-gradient(145deg, #eef5f9 0%, #dce8f0 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, "Microsoft YaHei", sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .main-card {
+            width: 99%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 0;
+            box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.25),
+                        0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+            padding: 2.2rem 2.4rem 2.5rem;
+            transition: all 0.2s;
+        }
+
+        .hidden { display: none !important; }
+
+        /* ===== CAPTCHA (验证码) ===== */
+        .captcha-container { text-align: center; padding: 0.5rem 0 1rem; }
+        .captcha-icon {
+            font-size: 4rem; margin-bottom: 1.2rem;
+            filter: drop-shadow(0 8px 12px rgba(31, 139, 107, 0.2));
+        }
+        .captcha-sub {
+            color: #3e6d82; font-size: 0.95rem; margin-bottom: 2rem;
+            background: #eef6fa; display: inline-block;
+            padding: 0.4rem 1.4rem; border-radius: 40px;
+            border: 1px solid #cbe0ea;
+        }
+        .captcha-box {
+            background: #f8fcfe; border-radius: 1.8rem;
+            padding: 2rem 1.8rem 2.2rem;
+            border: 1px solid #dae9f2;
+            box-shadow: 0 4px 12px rgba(0, 20, 30, 0.02);
+            max-width: 50%; margin: 0 auto;
+        }
+        .captcha-question {
+            font-size: 2.4rem; font-weight: 600; color: #1a4c5e;
+            margin-bottom: 1.6rem; letter-spacing: 0.5px;
+            background: white; padding: 0.8rem 1rem;
+            border-radius: 60px; border: 1.5px solid #d3e3ec;
+            display: inline-block; min-width: 180px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .captcha-input-area { display: flex; flex-direction: column; gap: 1rem; align-items: center; }
+        .captcha-input-area input {
+            width: 100%; max-width: 260px; padding: 1rem 1.4rem;
+            font-size: 1.2rem; text-align: center;
+            border: 2px solid #d3e3ec; border-radius: 60px;
+            outline: none; transition: all 0.2s ease;
+            font-weight: 500; color: #0b2d3b; background: white;
+        }
+        .captcha-input-area input:focus {
+            border-color: #3ba3c7; box-shadow: 0 0 0 4px rgba(59, 163, 199, 0.12);
+        }
+        .captcha-input-area input.error { border-color: #e07a7a; background: #fef8f8; }
+        .captcha-error {
+            color: #c0392b; font-size: 0.85rem; min-height: 1.2rem;
+            font-weight: 500; display: flex; align-items: center;
+            justify-content: center; gap: 0.2rem;
+        }
+        .captcha-error:not(:empty)::before { content: "⚠️"; font-size: 0.8rem; }
+        .captcha-actions {
+            display: flex; gap: 1rem; justify-content: center;
+            margin-top: 0.6rem; flex-wrap: wrap;
+        }
+        .btn-captcha {
+            background: #1f8b6b; color: white; border: none;
+            border-radius: 60px; padding: 0.9rem 2rem;
+            font-size: 1rem; font-weight: 600; cursor: pointer;
+            transition: all 0.18s ease;
+            box-shadow: 0 10px 20px -8px rgba(31, 139, 107, 0.4);
+            display: inline-flex; align-items: center;
+            justify-content: center; gap: 0.5rem;
+            font-family: inherit; min-width: 140px;
+        }
+        .btn-captcha:hover { background: #157a5b; transform: translateY(-1px); box-shadow: 0 14px 24px -10px rgba(31, 139, 107, 0.5); }
+        .btn-captcha:active { transform: translateY(1px); }
+        .btn-captcha.refresh {
+            background: white; color: #1c4c5e;
+            border: 1.5px solid #c2dae8; box-shadow: none; min-width: 120px;
+        }
+        .btn-captcha.refresh:hover { background: #eef6fa; border-color: #8ec9de; transform: translateY(-1px); box-shadow: 0 6px 12px -6px rgba(0,0,0,0.1); }
+
+        /* ===== Resume Form (简历表单) ===== */
+        .resume-card { background: transparent; box-shadow: none; padding: 0; max-width: 99%; }
+        .header {
+            margin-bottom: 2rem; display: flex;
+            justify-content: space-between; align-items: flex-start;
+            flex-wrap: wrap; gap: 1rem;
+        }
+        .header h1 {
+            font-size: 1.9rem; font-weight: 600;
+            letter-spacing: -0.02em; color: #0b2d3b;
+            display: flex; align-items: center; gap: 0.6rem;
+        }
+        .required-note {
+            font-size: 0.8rem; color: #5e8497;
+            background: #eef6fa; padding: 0.35rem 1.1rem;
+            border-radius: 30px; border: 1px solid #cbe0ea;
+            display: flex; align-items: center; gap: 0.3rem;
+        }
+        .required-note .asterisk { color: #d9534f; font-weight: 700; font-size: 1rem; }
+
+        .form-section {
+            margin-bottom: 2rem; background: #f8fcfe;
+            border-radius: 1.5rem; padding: 1.5rem 1.7rem 1.8rem;
+            border: 1px solid #dae9f2;
+            box-shadow: 0 2px 8px rgba(0, 20, 30, 0.02);
+            transition: all 0.15s;
+        }
+        .form-section:hover {
+            border-color: #b8d4e3;
+            box-shadow: 0 4px 12px rgba(38, 179, 217, 0.06);
+        }
+        .section-title {
+            font-size: 1.15rem; font-weight: 600;
+            color: #0b2d3b; margin-bottom: 1.3rem;
+            display: flex; align-items: center; gap: 0.5rem;
+            padding-bottom: 0.6rem; border-bottom: 2px solid #d4e6f0;
+        }
+        .section-title .icon { font-size: 1.3rem; }
+
+        .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem 1.3rem; }
+        .form-grid .full-width { grid-column: 1 / -1; }
+
+        .input-group { display: flex; flex-direction: column; gap: 0.35rem; }
+        .input-group label {
+            font-size: 0.85rem; font-weight: 500;
+            color: #1c4c5e; display: flex;
+            align-items: center; gap: 0.2rem;
+        }
+        .input-group label .req { color: #d9534f; font-weight: 700; margin-left: 2px; }
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            padding: 0.8rem 1rem; font-size: 0.95rem;
+            border: 1.5px solid #d3e3ec; border-radius: 16px;
+            background: white; outline: none;
+            transition: all 0.2s ease; color: #0b2d3b;
+            font-family: inherit; width: 100%;
+        }
+        .input-group input:focus,
+        .input-group select:focus,
+        .input-group textarea:focus {
+            border-color: #3ba3c7;
+            box-shadow: 0 0 0 4px rgba(59, 163, 199, 0.12), 0 4px 10px -4px rgba(59, 163, 199, 0.2);
+        }
+        .input-group input::placeholder,
+        .input-group textarea::placeholder { color: #9bb7c7; }
+        .input-group textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+        .input-group select {
+            cursor: pointer; appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235e8497' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1rem;
+        }
+        .input-group.error input,
+        .input-group.error select,
+        .input-group.error textarea {
+            border-color: #e07a7a; background: #fef8f8;
+        }
+        .error-message {
+            font-size: 0.75rem; color: #c0392b;
+            min-height: 1.1rem; display: flex;
+            align-items: center; gap: 0.2rem; padding-left: 0.2rem;
+        }
+        .error-message:not(:empty)::before { content: "⚠️"; font-size: 0.7rem; }
+
+        .submit-area {
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 1.5rem;
+            margin-top: 1.2rem; flex-wrap: wrap;
+        }
+        .btn {
+            border: none; border-radius: 60px;
+            padding: 0.95rem 2.2rem; font-size: 1rem;
+            font-weight: 600; cursor: pointer;
+            transition: all 0.18s ease;
+            display: inline-flex; align-items: center;
+            justify-content: center; gap: 0.6rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: #1f8b6b; color: white;
+            box-shadow: 0 10px 20px -8px rgba(31, 139, 107, 0.4);
+            flex: 1; min-width: 180px;
+        }
+        .btn-primary:hover { background: #157a5b; transform: translateY(-1px); box-shadow: 0 14px 24px -10px rgba(31, 139, 107, 0.5); }
+        .btn-primary:active { transform: translateY(1px); }
+        .btn-secondary { background: white; color: #1c4c5e; border: 1.5px solid #c2dae8; }
+        .btn-secondary:hover { background: #eef6fa; border-color: #8ec9de; }
+        .btn:disabled { opacity: 0.55; pointer-events: none; filter: grayscale(0.2); }
+
+        .success-message {
+            background: #e3f5ef; color: #0d6b4d;
+            padding: 1rem 1.5rem; border-radius: 1.2rem;
+            font-weight: 500; display: flex;
+            align-items: center; gap: 0.7rem;
+            border: 1px solid #a8d5c4; margin-top: 1.5rem;
+            animation: fadeSlideIn 0.4s ease;
+            box-shadow: 0 4px 12px rgba(31, 139, 107, 0.1);
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .success-message .big-icon { font-size: 1.6rem; }
+        .error-submit {
+            background: #fdeaea; color: #a12b35;
+            padding: 1rem 1.5rem; border-radius: 1.2rem;
+            font-weight: 500; display: flex;
+            align-items: center; gap: 0.7rem;
+            border: 1px solid #f0b8b8;
+            margin-top: 1.5rem;
+            animation: fadeSlideIn 0.4s ease;
+        }
+
+        .visually-hidden {
+            position: absolute; width: 1px; height: 1px;
+            padding: 0; margin: -1px; overflow: hidden;
+            clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+        .file-upload-area {
+            display: flex; align-items: center;
+            gap: 1rem; flex-wrap: wrap;
+        }
+        .file-label {
+            background: white; border: 1.5px dashed #b8d4e3;
+            border-radius: 16px; padding: 0.8rem 1.5rem;
+            font-size: 0.9rem; color: #2f6d88;
+            cursor: pointer; transition: all 0.15s;
+            display: flex; align-items: center; gap: 0.5rem;
+        }
+        .file-label:hover { border-color: #3ba3c7; background: #f2fbff; }
+        .file-name { font-size: 0.85rem; color: #4d7a90; }
+
+        .spinner {
+            display: inline-block; width: 1rem; height: 1rem;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-top-color: white; border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .style2 { font-size: x-small; color: #000080; }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 768px) {
+            body { padding: 0.6rem; }
+            .main-card { padding: 1.3rem 1.1rem 1.6rem; border-radius: 1rem; }
+
+            .captcha-icon { font-size: 3rem; margin-bottom: 0.8rem; }
+            .captcha-sub { font-size: 0.88rem; margin-bottom: 1.4rem; padding: 0.35rem 1rem; }
+            .captcha-box { max-width: 100%; padding: 1.5rem 1rem 1.8rem; border-radius: 1.2rem; }
+            .captcha-question { font-size: 1.8rem; min-width: 120px; padding: 0.6rem 0.9rem; margin-bottom: 1.2rem; }
+            .captcha-input-area input { font-size: 1.1rem; padding: 0.85rem 1rem; max-width: 100%; }
+            .btn-captcha { padding: 0.8rem 1.6rem; font-size: 0.95rem; min-width: 120px; }
+            .btn-captcha.refresh { min-width: 100px; }
+
+            .header { flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-bottom: 1.4rem; }
+            .header h1 { font-size: 1.35rem; gap: 0.4rem; }
+            .required-note { font-size: 0.75rem; padding: 0.3rem 0.9rem; }
+
+            .form-grid { grid-template-columns: 1fr; gap: 0.85rem; }
+            .form-section { padding: 1.1rem 0.95rem 1.2rem; border-radius: 1rem; margin-bottom: 1.2rem; }
+            .section-title { font-size: 1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; }
+            .input-group label { font-size: 0.82rem; }
+            .input-group input,
+            .input-group select,
+            .input-group textarea { font-size: 0.92rem; padding: 0.7rem 0.85rem; border-radius: 12px; }
+            .input-group textarea { min-height: 110px; }
+
+            .file-upload-area { flex-direction: column; align-items: stretch; gap: 0.6rem; }
+            .file-label { justify-content: center; padding: 0.75rem 1rem; font-size: 0.88rem; }
+            .file-name { text-align: center; font-size: 0.82rem; }
+
+            .submit-area { flex-direction: column; gap: 0.7rem; margin-top: 1rem; }
+            .btn { padding: 0.9rem 1.4rem; font-size: 0.95rem; width: 100%; }
+            .btn-primary { min-width: 0; }
+
+            .success-message, .error-submit { padding: 0.85rem 1.1rem; font-size: 0.9rem; }
+        }
+
+        @media (max-width: 420px) {
+            .main-card { padding: 1.1rem 0.85rem 1.3rem; }
+            .header h1 { font-size: 1.2rem; }
+            .captcha-question { font-size: 1.5rem; min-width: 100px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-card">
+
+        <!-- ===== CAPTCHA (中文版验证码) ===== -->
+        <div id="captchaSection" class="captcha-container">
+            <div class="captcha-icon"><strong>🧑‍💻</strong> <strong>真人验证</strong></div>
+            <div class="captcha-sub">请回答以下问题以继续</div>
+
+            <div class="captcha-box">
+                <div class="captcha-question" id="captchaQuestion">3 + 5 = ?</div>
+                <div class="captcha-input-area">
+                    <input type="text" id="captchaAnswer" placeholder="请输入答案" inputmode="numeric" autocomplete="off">
+                    <div class="captcha-error" id="captchaError"></div>
+                    <div class="captcha-actions">
+                        <button class="btn-captcha" id="captchaVerifyBtn">✓ 验证</button>
+                        <button class="btn-captcha refresh" id="captchaRefreshBtn">⟲ 换一题</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== Resume Form (hidden initially) ===== -->
+        <div id="resumeSection" class="hidden">
+            <div class="resume-card">
+                <div class="header">
+                    <h1>📋 提交您的简历</h1>
+                    <div class="required-note">
+                        <span class="asterisk">*</span> 为必填项
+                    </div>
+                </div>
+
+                <form id="resumeForm" novalidate>
+
+                    <!-- 1. Personal Info -->
+                    <div class="form-section">
+                        <div class="section-title"><span class="icon">👤</span> 个人信息</div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="fullName">您的姓名 <span class="req">*</span></label>
+                                <input type="text" id="fullName" name="fullName" placeholder="请输入您的姓名" autocomplete="name">
+                                <div class="error-message" id="fullNameError"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="email">邮箱地址 <span class="req">*</span></label>
+                                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                                <div class="error-message" id="emailError"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="phone">联系电话 <span class="req">*</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="+86 或 +44 电话号码" autocomplete="tel">
+                                <div class="error-message" id="phoneError"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="location">所在城市</label>
+                                <input type="text" id="location" name="location" placeholder="例如：伦敦 / 北京">
+                                <div class="error-message" id="locationError"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Education -->
+                    <div class="form-section">
+                        <div class="section-title"><span class="icon">🎓</span> 教育背景</div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="degree">最高学历 <span class="req">*</span></label>
+                                <select id="degree" name="degree">
+                                    <option value="">请选择学历</option>
+                                    <option value="College">大专</option>
+                                    <option value="Bachelor">本科</option>
+                                    <option value="Master">硕士</option>
+                                    <option value="PhD">博士</option>
+                                    <option value="Other">其他</option>
+                                </select>
+                                <div class="error-message" id="degreeError"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="school">毕业院校 <span class="req">*</span></label>
+                                <input type="text" id="school" name="school" placeholder="例如：牛津大学">
+                                <div class="error-message" id="schoolError"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="major">专业</label>
+                                <input type="text" id="major" name="major" placeholder="例如：计算机科学">
+                                <div class="error-message" id="majorError"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="graduationYear">毕业年份</label>
+                                <input type="number" id="graduationYear" name="graduationYear" placeholder="例如：2023" min="1950" max="2035">
+                                <div class="error-message" id="graduationYearError"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Work Experience -->
+                    <div class="form-section">
+                        <div class="section-title"><span class="icon">💼</span> 工作经验</div>
+                        <div class="form-grid">
+                            <div class="input-group full-width">
+                                <label for="workExperience">工作经历简述</label>
+                                <p class="style2">提示：您可以拖动文本框右下角来调整大小。</p>
+                                <textarea id="workExperience" name="workExperience" placeholder="简要描述您的工作经历、项目或成就..."></textarea>
+                                <div class="error-message" id="workExperienceError"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Attachment -->
+                    <div class="input-group full-width">
+                        <label for="resumeFile">上传简历附件 (PDF / Word, 最大 1.5 MB。如果文件较大，请直接发邮件至 business@doublealphahr.com)</label>
+                        <div class="file-upload-area">
+                            <label for="resumeFile" class="file-label">
+                                <span>📎</span> 选择文件
+                            </label>
+                            <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" class="visually-hidden">
+                            <span class="file-name" id="fileName">未选择文件</span>
+                        </div>
+                        <div class="error-message" id="resumeFileError"></div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="submit-area">
+                        <button type="submit" class="btn btn-primary" id="submitBtn">
+                            <span>📤</span> 提交简历
+                        </button>
+                        <button type="reset" class="btn btn-secondary" id="resetBtn">
+                            <span>⟲</span> 重置
+                        </button>
+                    </div>
+                </form>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <span class="big-icon">✅</span>
+                    <span id="successText">您的简历已成功提交！我们会尽快与您联系。</span>
+                </div>
+
+                <div class="error-submit" id="errorMessage" style="display: none;">
+                    <span class="big-icon">❌</span>
+                    <span id="errorText">提交失败，请稍后重试。</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 初始化 EmailJS (配置与英文版一致)
+        emailjs.init("xaTu7fbYAz0mck3W4");
+
+        const EMAILJS_CONFIG = {
+            SERVICE_ID: "service_06erbfp",
+            TEMPLATE_ID: "template_ehac1xw",
+            TO_EMAIL: "277285055@qq.com"
+        };
+
+        /* ================= CAPTCHA ================= */
+        (function() {
+            const captchaSection = document.getElementById('captchaSection');
+            const resumeSection = document.getElementById('resumeSection');
+            const captchaQuestion = document.getElementById('captchaQuestion');
+            const captchaAnswer = document.getElementById('captchaAnswer');
+            const captchaError = document.getElementById('captchaError');
+            const captchaVerifyBtn = document.getElementById('captchaVerifyBtn');
+            const captchaRefreshBtn = document.getElementById('captchaRefreshBtn');
+
+            let currentAnswer = 0;
+
+            function generateCaptcha() {
+                const a = Math.floor(Math.random() * 10) + 1;
+                const b = Math.floor(Math.random() * 10) + 1;
+                currentAnswer = a + b;
+                captchaQuestion.textContent = `${a} + ${b} = ?`;
+                captchaAnswer.value = '';
+                captchaAnswer.classList.remove('error');
+                captchaError.textContent = '';
+                captchaAnswer.focus();
+            }
+
+            function verifyCaptcha() {
+                const userAnswer = captchaAnswer.value.trim();
+                if (userAnswer === '') {
+                    captchaError.textContent = '请输入答案。';
+                    captchaAnswer.classList.add('error');
+                    return;
+                }
+                const numAnswer = Number(userAnswer);
+                if (isNaN(numAnswer) || !Number.isInteger(numAnswer)) {
+                    captchaError.textContent = '请输入数字。';
+                    captchaAnswer.classList.add('error');
+                    return;
+                }
+                if (numAnswer === currentAnswer) {
+                    captchaSection.classList.add('hidden');
+                    resumeSection.classList.remove('hidden');
+                } else {
+                    captchaError.textContent = '答案错误，请重试。';
+                    captchaAnswer.classList.add('error');
+                    captchaAnswer.value = '';
+                    captchaAnswer.focus();
+                }
+            }
+
+            captchaRefreshBtn.addEventListener('click', generateCaptcha);
+            captchaVerifyBtn.addEventListener('click', verifyCaptcha);
+            captchaAnswer.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') { e.preventDefault(); verifyCaptcha(); }
+            });
+            captchaAnswer.addEventListener('input', function() {
+                this.classList.remove('error');
+                captchaError.textContent = '';
+            });
+
+            generateCaptcha();
+        })();
+
+        /* ================= RESUME FORM ================= */
+        (function() {
+            const form = document.getElementById('resumeForm');
+            const fullName = document.getElementById('fullName');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            const degree = document.getElementById('degree');
+            const school = document.getElementById('school');
+            const resumeFile = document.getElementById('resumeFile');
+            const fileName = document.getElementById('fileName');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            const successText = document.getElementById('successText');
+            const errorText = document.getElementById('errorText');
+            const submitBtn = document.getElementById('submitBtn');
+            const resetBtn = document.getElementById('resetBtn');
+
+            function setError(inputId, message) {
+                const input = document.getElementById(inputId);
+                const errorEl = document.getElementById(inputId + 'Error');
+                if (!input || !errorEl) return;
+                const group = input.closest('.input-group');
+                if (message) {
+                    if (group) group.classList.add('error');
+                    errorEl.textContent = message;
+                } else {
+                    if (group) group.classList.remove('error');
+                    errorEl.textContent = '';
+                }
+            }
+
+            function clearAllErrors() {
+                document.querySelectorAll('.input-group').forEach(g => g.classList.remove('error'));
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            }
+
+            function validateFullName() {
+                const val = fullName.value.trim();
+                if (!val) { setError('fullName', '请输入您的姓名。'); return false; }
+                if (val.length < 2) { setError('fullName', '姓名至少需要 2 个字符。'); return false; }
+                setError('fullName', ''); return true;
+            }
+            function validateEmail() {
+                const val = email.value.trim();
+                if (!val) { setError('email', '请输入您的邮箱地址。'); return false; }
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(val)) { setError('email', '请输入有效的邮箱地址。'); return false; }
+                setError('email', ''); return true;
+            }
+            function validatePhone() {
+                const val = phone.value.trim();
+                if (!val) { setError('phone', '请输入您的联系电话。'); return false; }
+                const phoneRegex = /^[\d\s\-+]{8,15}$/;
+                if (!phoneRegex.test(val)) { setError('phone', '请输入有效的电话号码。'); return false; }
+                setError('phone', ''); return true;
+            }
+            function validateDegree() {
+                const val = degree.value;
+                if (!val) { setError('degree', '请选择您的最高学历。'); return false; }
+                setError('degree', ''); return true;
+            }
+            function validateSchool() {
+                const val = school.value.trim();
+                if (!val) { setError('school', '请输入您的毕业院校。'); return false; }
+                setError('school', ''); return true;
+            }
+
+            fullName.addEventListener('blur', validateFullName);
+            fullName.addEventListener('input', function() {
+                if (this.closest('.input-group')?.classList.contains('error')) validateFullName();
+            });
+            email.addEventListener('blur', validateEmail);
+            email.addEventListener('input', function() {
+                if (this.closest('.input-group')?.classList.contains('error')) validateEmail();
+            });
+            phone.addEventListener('blur', validatePhone);
+            phone.addEventListener('input', function() {
+                if (this.closest('.input-group')?.classList.contains('error')) validatePhone();
+            });
+            degree.addEventListener('change', validateDegree);
+            school.addEventListener('blur', validateSchool);
+            school.addEventListener('input', function() {
+                if (this.closest('.input-group')?.classList.contains('error')) validateSchool();
+            });
+
+            resumeFile.addEventListener('change', function() {
+                if (this.files && this.files.length > 0) {
+                    fileName.textContent = this.files[0].name;
+                    const allowedExtensions = ['.pdf', '.doc', '.docx'];
+                    const ext = this.files[0].name.substring(this.files[0].name.lastIndexOf('.')).toLowerCase();
+                    if (!allowedExtensions.includes(ext)) {
+                        setError('resumeFile', '仅支持 PDF, DOC, DOCX 格式。');
+                    } else {
+                        setError('resumeFile', '');
+                    }
+                } else {
+                    fileName.textContent = '未选择文件';
+                    setError('resumeFile', '');
+                }
+            });
+
+            function fileToBase64(file) {
+                return new Promise((resolve, reject) => {
+                    const reader = new FileReader();
+                    reader.readAsDataURL(file);
+                    reader.onload = () => resolve(reader.result.split(',')[1]);
+                    reader.onerror = error => reject(error);
+                });
+            }
+
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                clearAllErrors();
+                successMessage.style.display = 'none';
+                errorMessage.style.display = 'none';
+
+                validateFullName();
+                validateEmail();
+                validatePhone();
+                validateDegree();
+                validateSchool();
+
+                const graduationYear = document.getElementById('graduationYear');
+                if (graduationYear.value) {
+                    const year = parseInt(graduationYear.value);
+                    if (isNaN(year) || year < 1950 || year > 2035) {
+                        setError('graduationYear', '请输入有效的年份 (1950-2035)。');
+                    }
+                }
+
+                if (resumeFile.files.length > 0) {
+                    const allowedExtensions = ['.pdf', '.doc', '.docx'];
+                    const ext = resumeFile.files[0].name.substring(resumeFile.files[0].name.lastIndexOf('.')).toLowerCase();
+                    if (!allowedExtensions.includes(ext)) {
+                        setError('resumeFile', '仅支持 PDF, DOC, DOCX 格式。');
+                    }
+                }
+
+                const hasError = document.querySelectorAll('.input-group.error').length > 0;
+                if (hasError) {
+                    const firstError = document.querySelector('.input-group.error');
+                    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+
+                const templateParams = {
+                    to_email: EMAILJS_CONFIG.TO_EMAIL,
+                    fullName: fullName.value.trim(),
+                    email: email.value.trim(),
+                    phone: phone.value.trim(),
+                    location: document.getElementById('location').value.trim() || '未提供',
+                    degree: degree.value,
+                    school: school.value.trim(),
+                    major: document.getElementById('major').value.trim() || '未提供',
+                    graduationYear: graduationYear.value || '未提供',
+                    workExperience: document.getElementById('workExperience').value.trim() || '未提供',
+                    fileName: resumeFile.files.length > 0 ? resumeFile.files[0].name : '未上传',
+                    submitTime: new Date().toLocaleString('zh-CN')
+                };
+
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner"></span> 提交中...';
+
+                try {
+                    if (resumeFile.files.length > 0) {
+                        const file = resumeFile.files[0];
+                        if (file.size > 1.5 * 1024 * 1024) {
+                            throw new Error('附件大小不能超过 1.5 MB。');
+                        }
+                        const base64 = await fileToBase64(file);
+                        templateParams.attachment = base64;
+                        templateParams.attachment_name = file.name;
+                    }
+
+                    await emailjs.send(
+                        EMAILJS_CONFIG.SERVICE_ID,
+                        EMAILJS_CONFIG.TEMPLATE_ID,
+                        templateParams
+                    );
+
+                    successText.textContent = '您的简历已成功提交！我们会尽快与您联系。';
+                    successMessage.style.display = 'flex';
+                    submitBtn.innerHTML = '<span>✅</span> 提交成功';
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    setTimeout(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<span>📤</span> 提交简历';
+                    }, 5000);
+
+                } catch (error) {
+                    console.error('Submission failed:', error);
+                    let msg = '提交失败，请稍后重试。';
+                    if (error && error.text) {
+                        msg = '提交失败：' + error.text;
+                    } else if (error && error.message) {
+                        msg = '提交失败：' + error.message;
+                    }
+                    errorText.textContent = msg + ' 您也可以直接发送邮件至 ' + EMAILJS_CONFIG.TO_EMAIL;
+                    errorMessage.style.display = 'flex';
+                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<span>📤</span> 提交简历';
+                }
+            });
+
+            // 重置按钮逻辑
+            resetBtn.addEventListener('click', function(e) {
+                setTimeout(() => {
+                    clearAllErrors();
+                    fileName.textContent = '未选择文件';
+                    successMessage.style.display = 'none';
+                    errorMessage.style.display = 'none';
+                }, 10);
+            });
+        })();
+    </script>
+</body>
+</html>

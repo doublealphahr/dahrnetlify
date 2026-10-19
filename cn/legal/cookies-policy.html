@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cookie 政策 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.8; }
+
+        /* ===== 本页样式 ===== */
+        .legal-page { max-width: 800px; margin: 30px auto 60px; padding: 0 20px; font-family: "Microsoft YaHei", Arial, sans-serif; color: #333; line-height: 1.8; }
+        .legal-page h1 { color: #996633; font-size: 1.6rem; text-align: center; margin-bottom: 30px; }
+        .legal-page h2 { color: #996633; font-size: 1.2rem; margin-top: 30px; border-bottom: 1px solid #EEE; padding-bottom: 8px; }
+        .legal-page p { margin-bottom: 15px; text-align: justify; }
+        .legal-page ul { margin-bottom: 15px; padding-left: 20px; }
+        .legal-page li { margin-bottom: 8px; }
+
+        @media (max-width: 768px) {
+            .legal-page { padding: 0 15px; margin: 20px auto 40px; }
+            .legal-page h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            .legal-page h2 { font-size: 1.1rem; margin-top: 24px; }
+            .legal-page p, .legal-page li { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="legal-page">
+        <h1>Cookie 政策</h1>
+        <p>本政策旨在向您说明 Double Alpha HR Consulting（以下简称"我们"）如何在网站上使用 Cookie 及类似技术，以及您如何管理这些 Cookie。</p>
+
+        <h2>1. 什么是 Cookie？</h2>
+        <p>Cookie 是一种存储在您设备（如电脑、手机）上的小型文本文件。当您访问网站时，网站服务器会将 Cookie 发送到您的浏览器，浏览器将其存储在您的设备上。它通常包含标识符、站点名称以及一些数字和字符。</p>
+
+        <h2>2. 我们为什么使用 Cookie？</h2>
+        <p>我们使用 Cookie 主要用于以下目的：</p>
+        <ul>
+            <li><b>确保网站正常运行：</b>例如，维持您的登录状态，防止表单提交被重复触发。</li>
+            <li><b>提升用户体验：</b>记住您的语言偏好（例如，记住您选择的是中文站点）。</li>
+            <li><b>数据分析：</b>帮助我们了解用户如何浏览和使用网站，以便优化页面布局和功能。</li>
+        </ul>
+
+        <h2>3. 我们使用的 Cookie 类型</h2>
+        <ul>
+            <li><b>必要 Cookie：</b>这些 Cookie 是网站运行所必需的，无法关闭。它们通常用于响应您的操作，例如设置隐私偏好、登录或填写表单。</li>
+            <li><b>性能 Cookie：</b>这些 Cookie 收集有关用户如何使用网站的信息（例如，最常访问的页面），用于改善网站性能。</li>
+        </ul>
+
+        <h2>4. 如何管理您的 Cookie？</h2>
+        <p>大多数浏览器都允许您通过设置来管理 Cookie。您可以设置浏览器拒绝所有 Cookie，或者仅在网站尝试设置 Cookie 时通知您。但请注意，如果您禁用必要 Cookie，网站的某些功能（如表单提交）可能无法正常工作。</p>
+        <p>由于中国大陆的网络环境，部分第三方 Cookie 可能受制于网络运营商。我们建议您使用最新版本的 Chrome、Edge 或 Safari 浏览器以获得最佳体验。</p>
+
+        <h2>5. 本政策的更新</h2>
+        <p>我们可能会不时更新本 Cookie 政策，以反映我们使用的 Cookie 的变化或法律要求的变化。更新后的政策将在本页面上发布。</p>
+
+        <h2>6. 联系我们</h2>
+        <p>如果您对本 Cookie 政策有任何疑问，请发送邮件至 <a href="mailto:Business@doublealphahr.com">Business@doublealphahr.com</a>。</p>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

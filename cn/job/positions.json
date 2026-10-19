@@ -1,0 +1,82 @@
+[
+  {
+    "posNo": "260801KRSM",
+    "title": "Sales Manager",
+    "location": "Korea",
+    "description": "Download",
+    "dateStr": "2026-08",
+    "dateSort": 1785513600000,
+    "fileName": "260801KRSM-Sales Manager-Korea.pdf",
+    "filePath": "positions1/260801KRSM-Sales Manager-Korea.pdf"
+  },
+  {
+    "posNo": "260802USSM",
+    "title": "Sales Manager",
+    "location": "US",
+    "description": "Download",
+    "dateStr": "2026-08",
+    "dateSort": 1785513600000,
+    "fileName": "260802USSM-Sales Manager-US.pdf",
+    "filePath": "positions1/260802USSM-Sales Manager-US.pdf"
+  },
+  {
+    "posNo": "260803GESM",
+    "title": "Sales Manager",
+    "location": "Germany",
+    "description": "Download",
+    "dateStr": "2026-08",
+    "dateSort": 1785513600000,
+    "fileName": "260803GESM-Sales Manager-Germany.pdf",
+    "filePath": "positions1/260803GESM-Sales Manager-Germany.pdf"
+  },
+  {
+    "posNo": "260804JPSM",
+    "title": "Sales Manager",
+    "location": "Japan",
+    "description": "Download",
+    "dateStr": "2026-08",
+    "dateSort": 1785513600000,
+    "fileName": "260804JPSM-Sales Manager-Japan.pdf",
+    "filePath": "positions1/260804JPSM-Sales Manager-Japan.pdf"
+  },
+  {
+    "posNo": "260718SGSM",
+    "title": "Key Account Sales Manager",
+    "location": "Singapore",
+    "description": "Download",
+    "dateStr": "2026-07",
+    "dateSort": 1782835200000,
+    "fileName": "260718SGSM-Key Account Sales Manager-Singapore.pdf",
+    "filePath": "positions1/260718SGSM-Key Account Sales Manager-Singapore.pdf"
+  },
+  {
+    "posNo": "260628GESM",
+    "title": "Sales Executive",
+    "location": "Germany",
+    "description": "Download",
+    "dateStr": "2026-06",
+    "dateSort": 1780243200000,
+    "fileName": "260628GESM-Sales Executive-Germany.pdf",
+    "filePath": "positions1/260628GESM-Sales Executive-Germany.pdf"
+  },
+  {
+    "posNo": "260402SKSE",
+    "title": "Sales Engineer",
+    "location": "Korea",
+    "description": "Download",
+    "dateStr": "2026-04",
+    "dateSort": 1774972800000,
+    "fileName": "260402SKSE-Sales Engineer-Korea.pdf",
+    "filePath": "positions1/260402SKSE-Sales Engineer-Korea.pdf"
+  },
+  {
+    "posNo": "260403TRSE",
+    "title": "Sales Engineer",
+    "location": "Turkey",
+    "description": "Download",
+    "dateStr": "2026-04",
+    "dateSort": 1774972800000,
+    "fileName": "260403TRSE-Sales Engineer-Turkey.pdf",
+    "filePath": "positions1/260403TRSE-Sales Engineer-Turkey.pdf"
+  }
+]

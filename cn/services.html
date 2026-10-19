@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>服务内容 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.6; }
+
+        /* ===== Hero ===== */
+        .hero-banner {
+            position: relative; width: 100%; height: 55vh; min-height: 320px;
+            overflow: hidden; background-color: #f0f0f0; margin-top: 20px;
+        }
+        .hero-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.05) 100%);
+            z-index: 1;
+        }
+        .hero-text {
+            position: absolute; top: 12%; left: 5%; transform: none;
+            width: 55%; color: #FFFFFF; z-index: 2;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6); text-align: left;
+        }
+        .hero-text h1 { font-family: 'Arial Black', 'Microsoft YaHei', sans-serif; font-size: 2.6rem; margin: 0 0 12px 0; line-height: 1.2; }
+        .hero-text h1 .gold { color: #E4C28A; }
+        .hero-text h2 { font-size: 1.1rem; font-weight: normal; margin: 0 0 22px 0; color: #F5EFE3; letter-spacing: 0.5px; }
+        .hero-text h2 .gold { color: #E4C28A; font-weight: 600; }
+        .hero-text .hero-cta {
+            display: inline-block; background-color: #B89162; color: #FFFFFF;
+            padding: 12px 28px; font-weight: bold; border-radius: 4px;
+            font-size: 0.95rem; text-shadow: none; transition: background-color 0.3s;
+        }
+        .hero-text .hero-cta:hover { background-color: #996633; }
+
+        .page-title { text-align: center; margin: 30px 0 10px; }
+        .page-title h1 { font-family: "Arial Black", Arial, sans-serif; font-size: 1.6rem; color: #000; margin: 0 0 6px; }
+        .page-title h1 .gold { color: #996633; }
+        .page-title h2 { font-size: 1rem; font-weight: normal; color: #555; margin: 0; }
+        .page-title h2 .gold { color: #996633; font-weight: 600; }
+
+        .services-wrapper { max-width: 1200px; margin: 0 auto 60px; padding: 0 20px; }
+        .block {
+            display: grid; grid-template-columns: 240px 1fr;
+            gap: 30px; padding: 36px 0; border-top: 1px solid #F0E6D6;
+        }
+        .block:first-of-type { border-top: none; }
+        .block-label {
+            font-family: "Noto Serif SC Black", "Times New Roman", serif;
+            font-size: 1.25rem; color: #996633; line-height: 1.4;
+            padding-left: 12px; border-left: 4px solid #996633;
+            align-self: start; position: sticky; top: 20px;
+        }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card {
+            background: #FBFAF6; border: 1px solid #E5DFD0; border-radius: 10px;
+            padding: 22px 20px; transition: box-shadow .2s, transform .2s;
+            display: flex; flex-direction: column;
+        }
+        .card:hover { box-shadow: 0 8px 22px rgba(153,102,51,0.10); transform: translateY(-2px); }
+        .card-icon { width: 60px; height: 60px; object-fit: contain; margin-bottom: 12px; }
+        .card h3 { font-size: 1.05rem; color: #996633; margin: 0 0 8px; font-weight: 700; }
+        .card h3 a { color: #996633; }
+        .card h3 a:hover { color: #7a522a; }
+        .card p { font-size: 0.88rem; color: #666; margin: 0 0 16px; flex: 1; line-height: 1.7; }
+        .card .cta {
+            align-self: flex-start; display: inline-block;
+            background: #996633; color: #fff; padding: 6px 16px;
+            border-radius: 40px; font-size: 0.82rem;
+            letter-spacing: .5px; transition: background .2s;
+        }
+        .card .cta:hover { background: #7a522a; color: #fff; }
+
+        @media (max-width: 768px) {
+            .hero-banner { height: 45vh; min-height: 260px; }
+            .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
+            .hero-text h1 { font-size: 1.5rem; margin-bottom: 8px; }
+            .hero-text h2 { font-size: 0.85rem; margin-bottom: 14px; }
+            .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
+
+            .page-title { margin: 20px 0 8px; padding: 0 15px; }
+            .page-title h1 { font-size: 1.3rem; }
+            .page-title h2 { font-size: 0.9rem; }
+
+            .services-wrapper { padding: 0 15px; margin: 0 auto 40px; }
+            .block { grid-template-columns: 1fr; gap: 16px; padding: 24px 0; }
+            .block-label {
+                position: static; text-align: center; font-size: 1.1rem;
+                padding-left: 0; border-left: none;
+                border-bottom: 2px solid #996633; padding-bottom: 8px;
+            }
+            .card-grid { grid-template-columns: 1fr; gap: 16px; }
+            .card { padding: 18px 16px; }
+            .card h3 { font-size: 1rem; }
+            .card p { font-size: 0.85rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= Hero ================= -->
+    <div class="hero-banner">
+        <img src="/pics/image2.jpg" alt="服务内容" />
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+            <h1>面向<span class="gold">机构</span>及<span class="gold">个人</span>的双重 "Alpha" 服务</h1>
+            <h2>为组织与个人提供全方位人力资源支持</h2>
+            <a class="hero-cta" href="/cn/contact.html">立即咨询</a>
+        </div>
+    </div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="services-wrapper">
+
+        <!-- 机构服务 -->
+        <section class="block">
+            <div class="block-label">机构服务&nbsp;</div>
+            <div class="card-grid">
+
+                <div class="card">
+                    <img class="card-icon" src="/employer/recruit.jpg" alt="招聘服务" />
+                    <h3><a href="/cn/employer.html">招聘服务</a></h3>
+                    <p>寻找并招募到企业真正需要的理想人才，覆盖从初级岗位到高管的全面招聘。</p>
+                    <a class="cta" href="/cn/employer.html">了解详情</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/employer/permanentrecruit.jpg" alt="外包服务" />
+                    <h3><a href="/cn/employer.html">外包服务</a></h3>
+                    <p>您专注于业务增长，职能交给我们。提供 HR 外包、岗位外包、薪酬外包等一站式服务。</p>
+                    <a class="cta" href="/cn/employer.html">了解详情</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/employer/solution.jpg" alt="培训服务" />
+                    <h3><a href="/cn/employer.html">培训服务</a></h3>
+                    <p>确保企业长期发展，促进员工职业成就。提供管理培训、专业培训及定制化企业内训。</p>
+                    <a class="cta" href="/cn/employer.html">了解详情</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/images/solutions.jpg" alt="方案服务" />
+                    <h3><a href="/cn/employer.html">方案服务</a></h3>
+                    <p>以我们专业的优势为您的发展和竞争提供护航，提供组织诊断、薪酬绩效、人才发展等 HR 解决方案。</p>
+                    <a class="cta" href="/cn/employer.html">了解详情</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 个人服务 -->
+        <section class="block">
+            <div class="block-label">个人服务&nbsp;</div>
+            <div class="card-grid">
+
+                <div class="card">
+                    <img class="card-icon" src="/job/jobseeking.jpg" alt="求职服务" />
+                    <h3><a href="/cn/job.html">求职服务</a></h3>
+                    <p>帮助您找到理想的雇主和职业岗位，提供职位推荐、简历优化及面试辅导。</p>
+                    <a class="cta" href="/cn/job.html">了解详情</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/job/sustainability.jpg" alt="规划服务" />
+                    <h3><a href="/cn/job.html">规划服务</a></h3>
+                    <p>个人发展、职业规划，实现职业成长最大化。助您理清方向，走好每一步。</p>
+                    <a class="cta" href="/cn/job.html">了解详情</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/job/careerplanning.jpg" alt="合规服务" />
+                    <h3><a href="/cn/job.html">合规服务</a></h3>
+                    <p>确保每一个选择都稳健可靠，包括就业合规、签证与移民合规等专业支持。</p>
+                    <a class="cta" href="/cn/job.html">了解详情</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 知识宝典 -->
+        <section class="block">
+            <div class="block-label">知识宝典&nbsp;</div>
+            <div class="card-grid">
+
+                <div class="card">
+                    <img class="card-icon" src="/articles/HRMknowledge.jpg" alt="HRM 知识" />
+                    <h3><a href="/cn/resources.html">HRM 知识、技巧与报告</a></h3>
+                    <p>汇集人力资源管理的前沿洞察、实用技巧与行业报告，助力 HR 与管理者持续成长。</p>
+                    <a class="cta" href="/cn/resources.html">了解详情</a>
+                </div>
+
+                <div class="card">
+                    <img class="card-icon" src="/articles/global.jpg" alt="全球雇佣指南" />
+                    <h3><a href="/cn/resources.html">全球雇佣合规指南</a></h3>
+                    <p>覆盖世界各地的雇佣法规与合规实践，帮助您在全球范围内稳健地开展业务。</p>
+                    <a class="cta" href="/cn/resources.html">了解详情</a>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

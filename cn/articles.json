@@ -1,0 +1,502 @@
+{
+  "generatedAt": "2026-10-16T13:28:40.050Z",
+  "categories": [
+    {
+      "key": "hrm",
+      "label": "知识宝典",
+      "icon": "👥",
+      "articles": [
+        {
+          "title": "人力资源价值链：如何把人力资源动作转变为企业竞争力？",
+          "file": "人力资源价值链：如何把人力资源动作转变为企业竞争力？.html",
+          "url": "hrm/人力资源价值链：如何把人力资源动作转变为企业竞争力？.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:33:52.316Z"
+        },
+        {
+          "title": "为什么我们应该更加重视人力资源技术",
+          "file": "为什么我们应该更加重视人力资源技术？.html",
+          "url": "hrm/为什么我们应该更加重视人力资源技术？.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:10:02.065Z"
+        },
+        {
+          "title": "海外业务“属地化人才”培养路径",
+          "file": "探讨海外业务“属地化人才”培养路径.html",
+          "url": "hrm/探讨海外业务“属地化人才”培养路径.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:08:28.100Z"
+        },
+        {
+          "title": "JD里写的people skill是什么？为什么良好的人际关系是成功的敲门砖？",
+          "file": "良好的人际关系.html",
+          "url": "hrm/良好的人际关系.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:07:44.942Z"
+        },
+        {
+          "title": "“裁员潮”太难了，3个建议帮你度过难关",
+          "file": "“裁员潮”太难了，3个建议帮你度过难关.html",
+          "url": "hrm/“裁员潮”太难了，3个建议帮你度过难关.html",
+          "ext": "html",
+          "mtime": "2026-10-08T05:48:44.000Z"
+        },
+        {
+          "title": "年度考核攻略",
+          "file": "年度考核攻略.html",
+          "url": "hrm/年度考核攻略.html",
+          "ext": "html",
+          "mtime": "2026-10-08T05:47:43.000Z"
+        },
+        {
+          "title": "你的企业真的懂降本增效吗？HR可以着手的5大方面",
+          "file": "你的企业真的懂降本增效吗？HR可以着手的5大方面.html",
+          "url": "hrm/你的企业真的懂降本增效吗？HR可以着手的5大方面.html",
+          "ext": "html",
+          "mtime": "2026-10-08T05:47:37.000Z"
+        }
+      ]
+    },
+    {
+      "key": "news",
+      "label": "新闻/报告",
+      "icon": "📰",
+      "articles": [
+        {
+          "title": "人力资源管理新趋势：PEO专业雇主服务",
+          "file": "人力资源管理新趋势：PEO专业雇主服务.html",
+          "url": "news/人力资源管理新趋势：PEO专业雇主服务.html",
+          "ext": "html",
+          "mtime": "2026-10-11T23:45:36.917Z"
+        },
+        {
+          "title": "2023 人力资源行业报告：美国人服行业百年变迁，引领市场创新变革",
+          "file": "美国人服行业百年变迁，引领市场创新变革.html",
+          "url": "news/美国人服行业百年变迁，引领市场创新变革.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:38:58.310Z"
+        },
+        {
+          "title": "2025 年美国人力资源服务市场分析：名义雇主模式将撬动千亿级跨境用工蓝海",
+          "file": "2025年美国人力资源服务市场分析：名义雇主模式将撬动千亿级跨境用工蓝海.html",
+          "url": "news/2025年美国人力资源服务市场分析：名义雇主模式将撬动千亿级跨境用工蓝海.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:37:09.628Z"
+        },
+        {
+          "title": "麦肯锡2025年人力资源报告(英文版）",
+          "file": "麦肯锡：2025年人力资源管理监测报告（英文版）.html",
+          "url": "news/麦肯锡：2025年人力资源管理监测报告（英文版）.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:36:30.728Z"
+        },
+        {
+          "title": "2026 人力资源核心趋势预测",
+          "file": "2026人力资源核心趋势预测.html",
+          "url": "news/2026人力资源核心趋势预测.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:34:45.047Z"
+        },
+        {
+          "title": "美媒：关税冲突加剧欧美招聘挑战",
+          "file": "关税冲突加剧欧美招聘挑战.html",
+          "url": "news/关税冲突加剧欧美招聘挑战.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:43:22.982Z"
+        },
+        {
+          "title": "2026 最新海外人力资源外包美国EOR对比",
+          "file": "2026最新海外人力资源外包美国EOR对比.html",
+          "url": "news/2026最新海外人力资源外包美国EOR对比.html",
+          "ext": "html",
+          "mtime": "2026-10-08T05:52:24.955Z"
+        }
+      ]
+    },
+    {
+      "key": "regulations",
+      "label": "全球合规",
+      "icon": "📜",
+      "articles": [
+        {
+          "title": "2026年挪威雇佣指南",
+          "file": "EmploymentGuide-Norway.html",
+          "url": "regulations/EmploymentGuide-Norway.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:27:43.750Z"
+        },
+        {
+          "title": "2026年新西兰雇佣指南",
+          "file": "EmploymentGuide-NewZealand.html",
+          "url": "regulations/EmploymentGuide-NewZealand.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:27:04.681Z"
+        },
+        {
+          "title": "2026年荷兰雇佣指南",
+          "file": "EmploymentGuide-Netherlands.html",
+          "url": "regulations/EmploymentGuide-Netherlands.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:26:53.035Z"
+        },
+        {
+          "title": "2026年摩洛哥雇佣指南",
+          "file": "EmploymentGuide-Morocco.html",
+          "url": "regulations/EmploymentGuide-Morocco.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:26:39.589Z"
+        },
+        {
+          "title": "2026年墨西哥雇佣指南",
+          "file": "EmploymentGuide-Mexico.html",
+          "url": "regulations/EmploymentGuide-Mexico.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:26:24.320Z"
+        },
+        {
+          "title": "2026年马来西亚雇佣指南",
+          "file": "EmploymentGuide-Malaysia.html",
+          "url": "regulations/EmploymentGuide-Malaysia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:26:04.687Z"
+        },
+        {
+          "title": "2026年中国澳门雇佣指南",
+          "file": "EmploymentGuide-Macao.html",
+          "url": "regulations/EmploymentGuide-Macao.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:25:50.857Z"
+        },
+        {
+          "title": "2026年日本雇佣指南",
+          "file": "EmploymentGuide-Japan.html",
+          "url": "regulations/EmploymentGuide-Japan.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:25:34.628Z"
+        },
+        {
+          "title": "2026年意大利雇佣指南",
+          "file": "EmploymentGuide-Italy.html",
+          "url": "regulations/EmploymentGuide-Italy.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:25:23.077Z"
+        },
+        {
+          "title": "2026年以色列雇佣指南",
+          "file": "EmploymentGuide-Israel.html",
+          "url": "regulations/EmploymentGuide-Israel.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:25:07.379Z"
+        },
+        {
+          "title": "2026年爱尔兰雇佣指南",
+          "file": "EmploymentGuide-Ireland.html",
+          "url": "regulations/EmploymentGuide-Ireland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:24:51.311Z"
+        },
+        {
+          "title": "2026年印度尼西亚雇佣指南",
+          "file": "EmploymentGuide-Indonesia.html",
+          "url": "regulations/EmploymentGuide-Indonesia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:24:37.136Z"
+        },
+        {
+          "title": "2026年印度雇佣指南",
+          "file": "EmploymentGuide-India.html",
+          "url": "regulations/EmploymentGuide-India.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:24:04.354Z"
+        },
+        {
+          "title": "2026年匈牙利雇佣指南",
+          "file": "EmploymentGuide-Hungary.html",
+          "url": "regulations/EmploymentGuide-Hungary.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:23:42.241Z"
+        },
+        {
+          "title": "2026年中国香港雇佣指南",
+          "file": "EmploymentGuide-Hongkong.html",
+          "url": "regulations/EmploymentGuide-Hongkong.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:23:21.496Z"
+        },
+        {
+          "title": "2026年希腊雇佣指南",
+          "file": "EmploymentGuide-Greece.html",
+          "url": "regulations/EmploymentGuide-Greece.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:22:56.506Z"
+        },
+        {
+          "title": "2026年德国雇佣指南",
+          "file": "EmploymentGuide-Germany.html",
+          "url": "regulations/EmploymentGuide-Germany.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:22:43.806Z"
+        },
+        {
+          "title": "2026法国雇佣指南",
+          "file": "EmploymentGuide-France.html",
+          "url": "regulations/EmploymentGuide-France.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:22:25.587Z"
+        },
+        {
+          "title": "2026芬兰雇佣指南",
+          "file": "EmploymentGuide-Finland.html",
+          "url": "regulations/EmploymentGuide-Finland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:22:15.692Z"
+        },
+        {
+          "title": "2026阿联酋｜迪拜雇佣指南",
+          "file": "EmploymentGuide-Dubai.html",
+          "url": "regulations/EmploymentGuide-Dubai.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:22:03.659Z"
+        },
+        {
+          "title": "2026丹麦雇佣指南",
+          "file": "EmploymentGuide-Denmark.html",
+          "url": "regulations/EmploymentGuide-Denmark.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:21:47.623Z"
+        },
+        {
+          "title": "2026捷克雇佣指南",
+          "file": "EmploymentGuide-Czech.html",
+          "url": "regulations/EmploymentGuide-Czech.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:21:34.832Z"
+        },
+        {
+          "title": "2026加拿大雇佣指南",
+          "file": "EmploymentGuide-Canada.html",
+          "url": "regulations/EmploymentGuide-Canada.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:21:18.417Z"
+        },
+        {
+          "title": "2026年巴西雇佣指南",
+          "file": "EmploymentGuide-Brasia.html",
+          "url": "regulations/EmploymentGuide-Brasia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:21:06.012Z"
+        },
+        {
+          "title": "2026比利时雇佣指南",
+          "file": "EmploymentGuide-Belgium.html",
+          "url": "regulations/EmploymentGuide-Belgium.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:20:45.526Z"
+        },
+        {
+          "title": "2026奥地利雇佣指南",
+          "file": "EmploymentGuide-Austria.html",
+          "url": "regulations/EmploymentGuide-Austria.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:20:32.464Z"
+        },
+        {
+          "title": "2026年阿根廷雇佣指南",
+          "file": "EmploymentGuide-Argentina.html",
+          "url": "regulations/EmploymentGuide-Argentina.html",
+          "ext": "html",
+          "mtime": "2026-10-16T13:20:01.246Z"
+        },
+        {
+          "title": "2026年越南雇佣指南",
+          "file": "EmploymentGuide-Vietnam.html",
+          "url": "regulations/EmploymentGuide-Vietnam.html",
+          "ext": "html",
+          "mtime": "2026-10-16T12:51:06.668Z"
+        },
+        {
+          "title": "2026年美国雇佣指南",
+          "file": "EmploymentGuide-USA.html",
+          "url": "regulations/EmploymentGuide-USA.html",
+          "ext": "html",
+          "mtime": "2026-10-16T12:49:11.976Z"
+        },
+        {
+          "title": "2026年英国雇佣指南",
+          "file": "EmploymentGuide-UK.html",
+          "url": "regulations/EmploymentGuide-UK.html",
+          "ext": "html",
+          "mtime": "2026-10-16T12:47:38.479Z"
+        },
+        {
+          "title": "2026年土耳其雇佣指南",
+          "file": "EmploymentGuide-Turkey.html",
+          "url": "regulations/EmploymentGuide-Turkey.html",
+          "ext": "html",
+          "mtime": "2026-10-16T12:45:58.581Z"
+        },
+        {
+          "title": "2026年泰国雇佣指南",
+          "file": "EmploymentGuide-Thailand.html",
+          "url": "regulations/EmploymentGuide-Thailand.html",
+          "ext": "html",
+          "mtime": "2026-10-16T12:44:13.138Z"
+        },
+        {
+          "title": "2026年中国台湾雇佣指南",
+          "file": "EmploymentGuide-Taiwan.html",
+          "url": "regulations/EmploymentGuide-Taiwan.html",
+          "ext": "html",
+          "mtime": "2026-10-16T12:05:26.656Z"
+        },
+        {
+          "title": "2026年瑞典雇佣指南",
+          "file": "EmploymentGuide-Sweden.html",
+          "url": "regulations/EmploymentGuide-Sweden.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:57:22.971Z"
+        },
+        {
+          "title": "2026年西班牙雇佣指南",
+          "file": "EmploymentGuide-Spain.html",
+          "url": "regulations/EmploymentGuide-Spain.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:56:44.919Z"
+        },
+        {
+          "title": "2026年韩国雇佣指南",
+          "file": "EmploymentGuide-SouthKorea.html",
+          "url": "regulations/EmploymentGuide-SouthKorea.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:55:38.929Z"
+        },
+        {
+          "title": "2026年新加坡雇佣指南",
+          "file": "EmploymentGuide-Singapore.html",
+          "url": "regulations/EmploymentGuide-Singapore.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:54:44.515Z"
+        },
+        {
+          "title": "2026年沙特阿拉伯雇佣指南",
+          "file": "EmploymentGuide-Saudi.html",
+          "url": "regulations/EmploymentGuide-Saudi.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:53:53.210Z"
+        },
+        {
+          "title": "2026年俄罗斯雇佣指南",
+          "file": "EmploymentGuide-Russia.html",
+          "url": "regulations/EmploymentGuide-Russia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:53:00.144Z"
+        },
+        {
+          "title": "2026年罗马尼亚雇佣指南",
+          "file": "EmploymentGuide-Romania.html",
+          "url": "regulations/EmploymentGuide-Romania.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:52:03.619Z"
+        },
+        {
+          "title": "2026年葡萄牙雇佣指南",
+          "file": "EmploymentGuide-Portugal.html",
+          "url": "regulations/EmploymentGuide-Portugal.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:51:18.922Z"
+        },
+        {
+          "title": "2026年波兰雇佣指南",
+          "file": "EmploymentGuide-Poland.html",
+          "url": "regulations/EmploymentGuide-Poland.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:50:28.658Z"
+        },
+        {
+          "title": "2026年菲律宾雇佣指南",
+          "file": "EmploymentGuide-Philippines.html",
+          "url": "regulations/EmploymentGuide-Philippines.html",
+          "ext": "html",
+          "mtime": "2026-10-16T11:49:22.623Z"
+        },
+        {
+          "title": "EmploymentGuide-Australia",
+          "file": "EmploymentGuide-Australia.html",
+          "url": "regulations/EmploymentGuide-Australia.html",
+          "ext": "html",
+          "mtime": "2026-10-16T08:27:48.296Z"
+        },
+        {
+          "title": "欧美人力资源法规核心趋势解读（2024–2026） | Double Alpha HR",
+          "file": "欧美人力资源法规核心趋势解读.html",
+          "url": "regulations/欧美人力资源法规核心趋势解读.html",
+          "ext": "html",
+          "mtime": "2026-10-11T23:32:54.000Z"
+        },
+        {
+          "title": "劳动和雇佣条例核心解读——美国篇（含2025年新规动态） | Double Alpha HR",
+          "file": "劳动和雇佣条例核心解读——美国篇（含2025年新规动态）.html",
+          "url": "regulations/劳动和雇佣条例核心解读——美国篇（含2025年新规动态）.html",
+          "ext": "html",
+          "mtime": "2026-10-11T23:26:19.162Z"
+        },
+        {
+          "title": "德国2026新规：雇主须在第三国员工入职首日书面告知\"公平融入\"免费法律援助 | Double Alpha HR",
+          "file": "德国2026新规：雇主须在第三国员工入职首日书面告知“公平融入”免费法律援助.html",
+          "url": "regulations/德国2026新规：雇主须在第三国员工入职首日书面告知“公平融入”免费法律援助.html",
+          "ext": "html",
+          "mtime": "2026-10-11T23:23:38.612Z"
+        },
+        {
+          "title": "EOR美国劳动法 - 合规用工与劳动纠纷实务解析 | Double Alpha HR",
+          "file": "EOR美国劳动法-合规用工与劳动纠纷实务解析.html",
+          "url": "regulations/EOR美国劳动法-合规用工与劳动纠纷实务解析.html",
+          "ext": "html",
+          "mtime": "2026-10-11T23:22:30.972Z"
+        },
+        {
+          "title": "2026 出海欧洲人力新政全景解读：英、德、法、波、葡五国劳工法规与HR合规指南",
+          "file": "2026出海欧洲人力新政全景解读：英、德、法、波、葡五国劳工法规与HR合规指南.html",
+          "url": "regulations/2026出海欧洲人力新政全景解读：英、德、法、波、葡五国劳工法规与HR合规指南.html",
+          "ext": "html",
+          "mtime": "2026-10-11T22:40:21.592Z"
+        },
+        {
+          "title": "2026全球用工合规白皮书_员工_企业_模式",
+          "file": "2026全球用工合规白皮书.html",
+          "url": "regulations/2026全球用工合规白皮书.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:40:04.000Z"
+        },
+        {
+          "title": "Research on Employment Laws and Regulations of Mayor European Countires 欧洲主要国家劳动法律与法规探析",
+          "file": "欧洲主要国家劳动法律与法规探析.html",
+          "url": "regulations/欧洲主要国家劳动法律与法规探析.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:26:01.000Z"
+        },
+        {
+          "title": "欧美职业安全与健康法规发展概览",
+          "file": "欧美职业安全与健康法规发展概览.html",
+          "url": "regulations/欧美职业安全与健康法规发展概览.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:25:19.000Z"
+        },
+        {
+          "title": "ȫ��������Դ�Ϲ棺��Ҫ�����Ͷ���������� - ֪��",
+          "file": "全球人力资源合规：主要国家劳动法差异解析.html",
+          "url": "regulations/全球人力资源合规：主要国家劳动法差异解析.html",
+          "ext": "html",
+          "mtime": "2026-10-10T13:03:42.000Z"
+        },
+        {
+          "title": "试论劳动者保护的法律选择模式——欧美模式的比较及其对中国的启示 - 劳动法宝",
+          "file": "试论劳动者保护的法律选择模式——欧美模式的比较及其对中国的启示.html",
+          "url": "regulations/试论劳动者保护的法律选择模式——欧美模式的比较及其对中国的启示.html",
+          "ext": "html",
+          "mtime": "2026-10-08T05:45:24.000Z"
+        }
+      ]
+    }
+  ]
+}

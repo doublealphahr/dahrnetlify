@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>反招聘诈骗提醒 | Double Alpha HR</title>
+
+    <link rel="stylesheet" href="/cookies/style.css?v=20261010" />
+    <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
+
+    <style type="text/css">
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.8; }
+
+        /* ===== 本页样式 ===== */
+        .legal-page { max-width: 800px; margin: 30px auto 60px; padding: 0 20px; font-family: "Microsoft YaHei", Arial, sans-serif; color: #333; line-height: 1.8; }
+        .legal-page h1 { color: #996633; font-size: 1.6rem; text-align: center; margin-bottom: 30px; }
+        .legal-page h2 { color: #996633; font-size: 1.2rem; margin-top: 30px; border-bottom: 1px solid #EEE; padding-bottom: 8px; }
+        .legal-page p { margin-bottom: 15px; text-align: justify; }
+        .legal-page ul { margin-bottom: 15px; padding-left: 20px; }
+        .legal-page li { margin-bottom: 8px; }
+        .legal-page .warning { background: #FDECEA; border-left: 4px solid #C0392B; padding: 15px; margin: 20px 0; }
+
+        @media (max-width: 768px) {
+            .legal-page { padding: 0 15px; margin: 20px auto 40px; }
+            .legal-page h1 { font-size: 1.4rem; margin-bottom: 20px; }
+            .legal-page h2 { font-size: 1.1rem; margin-top: 24px; }
+            .legal-page p, .legal-page li { font-size: 0.9rem; }
+            .legal-page .warning { padding: 12px; font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ================= 1. 干净的头占位 ================= -->
+    <div id="site-header"></div>
+
+    <!-- ================= 页面主体 ================= -->
+    <div class="legal-page">
+        <h1>警惕针对求职者的招聘诈骗</h1>
+
+        <p>在 Double Alpha HR，您的求职安全对我们至关重要。近期，我们注意到各类招聘诈骗案件频发，特此提醒您注意防范。</p>
+
+        <div class="warning">
+            <strong>重要提醒：</strong>Double Alpha HR 绝不会向候选人收取任何形式的直接付款（如"行政费"、"认证费"、"培训费"等）。所有来自 Double Alpha HR 顾问的邮件均会使用官方域名（如 name.surname@doublealphahr.com）。
+        </div>
+
+        <h2>常见的诈骗警示信号：</h2>
+        <ul>
+            <li>您收到声称保证提供高薪工作或收入的邮件、消息或电话；</li>
+            <li>招聘方使用可疑的头像、缺乏真实的个人资料或联系方式；</li>
+            <li>声称只需极少努力即可通过个人电脑赚取大量金钱；</li>
+            <li>要求您提供个人详细信息，或支付费用以获取更多工作信息或启动材料；</li>
+            <li>要求您代他人转账（可能涉及洗钱）；</li>
+            <li>招聘人员使用通用邮箱（如 @Yahoo、@Hotmail、@163.com 等）与您联系；</li>
+            <li>在没有面试的情况下直接提供高薪职位；</li>
+            <li>招聘广告内容粗糙，包含大量拼写或语法错误。</li>
+        </ul>
+
+        <h2>如果您怀疑遇到冒充 Double Alpha HR 的诈骗：</h2>
+        <p>如果您对 Double Alpha HR 消息的真实性有任何疑问，请通过官方渠道<a href="/cn/contact.html">联系我们</a>进行核实。</p>
+
+        <h2>如果您不幸成为诈骗受害者：</h2>
+        <p>如果您怀疑自己已成为招聘诈骗的目标，请立即向当地公安机关报案（拨打 110 或前往附近派出所）。</p>
+        <p>如果您已向可疑诈骗者提供了任何个人信息，请立即更改相关账户的密码，并联系您的银行冻结账户或挂失银行卡。</p>
+    </div>
+
+    <!-- ================= 3. 干净的尾占位 ================= -->
+    <div id="site-footer"></div>
+
+    <!-- ================= 4. 通用加载器 (针对中文版) ================= -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 加载中文页头
+        fetch('/components/cn-header.html')
+            .then(response => response.text())
+            .then(data => {
+                const headerContainer = document.getElementById('site-header');
+                headerContainer.innerHTML = data;
+                const scripts = headerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+        
+        // 加载中文页脚
+        fetch('/components/cn-footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const footerContainer = document.getElementById('site-footer');
+                footerContainer.innerHTML = data;
+                const scripts = footerContainer.querySelectorAll('script');
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                });
+            });
+    });
+    </script>
+
+</body>
+</html>

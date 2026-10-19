@@ -1,0 +1,25 @@
+# Local Netlify folder
+.netlify
+
+# Node.js 依赖包（绝对不要传，巨大且无用）
+node_modules/
+
+# 微软老式服务器残留文件（必须屏蔽）
+_vti_cnf/
+_vti_pvt/
+App_Data/
+Web.config
+*.php
+
+# 本地脚本、备份和测试文件
+convert-mhtml.js
+generate-list.js
+resources0.html
+model.html
+package.json
+package-lock.json
+
+# 系统文件
+desktop.ini
+.DS_Store
+Thumbs.db
