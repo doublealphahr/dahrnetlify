@@ -1,6 +1,5 @@
 ﻿<!-- ================= Header 专属样式 ================= -->
 <style>
-    /* ===== 电脑端基础样式 ===== */
     .header-table{width:99%;margin:0 auto;border-collapse:collapse;}
     .header-logo-cell{width:350px;text-align:left;vertical-align:middle;padding:5px;}
     .header-logo-cell img{max-width:100%;height:auto;}
@@ -93,13 +92,8 @@
         .nav-dropdown > a {
             display: block; padding: 12px 0; margin: 0; border-bottom: 1px solid #f5f5f5;
         }
-        .dropdown-content {
-            position: static; display: none; box-shadow: none;
-            border: none; background-color: #f9f9f9; padding: 0;
-            transform: none; left: 0;
-        }
-        .nav-dropdown.open .dropdown-content { display: block; }
-        .dropdown-content a { padding: 10px 0; font-size: 14px; color: #666; }
+        /* 手机端隐藏下拉菜单，因为直接跳转页面了 */
+        .dropdown-content { display: none !important; }
 
         .menu-toggle { 
             display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -135,21 +129,17 @@
 <div style="text-align: center;">
     <table class="header-table" cellpadding="0" cellspacing="0">
         <tr>
-            <!-- 1. 最左边：Logo -->
             <td class="style1 header-logo-cell">
                 <a href="/cn/index.html">
                     <img alt="logo" src="/pics/cn-logo.jpg" />
                 </a>
             </td>
             
-            <!-- 2. 中间：导航区域 -->
             <td class="header-nav-cell">
-                <!-- 汉堡按钮（手机端显示） -->
                 <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
                     <span></span><span></span><span></span>
                 </button>
 
-                <!-- 导航菜单 -->
                 <div class="nav-menu" id="nav-menu">
                     <a href="/cn/index.html">首页</a>
                     <a href="/cn/about.html">关于</a>
@@ -166,9 +156,7 @@
                 </div>
             </td>
 
-            <!-- 3. 最右侧：语言选择器 -->
             <td class="header-lang-cell">
-                <!-- 统一绝对路径 -->
                 <a href="/index.html"><img alt="English" src="/pics/uk2.jpg" width="46" height="30"></a>
                 <a href="/cn/index.html"><img style="border: 0;" id="img1" src="/pics/cn2.jpg" alt="中 文" width="46" height="30" /></a>
             </td>
@@ -182,7 +170,6 @@
     // ===== 1. 汉堡菜单逻辑 =====
     const menuToggle = document.getElementById('menu-toggle');
     const navMenu = document.getElementById('nav-menu');
-    const navDropdown = document.querySelector('.nav-dropdown');
 
     if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function (e) {
@@ -191,22 +178,10 @@
         });
     }
 
-    if (navDropdown) {
-        const dropdownLink = navDropdown.querySelector('a');
-        dropdownLink.addEventListener('click', function (e) {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                e.stopPropagation();
-                navDropdown.classList.toggle('open');
-            }
-        });
-    }
-
     document.addEventListener('click', function (e) {
         if (navMenu && navMenu.classList.contains('active')) {
             if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
                 navMenu.classList.remove('active');
-                if (navDropdown) navDropdown.classList.remove('open');
             }
         }
     });
