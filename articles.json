@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T20:54:25.040Z",
+  "generatedAt": "2026-10-19T20:57:10.619Z",
   "categories": [
     {
       "key": "hrm",
@@ -385,13 +385,6 @@
           "mtime": "2026-10-19T20:46:19.986Z"
         },
         {
-          "title": "California \"No Robo Bosses Act\"",
-          "file": "California -No Robo Bosses Act.html",
-          "url": "news/California -No Robo Bosses Act.html",
-          "ext": "html",
-          "mtime": "2026-10-19T20:17:23.000Z"
-        },
-        {
           "title": "SAP announced its planned TechWolf acquisition on October 6, 2026",
           "file": "SAP announced its planned TechWolf acquisition on October 6.html",
           "url": "news/SAP announced its planned TechWolf acquisition on October 6.html",
@@ -496,6 +489,13 @@
       "label": "Global Employment Reguraltions",
       "icon": "📜",
       "articles": [
+        {
+          "title": "California \"No Robo Bosses Act\"",
+          "file": "California -No Robo Bosses Act.html",
+          "url": "regulations/California -No Robo Bosses Act.html",
+          "ext": "html",
+          "mtime": "2026-10-19T20:57:02.000Z"
+        },
         {
           "title": "South Korea's \"Yellow Envelope Act\"",
           "file": "South Korea -Yellow Envelope Act.html",
