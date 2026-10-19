@@ -3,7 +3,7 @@
   "categories": [
     {
       "key": "hrm",
-      "label": "HRM Base: Knowledge % Tips",
+      "label": "HRM Base: Knowledge and Tips",
       "icon": "👥",
       "articles": [
         {
@@ -367,7 +367,7 @@
     },
     {
       "key": "news",
-      "label": "HRM News & Reports",
+      "label": "HRM News and Reports",
       "icon": "📰",
       "articles": [
         {
