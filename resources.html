@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
 
     <style type="text/css">
-        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; overflow-x: hidden; }
         a { color: #000000; text-decoration: none; }
         a:hover { color: #996633; }
         img { border: 0; max-width: 100%; }
@@ -30,26 +30,40 @@
         .hero-text .hero-cta:hover { background-color: #996633; }
 
         /* ===== 资源列表 ===== */
-        /* 修复：将宽度调整与中文版一致，统一最大宽度并增加左右内边距 */
-        .resources-page { max-width: 1200px; margin: 30px auto 60px; padding: 0 20px; }
+        .resources-page { width: 90%; max-width: 1200px; margin: 30px auto 60px; padding: 0; }
         .page-meta { text-align: center; color: #666; font-size: 0.9rem; margin: 10px 0 15px; }
-        .search-box { max-width: 480px; margin: 0 auto 25px; }
+        .search-box { width: 100%; max-width: 480px; margin: 0 auto 25px; }
         .search-box input { width: 100%; padding: 12px 20px; border: 1.5px solid #ddd; border-radius: 40px; font-size: 0.95rem; outline: none; background: #fff; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
         .search-box input:focus { border-color: #996633; box-shadow: 0 0 0 4px rgba(153,102,51,0.1); }
+        
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 24px; }
-        .category { background: #FFFFFF; border-radius: 12px; padding: 18px 18px 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border: 1px solid #eee; display: flex; flex-direction: column; }
+        .category { background: #FFFFFF; border-radius: 12px; padding: 18px 18px 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); border: 1px solid #eee; display: flex; flex-direction: column; overflow: hidden; /* 防止子元素溢出卡片 */ }
         .category-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid #f2ede5; }
         .category-header h2 { font-size: 1.1rem; font-weight: 600; display: flex; align-items: center; gap: 6px; margin: 0; }
         .category-header .count { font-size: 0.75rem; font-weight: 600; background: #f5f0e8; color: #996633; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
-        .article-list { list-style: none; padding: 0; margin: 0 0 8px 0; flex: 1; }
-        .article-list li { border-bottom: 1px solid #f2f2f2; }
+        
+        /* 核心修改点：列表与链接的截断处理 */
+        .article-list { list-style: none; padding: 0; margin: 0 0 8px 0; flex: 1; width: 100%; }
+        .article-list li { border-bottom: 1px solid #f2f2f2; width: 100%; overflow: hidden; /* 防止 li 被长文本撑开 */ }
         .article-list li:last-child { border-bottom: none; }
-        .article-list a { display: block; padding: 9px 6px; font-size: 0.92rem; color: #1a1a1a; border-radius: 6px; transition: background 0.15s, color 0.15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .article-list a { 
+            display: block; 
+            padding: 9px 6px; 
+            font-size: 0.92rem; 
+            color: #1a1a1a; 
+            border-radius: 6px; 
+            transition: background 0.15s, color 0.15s; 
+            /* 强制单行显示并显示省略号 */
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            width: 100%;
+        }
         .article-list a:hover { background: #faf7f2; color: #996633; }
         .article-list .empty { text-align: center; padding: 14px 0; color: #999; font-size: 0.85rem; }
         
         /* 更多按钮位置调整 */
-        .more-wrap { margin-top: 12px; text-align: center; } /* 居中显示更协调 */
+        .more-wrap { margin-top: 12px; text-align: center; }
         .more-btn { display: inline-block; background: #996633; color: #fff !important; padding: 8px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
         .more-btn:hover { background: #7a522a; color: #fff !important; }
         
@@ -60,15 +74,16 @@
         .loading { text-align: center; padding: 40px 0; color: #888; }
 
         /* ===== 分类页 ===== */
-        .category-page { max-width: 1000px; margin: 30px auto 60px; padding: 0 20px; }
+        .category-page { width: 90%; max-width: 1000px; margin: 30px auto 60px; padding: 0; }
         .category-page-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #f0e8dd; }
         .category-page-header h2 { font-size: 1.4rem; margin: 0; display: flex; align-items: center; gap: 8px; }
         .category-page-header .back-link { font-size: 0.9rem; color: #996633; font-weight: 600; }
         .category-page-header .back-link:hover { text-decoration: underline; }
         .category-meta { color: #666; font-size: 0.88rem; margin-bottom: 14px; }
 
+        /* 分类页的列表也需要类似处理 */
         .full-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
-        .full-list li { border-bottom: 1px solid #f0f0f0; min-width: 0; }
+        .full-list li { border-bottom: 1px solid #f0f0f0; min-width: 0; overflow: hidden; }
         .full-list a { display: block; padding: 12px 10px; font-size: 0.95rem; color: #1a1a1a; border-radius: 6px; transition: background 0.15s, color 0.15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .full-list a:hover { background: #faf7f2; color: #996633; }
 
@@ -88,14 +103,15 @@
             .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
 
             /* 资源列表 手机端调整 */
-            .resources-page { margin: 20px auto 40px; padding: 0 15px; } /* 确保左右有 15px 留白 */
+            .resources-page { width: 90%; margin: 20px auto 40px; padding: 0; } 
+            .search-box { max-width: 100%; margin-bottom: 20px; }
             .grid { grid-template-columns: 1fr; gap: 16px; }
             .category { padding: 14px 14px 12px; }
             .category-header h2 { font-size: 1rem; }
             .article-list a { font-size: 0.88rem; padding: 8px 4px; }
             .more-btn { padding: 8px 24px; font-size: 0.85rem; }
             
-            .category-page { margin: 20px auto 40px; padding: 0 15px; }
+            .category-page { width: 90%; margin: 20px auto 40px; padding: 0; }
             .category-page-header h2 { font-size: 1.15rem; }
             .full-list { grid-template-columns: 1fr; gap: 0; }
             .full-list a { font-size: 0.9rem; padding: 11px 6px; }
@@ -185,7 +201,6 @@
                                         </li>
                                     `).join('');
 
-                                // 修复：将“More”按钮移至 <ul> 列表下方
                                 return `
                                     <section class="category">
                                         <div class="category-header">
@@ -243,7 +258,6 @@
                         return;
                     }
 
-                    // 修复：搜索结果中的“More”按钮也移到列表下方
                     contentEl.innerHTML = `<div class="grid">${filteredData.map(cat => {
                         const preview = cat.filteredArticles.slice(0, PREVIEW_COUNT);
                         const hasMore = cat.filteredArticles.length > PREVIEW_COUNT;
