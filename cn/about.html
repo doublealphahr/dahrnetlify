@@ -12,18 +12,14 @@
     <link rel="stylesheet" href="/animated-sliders/autoMatic.css" />
 
     <style type="text/css">
-        body{background-color:#FFFFFF;margin:0;padding:0;font-family:Arial,"Microsoft YaHei",sans-serif;color:#000000;}
-        a{color:#000000;text-decoration:none;}
-        a:hover{color:#996633;}
-        img{border:0;max-width:100%;}
-        p{margin:8px 0;line-height:1.6;}
+        body { background-color: #FFFFFF; margin: 0; padding: 0; font-family: Arial, "Microsoft YaHei", sans-serif; color: #000000; }
+        a { color: #000000; text-decoration: none; }
+        a:hover { color: #996633; }
+        img { border: 0; max-width: 100%; }
+        p { margin: 8px 0; line-height: 1.6; }
 
         /* ===== 主体 ===== */
-        .main-wrapper{width:99%;margin:0 auto;}
-
-        .style1{vertical-align:middle;text-align:left;padding:5px;}
-        .style2{text-align:center;}
-        .style15{color:#996633;text-align:center;font-size:xx-large;}
+        .main-wrapper { width: 99%; max-width: 1200px; margin: 0 auto; }
 
         /* ===== Hero 大图 ===== */
         .hero-banner {
@@ -61,43 +57,53 @@
         }
         .hero-text .hero-cta:hover { background-color: #996633; }
 
-        .about-cta-group{
-            display:flex; flex-wrap:wrap; justify-content:center; align-items:center;
-            gap:16px; padding:30px 10px 10px;
+        /* ===== 按钮组 ===== */
+        .about-cta-group {
+            display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+            gap: 16px; padding: 30px 10px 40px;
         }
-        .about-cta-btn{
-            display:inline-block; background-color:#996633; color:#FFFFFF;
-            font-family:Arial,"Microsoft YaHei",sans-serif;
-            font-size:16px; font-weight:600; line-height:1;
-            padding:14px 26px; border-radius:6px; text-decoration:none;
-            white-space:nowrap;
-            transition:background-color .2s ease, transform .2s ease, box-shadow .2s ease;
+        .about-cta-btn {
+            display: inline-block; background-color: #996633; color: #FFFFFF;
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+            font-size: 16px; font-weight: 600; line-height: 1;
+            padding: 14px 26px; border-radius: 6px; text-decoration: none;
+            white-space: nowrap;
+            transition: background-color .2s ease, transform .2s ease, box-shadow .2s ease;
         }
-        .about-cta-btn:hover{
-            background-color:#7a4f26; color:#FFFFFF;
-            transform:translateY(-2px);
-            box-shadow:0 6px 16px rgba(153,102,51,0.25);
+        .about-cta-btn:hover {
+            background-color: #7a4f26; color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(153,102,51,0.25);
         }
 
-        /* ===== 正文排版精细调整 ===== */
+        /* ===== 正文排版精细调整 (核心修复区) ===== */
         .about-text-content {
             font-family: Arial, "Microsoft YaHei", sans-serif;
-            font-size: 16px;
+            font-size: 16px !important;
             line-height: 1.8;
             color: #333;
-            padding-top: 20px;
+            padding: 20px 10px;
+            max-width: 900px;
+            margin: 0 auto;
         }
         .main-heading {
             display: block;
-            font-size: 1.4rem;
+            font-size: 1.5rem !important;
             color: #000;
-            margin: 0 0 10px 0;
+            margin: 0 0 20px 0;
+            font-weight: bold;
+            border-bottom: 2px solid #B89162;
+            padding-bottom: 10px;
         }
         .about-text-content p {
-            margin: 0 0 12px 0;
+            font-size: 16px !important;
+            margin: 0 0 16px 0;
+            line-height: 1.8;
             text-align: justify;
+            color: #444;
         }
 
+        /* ===== 响应式手机端优化 ===== */
         @media (max-width: 768px) {
             .hero-banner { height: 38vh; min-height: 240px; }
             .hero-text { width: 90%; left: 5%; top: 10%; text-align: left; }
@@ -105,15 +111,11 @@
             .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
             .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
 
-            .main-wrapper table[style*="width:99%"] { display: block; width: 100% !important; }
-            .main-wrapper table[style*="width:99%"] tbody, .main-wrapper table[style*="width:99%"] tr, .main-wrapper table[style*="width:99%"] td {
-                display: block; width: 100% !important; text-align: center; padding: 0;
-            }
-            .main-wrapper table[style*="width:99%"] td { text-align: left !important; padding: 0 10px; }
-            .main-wrapper table[style*="width:99%"] td p { font-size: 0.9rem !important; text-align: justify; }
-
-            .about-cta-group{ gap:12px; padding:20px 10px 10px; }
-            .about-cta-btn{ font-size:14px; padding:12px 18px; display:block; width:100%; max-width:280px; margin:0 auto; }
+            .about-cta-group { gap: 12px; padding: 20px 10px 30px; }
+            .about-cta-btn { font-size: 14px; padding: 12px 18px; display: block; width: 100%; max-width: 280px; margin: 0 auto; }
+            
+            .main-heading { font-size: 1.3rem !important; }
+            .about-text-content p { font-size: 15px !important; }
         }
     </style>
 </head>
@@ -134,33 +136,29 @@
     </div>
 
     <div class="main-wrapper">
-        <div class="has-text-align-center">
-            <div class="has-text-align-left">
-                <table style="width:99%" align="center">
-                    <tr>
-                        <td valign="top" class="about-text-content">
-                            <span class="main-heading"><strong>为什么选择 "Double Alpha"?</strong></span>
-                            
-                            <p>“Alpha” 代表超越市场的卓越表现。如今人力资源（HR）的定位已从后台行政职能转变为至关重要的战略战场。无论您是需要为关键职位锁定人才，还是需要根据不断更新的合规标准进行人力审计，我们都能通过我们的双向定位优势，确保您的业务顺利开展，又能得到全面保障。</p>
-                            <p>我们的核心服务包括：</p>
-                            <p><strong>精准招聘 (Precision Recruitment)：</strong> 我们不只是填补职位空缺；我们负责搜寻 “Alpha” 型专业候选人。</p>
-                            <p><strong>合规与劳动法 (Compliance &amp; Employment Law)：</strong> 从定制合同到员工手册，我们确保您的业务在不断变化的英国雇佣法规中稳如泰山。</p>
-                            <p><strong>战略外包 (Strategic Outsourcing)：</strong> 将招聘，入职，合同，薪酬管理到处理复杂员工关系等等HR相职能交给我们，让您能够专注于业务增长。</p>
-                            <p>人力资源不再是成本中心，而是竞争引擎。凭借我们的优势，无论您是客户还是候选人，我们都能助您专注现在守护未来。请与我们合作，期待您的 “Double Alpha” 卓越表现。</p>
-                            <br>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td valign="top">
-                            <div class="about-cta-group">
-                                <a href="/cn/contact.html" class="about-cta-btn">联系我们获取咨询和服务</a>
-                                <a href="/cn/job/positions.html" class="about-cta-btn">查看正在招聘职位</a>
-                                <a href="/cn/cv/index.html" class="about-cta-btn">发送简历</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+        <!-- 去掉了老式的 table 布局，改用现代 div 布局 -->
+        <div class="about-text-content">
+            <span class="main-heading">为什么选择 "Double Alpha"？</span>
+            
+            <p><strong>“Alpha” 代表着超越市场的卓越表现。</strong> 如今，人力资源（HR）的定位已从后台行政职能，转变为至关重要的高维战略战场。无论您是需要为关键岗位锁定顶尖人才，还是需要根据不断演变的合规标准进行人力审计，我们都能为您提供“双重 Alpha”优势。我们对人力资源采用双轨并行的策略，确保您的企业既保持高绩效，又得到全方位的安全保障。</p>
+            
+            <p style="font-weight: bold; margin-top: 25px; color: #996633;">我们的核心服务包括：</p>
+            
+            <ul style="margin-bottom: 20px; padding-left: 20px;">
+                <li style="margin-bottom: 12px; line-height: 1.8; color: #444; font-size: 16px;"><strong>精准招聘 (Precision Recruitment)：</strong> 我们不只是填补职位空缺；我们为您搜寻 “Alpha” 型候选人——那些能带来可衡量投资回报率（ROI）的领导者与专家。</li>
+                <li style="margin-bottom: 12px; line-height: 1.8; color: #444; font-size: 16px;"><strong>合规与劳动法 (Compliance &amp; Employment Law)：</strong> 从定制合同到员工手册，我们确保您的业务在不断变化的英国雇佣法规浪潮中免受冲击，稳如泰山。</li>
+                <li style="margin-bottom: 12px; line-height: 1.8; color: #444; font-size: 16px;"><strong>战略外包 (Strategic Outsourcing)：</strong> 我们充当您的编外 HR 部门，从绩效周期管理到复杂的员工关系，统统交由我们处理，让您能够心无旁骛地专注于业务增长。</li>
+            </ul>
+            
+            <p>人力资源不再是成本中心——它是企业的竞争引擎。无论您是雇主还是求职者，我们都能助您实现增长并守护未来。</p>
+            
+            <p><strong>今天就与我们携手，共同驱动您的 "Double Alpha" 卓越表现。</strong></p>
+        </div>
+
+        <div class="about-cta-group">
+            <a href="/cn/contact.html" class="about-cta-btn">联系我们获取咨询和服务</a>
+            <a href="/cn/job/positions.html" class="about-cta-btn">查看正在招聘职位</a>
+            <a href="/cn/cv/index.html" class="about-cta-btn">发送简历</a>
         </div>
     </div>
 
