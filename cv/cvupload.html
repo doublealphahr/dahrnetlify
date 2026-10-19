@@ -6,8 +6,6 @@
     <meta http-equiv="Content-Language" content="en" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>CV Upload Form | Double Alpha HR Consulting</title>
-    <!-- EmailJS SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -94,12 +92,11 @@
             font-family: inherit; min-width: 140px;
         }
         .btn-captcha:hover { background: #157a5b; transform: translateY(-1px); box-shadow: 0 14px 24px -10px rgba(31, 139, 107, 0.5); }
-        .btn-captcha:active { transform: translateY(1px); }
         .btn-captcha.refresh {
             background: white; color: #1c4c5e;
             border: 1.5px solid #c2dae8; box-shadow: none; min-width: 120px;
         }
-        .btn-captcha.refresh:hover { background: #eef6fa; border-color: #8ec9de; transform: translateY(-1px); box-shadow: 0 6px 12px -6px rgba(0,0,0,0.1); }
+        .btn-captcha.refresh:hover { background: #eef6fa; border-color: #8ec9de; }
 
         /* ===== Resume Form ===== */
         .resume-card { background: transparent; box-shadow: none; padding: 0; max-width: 99%; }
@@ -127,10 +124,6 @@
             border: 1px solid #dae9f2;
             box-shadow: 0 2px 8px rgba(0, 20, 30, 0.02);
             transition: all 0.15s;
-        }
-        .form-section:hover {
-            border-color: #b8d4e3;
-            box-shadow: 0 4px 12px rgba(38, 179, 217, 0.06);
         }
         .section-title {
             font-size: 1.15rem; font-weight: 600;
@@ -163,18 +156,10 @@
         .input-group select:focus,
         .input-group textarea:focus {
             border-color: #3ba3c7;
-            box-shadow: 0 0 0 4px rgba(59, 163, 199, 0.12), 0 4px 10px -4px rgba(59, 163, 199, 0.2);
+            box-shadow: 0 0 0 4px rgba(59, 163, 199, 0.12);
         }
-        .input-group input::placeholder,
-        .input-group textarea::placeholder { color: #9bb7c7; }
         .input-group textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
-        .input-group select {
-            cursor: pointer; appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235e8497' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 1rem;
-        }
+        
         .input-group.error input,
         .input-group.error select,
         .input-group.error textarea {
@@ -199,7 +184,6 @@
             transition: all 0.18s ease;
             display: inline-flex; align-items: center;
             justify-content: center; gap: 0.6rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             font-family: inherit;
         }
         .btn-primary {
@@ -207,8 +191,7 @@
             box-shadow: 0 10px 20px -8px rgba(31, 139, 107, 0.4);
             flex: 1; min-width: 180px;
         }
-        .btn-primary:hover { background: #157a5b; transform: translateY(-1px); box-shadow: 0 14px 24px -10px rgba(31, 139, 107, 0.5); }
-        .btn-primary:active { transform: translateY(1px); }
+        .btn-primary:hover { background: #157a5b; transform: translateY(-1px); }
         .btn-secondary { background: white; color: #1c4c5e; border: 1.5px solid #c2dae8; }
         .btn-secondary:hover { background: #eef6fa; border-color: #8ec9de; }
         .btn:disabled { opacity: 0.55; pointer-events: none; filter: grayscale(0.2); }
@@ -227,15 +210,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         .success-message .big-icon { font-size: 1.6rem; }
-        .error-submit {
-            background: #fdeaea; color: #a12b35;
-            padding: 1rem 1.5rem; border-radius: 1.2rem;
-            font-weight: 500; display: flex;
-            align-items: center; gap: 0.7rem;
-            border: 1px solid #f0b8b8;
-            margin-top: 1.5rem;
-            animation: fadeSlideIn 0.4s ease;
-        }
 
         .visually-hidden {
             position: absolute; width: 1px; height: 1px;
@@ -263,60 +237,28 @@
             animation: spin 0.7s linear infinite;
         }
         @keyframes spin { to { transform: rotate(360deg); } }
-        .style2 { font-size: x-small; color: #000080; }
 
         /* ===== Mobile ===== */
         @media (max-width: 768px) {
             body { padding: 0.6rem; }
             .main-card { padding: 1.3rem 1.1rem 1.6rem; border-radius: 1rem; }
-
-            .captcha-icon { font-size: 3rem; margin-bottom: 0.8rem; }
-            .captcha-sub { font-size: 0.88rem; margin-bottom: 1.4rem; padding: 0.35rem 1rem; }
-            .captcha-box { max-width: 100%; padding: 1.5rem 1rem 1.8rem; border-radius: 1.2rem; }
-            .captcha-question { font-size: 1.8rem; min-width: 120px; padding: 0.6rem 0.9rem; margin-bottom: 1.2rem; }
-            .captcha-input-area input { font-size: 1.1rem; padding: 0.85rem 1rem; max-width: 100%; }
-            .btn-captcha { padding: 0.8rem 1.6rem; font-size: 0.95rem; min-width: 120px; }
-            .btn-captcha.refresh { min-width: 100px; }
-
-            .header { flex-direction: column; align-items: flex-start; gap: 0.6rem; margin-bottom: 1.4rem; }
-            .header h1 { font-size: 1.35rem; gap: 0.4rem; }
-            .required-note { font-size: 0.75rem; padding: 0.3rem 0.9rem; }
-
+            .captcha-box { max-width: 100%; padding: 1.5rem 1rem 1.8rem; }
             .form-grid { grid-template-columns: 1fr; gap: 0.85rem; }
-            .form-section { padding: 1.1rem 0.95rem 1.2rem; border-radius: 1rem; margin-bottom: 1.2rem; }
-            .section-title { font-size: 1rem; margin-bottom: 1rem; padding-bottom: 0.5rem; }
-            .input-group label { font-size: 0.82rem; }
-            .input-group input,
-            .input-group select,
-            .input-group textarea { font-size: 0.92rem; padding: 0.7rem 0.85rem; border-radius: 12px; }
-            .input-group textarea { min-height: 110px; }
-
+            .form-section { padding: 1.1rem 0.95rem 1.2rem; }
             .file-upload-area { flex-direction: column; align-items: stretch; gap: 0.6rem; }
-            .file-label { justify-content: center; padding: 0.75rem 1rem; font-size: 0.88rem; }
-            .file-name { text-align: center; font-size: 0.82rem; }
-
-            .submit-area { flex-direction: column; gap: 0.7rem; margin-top: 1rem; }
-            .btn { padding: 0.9rem 1.4rem; font-size: 0.95rem; width: 100%; }
-            .btn-primary { min-width: 0; }
-
-            .success-message, .error-submit { padding: 0.85rem 1.1rem; font-size: 0.9rem; }
-        }
-
-        @media (max-width: 420px) {
-            .main-card { padding: 1.1rem 0.85rem 1.3rem; }
-            .header h1 { font-size: 1.2rem; }
-            .captcha-question { font-size: 1.5rem; min-width: 100px; }
+            .file-label { justify-content: center; }
+            .submit-area { flex-direction: column; gap: 0.7rem; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
 <body>
     <div class="main-card">
 
-        <!-- ===== CAPTCHA ===== -->
+        <!-- ===== 验证码 ===== -->
         <div id="captchaSection" class="captcha-container">
             <div class="captcha-icon"><strong>🧑‍💻</strong> <strong>Human Verification</strong></div>
             <div class="captcha-sub">Please answer the question to continue</div>
-
             <div class="captcha-box">
                 <div class="captcha-question" id="captchaQuestion">3 + 5 = ?</div>
                 <div class="captcha-input-area">
@@ -330,7 +272,7 @@
             </div>
         </div>
 
-        <!-- ===== Resume Form (hidden initially) ===== -->
+        <!-- ===== 表单 (Netlify Forms) ===== -->
         <div id="resumeSection" class="hidden">
             <div class="resume-card">
                 <div class="header">
@@ -340,7 +282,13 @@
                     </div>
                 </div>
 
-                <form id="resumeForm" novalidate>
+                <!-- ★ 核心改动：netlify 属性、form-name 和 enctype -->
+                <form id="resumeForm" name="cv_upload" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+                    <!-- Netlify 识别字段 -->
+                    <input type="hidden" name="form-name" value="cv_upload">
+                    <p class="visually-hidden">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
 
                     <!-- 1. Personal Info -->
                     <div class="form-section">
@@ -348,17 +296,17 @@
                         <div class="form-grid">
                             <div class="input-group">
                                 <label for="fullName">Full Name <span class="req">*</span></label>
-                                <input type="text" id="fullName" name="fullName" placeholder="Your full name" autocomplete="name">
+                                <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
                                 <div class="error-message" id="fullNameError"></div>
                             </div>
                             <div class="input-group">
                                 <label for="email">Email <span class="req">*</span></label>
-                                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+                                <input type="email" id="email" name="email" placeholder="you@example.com" required>
                                 <div class="error-message" id="emailError"></div>
                             </div>
                             <div class="input-group">
                                 <label for="phone">Phone <span class="req">*</span></label>
-                                <input type="tel" id="phone" name="phone" placeholder="+44 or +86 phone number" autocomplete="tel">
+                                <input type="tel" id="phone" name="phone" placeholder="+44 or +86 phone number" required>
                                 <div class="error-message" id="phoneError"></div>
                             </div>
                             <div class="input-group">
@@ -375,7 +323,7 @@
                         <div class="form-grid">
                             <div class="input-group">
                                 <label for="degree">Highest Degree <span class="req">*</span></label>
-                                <select id="degree" name="degree">
+                                <select id="degree" name="degree" required>
                                     <option value="">Select degree</option>
                                     <option value="College">College</option>
                                     <option value="Bachelor">Bachelor</option>
@@ -387,18 +335,16 @@
                             </div>
                             <div class="input-group">
                                 <label for="school">Graduated From <span class="req">*</span></label>
-                                <input type="text" id="school" name="school" placeholder="e.g. University of Oxford">
+                                <input type="text" id="school" name="school" placeholder="e.g. University of Oxford" required>
                                 <div class="error-message" id="schoolError"></div>
                             </div>
                             <div class="input-group">
                                 <label for="major">Major</label>
                                 <input type="text" id="major" name="major" placeholder="e.g. Computer Science">
-                                <div class="error-message" id="majorError"></div>
                             </div>
                             <div class="input-group">
                                 <label for="graduationYear">Graduation Year</label>
                                 <input type="number" id="graduationYear" name="graduationYear" placeholder="e.g. 2023" min="1950" max="2035">
-                                <div class="error-message" id="graduationYearError"></div>
                             </div>
                         </div>
                     </div>
@@ -409,21 +355,20 @@
                         <div class="form-grid">
                             <div class="input-group full-width">
                                 <label for="workExperience">Brief Description of Your Work Experience</label>
-                                <p class="style2">Tip: You can drag the bottom-right corner of the text box to resize it.</p>
-                                <textarea id="workExperience" name="workExperience" placeholder="Briefly describe your work experience, projects, or achievements..."></textarea>
-                                <div class="error-message" id="workExperienceError"></div>
+                                <textarea id="workExperience" name="workExperience" placeholder="Briefly describe your work experience..."></textarea>
                             </div>
                         </div>
                     </div>
 
                     <!-- 4. Attachment -->
                     <div class="input-group full-width">
-                        <label for="resumeFile">Upload CV Attachment (PDF / Word, max 1.5 MB. If larger, please email business@doublealphahr.com directly.)</label>
+                        <label for="resumeFile">Upload CV Attachment (PDF / Word, max 8 MB)</label>
                         <div class="file-upload-area">
                             <label for="resumeFile" class="file-label">
                                 <span>📎</span> Choose File
                             </label>
-                            <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" class="visually-hidden">
+                            <!-- ★ 核心改动：name 属性必须为 file -->
+                            <input type="file" id="resumeFile" name="resumeFile" accept=".pdf,.doc,.docx" class="visually-hidden" required>
                             <span class="file-name" id="fileName">No file selected</span>
                         </div>
                         <div class="error-message" id="resumeFileError"></div>
@@ -442,26 +387,13 @@
 
                 <div class="success-message" id="successMessage" style="display: none;">
                     <span class="big-icon">✅</span>
-                    <span id="successText">Your CV has been submitted successfully. We'll be in touch soon.</span>
-                </div>
-
-                <div class="error-submit" id="errorMessage" style="display: none;">
-                    <span class="big-icon">❌</span>
-                    <span id="errorText">Submission failed. Please try again later.</span>
+                    <span>Your CV has been submitted successfully. We'll be in touch soon.</span>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        emailjs.init("xaTu7fbYAz0mck3W4");
-
-        const EMAILJS_CONFIG = {
-            SERVICE_ID: "service_06erbfp",
-            TEMPLATE_ID: "template_ehac1xw",
-            TO_EMAIL: "277285055@qq.com"
-        };
-
         /* ================= CAPTCHA ================= */
         (function() {
             const captchaSection = document.getElementById('captchaSection');
@@ -492,13 +424,7 @@
                     captchaAnswer.classList.add('error');
                     return;
                 }
-                const numAnswer = Number(userAnswer);
-                if (isNaN(numAnswer) || !Number.isInteger(numAnswer)) {
-                    captchaError.textContent = 'Please enter a number.';
-                    captchaAnswer.classList.add('error');
-                    return;
-                }
-                if (numAnswer === currentAnswer) {
+                if (Number(userAnswer) === currentAnswer) {
                     captchaSection.classList.add('hidden');
                     resumeSection.classList.remove('hidden');
                 } else {
@@ -522,7 +448,7 @@
             generateCaptcha();
         })();
 
-        /* ================= RESUME FORM ================= */
+        /* ================= RESUME FORM (AJAX to Netlify) ================= */
         (function() {
             const form = document.getElementById('resumeForm');
             const fullName = document.getElementById('fullName');
@@ -533,209 +459,70 @@
             const resumeFile = document.getElementById('resumeFile');
             const fileName = document.getElementById('fileName');
             const successMessage = document.getElementById('successMessage');
-            const errorMessage = document.getElementById('errorMessage');
-            const successText = document.getElementById('successText');
-            const errorText = document.getElementById('errorText');
             const submitBtn = document.getElementById('submitBtn');
             const resetBtn = document.getElementById('resetBtn');
 
-            function setError(inputId, message) {
-                const input = document.getElementById(inputId);
-                const errorEl = document.getElementById(inputId + 'Error');
-                if (!input || !errorEl) return;
-                const group = input.closest('.input-group');
-                if (message) {
-                    if (group) group.classList.add('error');
-                    errorEl.textContent = message;
-                } else {
-                    if (group) group.classList.remove('error');
-                    errorEl.textContent = '';
-                }
-            }
-
-            function clearAllErrors() {
-                document.querySelectorAll('.input-group').forEach(g => g.classList.remove('error'));
-                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
-            }
-
-            function validateFullName() {
-                const val = fullName.value.trim();
-                if (!val) { setError('fullName', 'Please enter your name.'); return false; }
-                if (val.length < 2) { setError('fullName', 'Name must be at least 2 characters.'); return false; }
-                setError('fullName', ''); return true;
-            }
-            function validateEmail() {
-                const val = email.value.trim();
-                if (!val) { setError('email', 'Please enter your email.'); return false; }
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(val)) { setError('email', 'Please enter a valid email address.'); return false; }
-                setError('email', ''); return true;
-            }
-            function validatePhone() {
-                const val = phone.value.trim();
-                if (!val) { setError('phone', 'Please enter your phone number.'); return false; }
-                const phoneRegex = /^[\d\s\-+]{8,15}$/;
-                if (!phoneRegex.test(val)) { setError('phone', 'Please enter a valid phone number.'); return false; }
-                setError('phone', ''); return true;
-            }
-            function validateDegree() {
-                const val = degree.value;
-                if (!val) { setError('degree', 'Please select your highest degree.'); return false; }
-                setError('degree', ''); return true;
-            }
-            function validateSchool() {
-                const val = school.value.trim();
-                if (!val) { setError('school', 'Please enter your school.'); return false; }
-                setError('school', ''); return true;
-            }
-
-            fullName.addEventListener('blur', validateFullName);
-            fullName.addEventListener('input', function() {
-                if (this.closest('.input-group')?.classList.contains('error')) validateFullName();
-            });
-            email.addEventListener('blur', validateEmail);
-            email.addEventListener('input', function() {
-                if (this.closest('.input-group')?.classList.contains('error')) validateEmail();
-            });
-            phone.addEventListener('blur', validatePhone);
-            phone.addEventListener('input', function() {
-                if (this.closest('.input-group')?.classList.contains('error')) validatePhone();
-            });
-            degree.addEventListener('change', validateDegree);
-            school.addEventListener('blur', validateSchool);
-            school.addEventListener('input', function() {
-                if (this.closest('.input-group')?.classList.contains('error')) validateSchool();
-            });
-
+            // 简单的文件名称显示
             resumeFile.addEventListener('change', function() {
                 if (this.files && this.files.length > 0) {
                     fileName.textContent = this.files[0].name;
-                    const allowedExtensions = ['.pdf', '.doc', '.docx'];
                     const ext = this.files[0].name.substring(this.files[0].name.lastIndexOf('.')).toLowerCase();
-                    if (!allowedExtensions.includes(ext)) {
-                        setError('resumeFile', 'Only PDF, DOC, DOCX formats are supported.');
+                    if (!['.pdf', '.doc', '.docx'].includes(ext)) {
+                        document.getElementById('resumeFileError').textContent = 'Only PDF, DOC, DOCX supported.';
                     } else {
-                        setError('resumeFile', '');
+                        document.getElementById('resumeFileError').textContent = '';
                     }
                 } else {
                     fileName.textContent = 'No file selected';
-                    setError('resumeFile', '');
                 }
             });
 
-            function fileToBase64(file) {
-                return new Promise((resolve, reject) => {
-                    const reader = new FileReader();
-                    reader.readAsDataURL(file);
-                    reader.onload = () => resolve(reader.result.split(',')[1]);
-                    reader.onerror = error => reject(error);
-                });
-            }
-
+            // 拦截提交，使用 fetch 发给 Netlify (避免页面跳转)
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
-                clearAllErrors();
-                successMessage.style.display = 'none';
-                errorMessage.style.display = 'none';
-
-                validateFullName();
-                validateEmail();
-                validatePhone();
-                validateDegree();
-                validateSchool();
-
-                const graduationYear = document.getElementById('graduationYear');
-                if (graduationYear.value) {
-                    const year = parseInt(graduationYear.value);
-                    if (isNaN(year) || year < 1950 || year > 2035) {
-                        setError('graduationYear', 'Please enter a valid year (1950-2035).');
-                    }
-                }
-
-                if (resumeFile.files.length > 0) {
-                    const allowedExtensions = ['.pdf', '.doc', '.docx'];
-                    const ext = resumeFile.files[0].name.substring(resumeFile.files[0].name.lastIndexOf('.')).toLowerCase();
-                    if (!allowedExtensions.includes(ext)) {
-                        setError('resumeFile', 'Only PDF, DOC, DOCX formats are supported.');
-                    }
-                }
-
-                const hasError = document.querySelectorAll('.input-group.error').length > 0;
-                if (hasError) {
-                    const firstError = document.querySelector('.input-group.error');
-                    if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                
+                // 前端简单校验
+                if(!fullName.value || !email.value || !phone.value || !degree.value || !school.value) {
+                    alert('Please fill in all required fields.');
                     return;
                 }
-
-                const templateParams = {
-                    to_email: EMAILJS_CONFIG.TO_EMAIL,
-                    fullName: fullName.value.trim(),
-                    email: email.value.trim(),
-                    phone: phone.value.trim(),
-                    location: document.getElementById('location').value.trim() || 'Not provided',
-                    degree: degree.value,
-                    school: school.value.trim(),
-                    major: document.getElementById('major').value.trim() || 'Not provided',
-                    graduationYear: graduationYear.value || 'Not provided',
-                    workExperience: document.getElementById('workExperience').value.trim() || 'Not provided',
-                    fileName: resumeFile.files.length > 0 ? resumeFile.files[0].name : 'Not uploaded',
-                    submitTime: new Date().toLocaleString('en-GB')
-                };
 
                 submitBtn.disabled = true;
                 submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
 
                 try {
-                    if (resumeFile.files.length > 0) {
-                        const file = resumeFile.files[0];
-                        if (file.size > 1.5 * 1024 * 1024) {
-                            throw new Error('Attachment must not exceed 1.5 MB.');
-                        }
-                        const base64 = await fileToBase64(file);
-                        templateParams.attachment = base64;
-                        templateParams.attachment_name = file.name;
+                    // 将表单数据转为 URL-encoded 格式（Netlify 要求这种格式进行 AJAX 提交）
+                    const formData = new FormData(form);
+                    const data = new URLSearchParams(formData).toString();
+
+                    // 发送 POST 请求到当前页面地址（Netlify 会自动处理）
+                    const response = await fetch(window.location.pathname, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: data
+                    });
+
+                    if (response.ok) {
+                        form.reset();
+                        fileName.textContent = 'No file selected';
+                        successMessage.style.display = 'flex';
+                        submitBtn.innerHTML = '<span>✅</span> Submitted';
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    } else {
+                        throw new Error('Network response was not ok');
                     }
-
-                    await emailjs.send(
-                        EMAILJS_CONFIG.SERVICE_ID,
-                        EMAILJS_CONFIG.TEMPLATE_ID,
-                        templateParams
-                    );
-
-                    successText.textContent = 'Your CV has been submitted successfully. We\'ll be in touch soon.';
-                    successMessage.style.display = 'flex';
-                    submitBtn.innerHTML = '<span>✅</span> Submitted';
-                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-                    setTimeout(() => {
-                        submitBtn.disabled = false;
-                        submitBtn.innerHTML = '<span>📤</span> Submit CV';
-                    }, 5000);
-
                 } catch (error) {
-                    console.error('Submission failed:', error);
-                    let msg = 'Submission failed. Please try again later.';
-                    if (error && error.text) {
-                        msg = 'Submission failed: ' + error.text;
-                    } else if (error && error.message) {
-                        msg = 'Submission failed: ' + error.message;
-                    }
-                    errorText.textContent = msg + ' You can also email us directly at ' + EMAILJS_CONFIG.TO_EMAIL;
-                    errorMessage.style.display = 'flex';
-                    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
+                    alert('Submission failed. Please try again or email us directly at business@doublealphahr.com');
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = '<span>📤</span> Submit CV';
                 }
             });
 
-            // 修复被截断的重置按钮逻辑
-            resetBtn.addEventListener('click', function(e) {
+            resetBtn.addEventListener('click', function() {
                 setTimeout(() => {
-                    clearAllErrors();
                     fileName.textContent = 'No file selected';
                     successMessage.style.display = 'none';
-                    errorMessage.style.display = 'none';
+                    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
                 }, 10);
             });
         })();
