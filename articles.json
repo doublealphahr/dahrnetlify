@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16T11:28:09.118Z",
+  "generatedAt": "2026-10-19T17:45:56.110Z",
   "categories": [
     {
       "key": "hrm",
-      "label": "HRM Base: Knowledge & Tips",
+      "label": "HRM Base: Knowledge % Tips",
       "icon": "👥",
       "articles": [
         {
@@ -476,11 +476,67 @@
       "icon": "📜",
       "articles": [
         {
-          "title": "Argentina Employment Guide 2026",
+          "title": "Taiwan, China Employment Guide 2026",
           "file": "EmploymentGuide-Taiwan.html",
           "url": "regulations/EmploymentGuide-Taiwan.html",
           "ext": "html",
-          "mtime": "2026-10-16T08:13:39.570Z"
+          "mtime": "2026-10-19T17:39:24.105Z"
+        },
+        {
+          "title": "Argentina Employment Guide 2026",
+          "file": "Research on Employment Laws and Regulations of Mayor European Countires.html",
+          "url": "regulations/Research on Employment Laws and Regulations of Mayor European Countires.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:33:16.588Z"
+        },
+        {
+          "title": "Global HR Compliance: Analysis of Labor Law Differences in Major Countries",
+          "file": "Global HR Compliance -Analysis of Labor Law Differences in Major Countries.html",
+          "url": "regulations/Global HR Compliance -Analysis of Labor Law Differences in Major Countries.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:31:21.184Z"
+        },
+        {
+          "title": "2026 Global Employment Compliance Whitebook",
+          "file": "Global Employment Compliance Whitebook 2026.html",
+          "url": "regulations/Global Employment Compliance Whitebook 2026.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:29:25.845Z"
+        },
+        {
+          "title": "Germany New Regulation 2026: Employers Must Give Written Notice of Free \"Fair Integration\" Legal Aid on Day One for Third-Country Employees",
+          "file": "Germany New Regulation 2026.html",
+          "url": "regulations/Germany New Regulation 2026.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:27:42.207Z"
+        },
+        {
+          "title": "EOR and US Labor Law: Compliance Employment and Labor Dispute Practice Analysis",
+          "file": "EOR American Labor Law.html",
+          "url": "regulations/EOR American Labor Law.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:25:49.209Z"
+        },
+        {
+          "title": "Employment Regulations of the UK and Four Other European Countries in 2026:<br>A Comprehensive Interpretation of New European HR Policies",
+          "file": "Employment Regulations of UK and Other Four European Countries in 2026.html",
+          "url": "regulations/Employment Regulations of UK and Other Four European Countries in 2026.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:23:50.261Z"
+        },
+        {
+          "title": "Core Trends in European and American HR Regulations",
+          "file": "Core Trends in European and American HR Regulations.html",
+          "url": "regulations/Core Trends in European and American HR Regulations.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:20:15.193Z"
+        },
+        {
+          "title": "Development of Occupational Safety and Health Acts in Europe and US",
+          "file": "Development of Occupational Safety and Health Acts in Europe and US.html",
+          "url": "regulations/Development of Occupational Safety and Health Acts in Europe and US.html",
+          "ext": "html",
+          "mtime": "2026-10-19T17:16:47.281Z"
         },
         {
           "title": "Argentina Employment Guide 2026",
@@ -789,62 +845,6 @@
           "url": "regulations/EmploymentGuide-Australia.html",
           "ext": "html",
           "mtime": "2026-10-16T03:40:47.611Z"
-        },
-        {
-          "title": "Employment Regulations of the UK and Four Other European Countries in 2026: A Comprehensive Interpretation of New European HR Policies",
-          "file": "Employment Regulations of UK and Other Four European Countries in 2026.html",
-          "url": "regulations/Employment Regulations of UK and Other Four European Countries in 2026.html",
-          "ext": "html",
-          "mtime": "2026-10-15T20:00:21.993Z"
-        },
-        {
-          "title": "EOR and US Labor Law: Compliance Employment and Labor Dispute Practice Analysis",
-          "file": "EOR American Labor Law.html",
-          "url": "regulations/EOR American Labor Law.html",
-          "ext": "html",
-          "mtime": "2026-10-10T13:41:30.004Z"
-        },
-        {
-          "title": "2026 Global Employment Compliance Whitebook",
-          "file": "Global Employment Compliance Whitebook 2026.html",
-          "url": "regulations/Global Employment Compliance Whitebook 2026.html",
-          "ext": "html",
-          "mtime": "2026-10-10T13:37:16.898Z"
-        },
-        {
-          "title": "Research on Employment Laws and Regulations of Major European Countries",
-          "file": "Research on Employment Laws and Regulations of Mayor European Countires.html",
-          "url": "regulations/Research on Employment Laws and Regulations of Mayor European Countires.html",
-          "ext": "html",
-          "mtime": "2026-10-10T13:35:39.392Z"
-        },
-        {
-          "title": "Development of Occupational Safety and Health Acts in Europe and the US",
-          "file": "Development of Occupational Safety and Health Acts in Europe and US.html",
-          "url": "regulations/Development of Occupational Safety and Health Acts in Europe and US.html",
-          "ext": "html",
-          "mtime": "2026-10-10T13:24:45.000Z"
-        },
-        {
-          "title": "Global HR Compliance: Analysis of Labor Law Differences in Major Countries",
-          "file": "Global HR Compliance -Analysis of Labor Law Differences in Major Countries.html",
-          "url": "regulations/Global HR Compliance -Analysis of Labor Law Differences in Major Countries.html",
-          "ext": "html",
-          "mtime": "2026-10-10T13:03:12.000Z"
-        },
-        {
-          "title": "Core Trends in European and American HR Regulations 2024–2026",
-          "file": "Core Trends in European and American HR Regulations.html",
-          "url": "regulations/Core Trends in European and American HR Regulations.html",
-          "ext": "html",
-          "mtime": "2026-10-10T12:57:35.000Z"
-        },
-        {
-          "title": "Germany New Regulation 2026: Employers Must Give Written Notice of Free \"Fair Integration\" Legal Aid on Day One for Third-Country Employees",
-          "file": "Germany New Regulation 2026.html",
-          "url": "regulations/Germany New Regulation 2026.html",
-          "ext": "html",
-          "mtime": "2026-10-10T12:41:47.000Z"
         }
       ]
     }

@@ -1,145 +1,220 @@
 ﻿<!DOCTYPE html>
-<html style="overflow: hidden auto;" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<html lang="en" style="overflow-x: hidden;">
 <head>
-    <style>
-      @keyframes chatbase-spin { 100% { transform: rotate(360deg); } }
-      @keyframes chatbase-dash { 0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; } 50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; } 100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; } }
-      .chatbase-spinner { animation: chatbase-spin 2s linear infinite, chatbase-dash 1.5s ease-in-out infinite; transform-origin: center; }
-    .style1 {
-                text-align: center;
-}
-    .style2 {
-                font-size: small;
-                margin: 16px 0px;
-                padding-left: 18px;
-}
-.style3 {
-                font-style: normal;
-                font-variant: normal;
-                font-weight: 500;
-                font-size: small;
-                line-height: 25px;
-                font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                text-align: left;
-                border-top-style: none;
-                border-top-color: currentcolor;
-                border-top-width: medium;
-                padding-left: 0px;
-                padding-right: 16px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-}
-.style4 {
-                font-style: normal;
-                font-variant: normal;
-                font-weight: 500;
-                font-size: small;
-                line-height: 25px;
-                font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                text-align: left;
-                border-top-style: none;
-                border-top-color: currentcolor;
-                border-top-width: medium;
-                padding: 10px 16px;
-}
-.style5 {
-                font-style: normal;
-                font-variant: normal;
-                font-weight: 400;
-                font-size: small;
-                line-height: 25px;
-                font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                padding-left: 0px;
-                padding-right: 16px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-}
-.style6 {
-                font-style: normal;
-                font-variant: normal;
-                font-weight: 400;
-                font-size: small;
-                line-height: 25px;
-                font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                padding-left: 16px;
-                padding-right: 0px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-}
-.style7 {
-                font-style: normal;
-                font-variant: normal;
-                font-weight: 400;
-                font-size: small;
-                line-height: 25px;
-                font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-                padding: 10px 16px;
-}
-.style8 {
-                font-size: small;
-                text-align: center;
-}
-/* ===== 统一模板样式：表格宽度与栏目标题 ===== */
-table.style9 {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-table.style9[data-large="true"] {
-    width: 98%;
-}
-table.style9 td,
-table.style9 th {
-    border: 1px solid #d0d0d0;
-    padding: 8px 10px;
-    vertical-align: top;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    white-space: normal;
-}
-table.style9 thead th,
-table.style9 th {
-    text-align: center;
-    font-weight: bold;
-    background-color: #f5f5f5;
-}
-h1, h2, h3, h4, h5, h6 {
-    text-align: left;
-    font-weight: bold;
-}
-p, li, ul, ol, div:not(.MuiBox-root) {
-    text-align: left;
-}
-@media (max-width: 900px) {
-    table.style9,
-    table.style9[data-large="true"] {
-        width: 100%;
-    }
-}
-    </style>
     <meta charset="UTF-8">
-    <meta name="emotion-insertion-point" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="index,follow">
-    <meta property="og:title" content="Development of Occupational Safety and Health Acts in Europe and the US">
-    <meta property="og:description" content="Industrial Revolution and the emergence of OSH legislation, the 1970s legislative wave, and the reference value of US OSH law.">
-    <meta property="og:type" content="article">
-    <title>Development of Occupational Safety and Health Acts in Europe and the US</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Development of Occupational Safety and Health Acts in Europe and US</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background: #ffffff;
+            color: #1e1e1e;
+            font-size: 16px;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        .guide-container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px 16px;
+        }
+
+        .guide-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .guide-header .subtitle {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #2c2c2c;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .guide-header .policy-update {
+            font-size: 0.9rem;
+            color: #444;
+            max-width: 900px;
+            margin: 16px auto 8px;
+            text-align: left;
+            background: #f9f9f9;
+            padding: 16px 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1e3a8a;
+        }
+
+        .guide-header .policy-update p {
+            margin-bottom: 12px;
+        }
+
+        .guide-header .policy-update p:last-child {
+            margin-bottom: 0;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin: 2rem 0 1rem;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #e0e0e0;
+            text-align: left;
+            scroll-margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin: 1.5rem 0 0.8rem;
+            text-align: left;
+        }
+
+        h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin: 1.2rem 0 0.5rem;
+            text-align: left;
+        }
+
+        p, li, ul, ol, div:not(.MuiBox-root) {
+            text-align: left;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        ul, ol {
+            margin: 12px 0 16px 20px;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .table-wrap {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        table.style9 {
+            width: 100%;
+            min-width: 600px;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            background: #fff;
+            table-layout: fixed;
+        }
+
+        table.style9 th,
+        table.style9 td {
+            border: 1px solid #d0d0d0;
+            padding: 10px 12px;
+            vertical-align: top;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            white-space: normal;
+            text-align: left;
+        }
+
+        table.style9 thead th {
+            text-align: center;
+            font-weight: 700;
+            background-color: #f3f4f6;
+            color: #111;
+        }
+
+        table.style9 tbody tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        @media (max-width: 900px) {
+            table.style9 {
+                width: 100%;
+                min-width: 700px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            table.style9 {
+                min-width: 600px;
+                font-size: 0.85rem;
+            }
+
+            table.style9 th,
+            table.style9 td {
+                padding: 8px 10px;
+            }
+        }
+
+        strong {
+            font-weight: 600;
+            color: #0a0a0a;
+        }
+
+        code {
+            background: #f1f1f1;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.9em;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: #e0e0e0;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 480px) {
+            .guide-container {
+                padding: 16px 12px;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+            }
+
+            .policy-update {
+                padding: 12px 14px;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
-<body style="overflow: hidden; height: 100%; position: relative;">
-<div class="MuiBox-root css-1jh628d">
-    <main class="MuiBox-root css-12qm5r6">
-        <div class="MuiBox-root css-1vlorhn">
-            <div class="MuiBox-root css-14q94ld">
-                <div class="MuiBox-root css-1lxa5zn">
-                    <p class="MuiTypography-root MuiTypography-body1 css-y6ial7">EMPLOYMENT GUIDE</p>
-                    <h1 class="style1">Development of Occupational Safety and Health Acts in Europe and the US</h1>
-                    <p class="style8">
-                        <strong style="font-weight: 600;">
-                            <span>Industrial Revolution and the Emergence of OSH Legislation, the 1970s Legislative Wave, and the Reference Value of US OSH Law</span>
-                        </strong>
+<body>
+    <div class="guide-container">
+        <div class="guide-header">
+<div class="guide-header">
+<p class="subtitle"><strong>Industrial Revolution and the Emergence of OSH Legislation, the 1970s Legislative Wave, and the Reference Value of US OSH Law</strong>
                     </p>
                     <p class="style8">
                         <strong>&nbsp;</strong>
@@ -149,11 +224,7 @@ p, li, ul, ol, div:not(.MuiBox-root) {
                         <span>On December 1, 2014, China's newly amended Work Safety Law officially came into effect, comprehensively regulating and guiding national work safety for the coming period, protecting workers' lives, safety, and physical and mental health, and safeguarding people's well-being and social harmony. Looking around the world, occupational safety and health legislation originated and was standardized in developed countries in Europe and the US. These developed countries, which pioneered the Industrial Revolution and entered industrialized society earlier, have set a model for the world in building occupational safety and health regulations.</span>
                     </p>
 
-                    <h2 class="style2">
-                        <strong style="font-weight: 600;">
-                            <span>Industrial Revolution and the Emergence of OSH Legislation</span>
-                        </strong>
-                    </h2>
+                    <h2> Industrial Revolution and the Emergence of OSH Legislation </h2>
                     <p class="style2">
                         <span>Occupational safety and health regulations evolved from nothing to something, from single, sporadic regulations applicable only to a specific scope (industry, region, worker) to comprehensive, all-encompassing basic laws with broader application, supplemented by a series of subordinate regulations and standards, forming a relatively complete occupational safety and health regulatory system. This process went through a considerable historical stage. It is generally believed that occupational safety and health legislation emerged during the First Industrial Revolution in Europe, arising along with the industrialization and urbanization of Europe and the US.</span>
                     </p>
@@ -167,11 +238,7 @@ p, li, ul, ol, div:not(.MuiBox-root) {
                         <span>After the mid-19th century, with the advancement of the Second Industrial Revolution, occupational safety and health legislation gradually developed. Some major capitalist countries followed Britain's lead and joined the ranks of "factory legislation." Occupational safety and health legislation in the United States was first carried out at the state level. At that time, the United States was in the midst of the three-year Civil War (1861–1864, the American Civil War). Factories were in chaos, working conditions were extremely poor, and casualties were frequent. In 1877, Massachusetts promulgated the first Factory Inspection Act in the United States, which greatly promoted the formulation of occupational safety and health regulations in other states.</span>
                     </p>
 
-                    <h2 class="style2">
-                        <strong style="font-weight: 600;">
-                            <span>The 1970s Legislative Wave in OSH</span>
-                        </strong>
-                    </h2>
+                    <h2>The 1970s Legislative Wave in OSH</h2>
                     <p class="style2">
                         <span>From the early 20th century to the 1970s, capitalism developed into the stage of monopoly capitalism, and industrial production during this period had formed modern industry. The development of science and technology brought rapid changes to production. However, with the application of new technologies, new processes, and new equipment, many new risks and problems were also brought to occupational safety and health. During this period, to adapt to production development, Britain amended the Factory Act four times in 1937, 1948, 1959, and 1961. Especially after the end of World War II, the new technological revolution drove tremendous changes in social economy and production and life, making standardized OSH legislation urgent. European and American countries increasingly felt that only enacting and promulgating single, sporadic occupational safety and health regulations applicable only to a specific scope could no longer meet the needs of industrial development. Occupational safety and health had to be treated as an extremely important issue and a unified, comprehensive, all-encompassing basic safety and health law had to be enacted separately. This legislative preparation process finally came to fruition in the 1970s, setting off a wave of OSH legislation.</span>
                     </p>
@@ -185,11 +252,7 @@ p, li, ul, ol, div:not(.MuiBox-root) {
                         <span>Following the United States and Britain, West Germany promulgated the Occupational Safety Act in 1974, Canada promulgated the Occupational Health and Safety Act in 1978, and Finland promulgated a new Occupational Health Act in 1979. The booming legislative movement in Europe and the US pushed forward the global OSH legislative process. In Asia, Japan promulgated the Industrial Safety and Health Act on June 8, 1972. China's Taiwan region also promulgated the Labor Safety and Health Act on April 16, 1974. In Latin America, Mexico enacted the Safety and Health Act in 1978, and both Bolivia and Venezuela promulgated Safety and Health Acts in 1979. This period can be called the golden age of OSH legislation.</span>
                     </p>
 
-                    <h2 class="style2">
-                        <strong style="font-weight: 600;">
-                            <span>The Reference Value of US OSH Law</span>
-                        </strong>
-                    </h2>
+                    <h2>The Reference Value of US OSH Law </h2>
                     <p class="style2">
                         <span>Among developed countries in Europe and the US, the US occupational safety and health regulatory system is relatively complete and standardized. The United States enacted the Occupational Safety and Health Act and the Mine Safety and Health Act relatively early, and the related occupational safety and health standards are complete in categories and highly operable. China and the United States are relatively similar in land area, topography, natural climate, industrial categories, population, ethnic groups, and races. Therefore, compared with other developed countries in Europe and the US, the US OSH rule of law construction has strong reference value for China.</span>
                     </p>

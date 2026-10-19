@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Article | Double Alpha HR</title>
   <style>
+    /* 保持您原有的样式不变 */
     .article-detail {
       max-width: 900px;
       margin: 0 auto;
@@ -43,12 +44,21 @@
   </style>
 </head>
 <body>
+
+  <!-- ================= 1. 页头占位符 ================= -->
+  <div id="site-header"></div>
+
+  <!-- ================= 2. 文章主体内容 ================= -->
   <div class="article-detail">
     <a class="back" href="resources.html">← Return to the Articles List</a>
     <h1 class="title" id="articleTitle">Loading...</h1>
     <div class="body" id="articleBody"></div>
   </div>
 
+  <!-- ================= 3. 页脚占位符 ================= -->
+  <div id="site-footer"></div>
+
+  <!-- ================= 4. 原有的文章加载脚本 ================= -->
   <script>
   (function() {
       var params = new URLSearchParams(location.search);
@@ -95,5 +105,44 @@
           });
   })();
   </script>
+
+  <!-- ================= 5. 新增：通用页头页脚加载器 ================= -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // 加载英文页头
+      fetch('/components/header.html')
+          .then(response => response.text())
+          .then(data => {
+              const headerContainer = document.getElementById('site-header');
+              headerContainer.innerHTML = data;
+              
+              // 重新执行注入的 script 标签 (保持原有逻辑)
+              const scripts = headerContainer.querySelectorAll('script');
+              scripts.forEach(oldScript => {
+                  const newScript = document.createElement('script');
+                  Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                  newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                  oldScript.parentNode.replaceChild(newScript, oldScript);
+              });
+          });
+      
+      // 加载英文页脚
+      fetch('/components/footer.html')
+          .then(response => response.text())
+          .then(data => {
+              const footerContainer = document.getElementById('site-footer');
+              footerContainer.innerHTML = data;
+              
+              const scripts = footerContainer.querySelectorAll('script');
+              scripts.forEach(oldScript => {
+                  const newScript = document.createElement('script');
+                  Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                  newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                  oldScript.parentNode.replaceChild(newScript, oldScript);
+              });
+          });
+  });
+  </script>
+
 </body>
 </html>

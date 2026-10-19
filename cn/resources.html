@@ -84,10 +84,11 @@
         .notice-box a { color: #996633; text-decoration: underline; }
         .notice-box a:hover { color: #B89162; }
 
-        .more-wrap { margin-top: 10px; text-align: left; }
+        /* 修复：更多按钮居中，并加一点上边距 */
+        .more-wrap { margin-top: 12px; text-align: center; }
         .more-btn {
             display: inline-block; background: #996633; color: #fff !important;
-            padding: 7px 18px; border-radius: 30px; font-size: 0.85rem;
+            padding: 8px 24px; border-radius: 30px; font-size: 0.85rem;
             font-weight: 600; transition: background 0.2s;
         }
         .more-btn:hover { background: #7a522a; color: #fff !important; }
@@ -150,7 +151,6 @@
             .category-header h2 { font-size: 1.05rem; }
             .count { font-size: 0.7rem; }
             .title { font-size: 0.88rem; }
-            .more-wrap { text-align: left; }
             .more-btn { padding: 8px 24px; font-size: 0.85rem; }
 
             .category-page { margin: 20px auto 40px; padding: 0 15px; }
@@ -244,18 +244,19 @@
                                         </li>
                                     `).join('');
 
+                                // 修复：将“更多”按钮移至 <ul> 列表下方
                                 return `
                                     <section class="category">
                                         <div class="category-header">
                                             <h2><span>${cat.icon || '📄'}</span>${escapeHtml(cat.label)}</h2>
                                             <span class="count">${cat.articles.length} 篇文章</span>
                                         </div>
+                                        <ul class="article-list">${listItems}</ul>
                                         ${hasMore ? `
                                             <div class="more-wrap">
                                                 <a class="more-btn" href="javascript:void(0)" data-category-index="${idx}">更多 →</a>
                                             </div>
                                         ` : ''}
-                                        <ul class="article-list">${listItems}</ul>
                                     </section>
                                 `;
                             }).join('')}
@@ -301,6 +302,7 @@
                         return;
                     }
 
+                    // 修复：搜索结果中的“更多”按钮也移到列表下方
                     contentEl.innerHTML = `<div class="grid">${filteredData.map(cat => {
                         const preview = cat.filteredArticles.slice(0, PREVIEW_COUNT);
                         const hasMore = cat.filteredArticles.length > PREVIEW_COUNT;
@@ -316,12 +318,12 @@
                                     <h2><span>${cat.icon || '📄'}</span>${escapeHtml(cat.label)}</h2>
                                     <span class="count">${cat.filteredArticles.length} 篇文章</span>
                                 </div>
+                                <ul class="article-list">${listItems}</ul>
                                 ${hasMore ? `
                                     <div class="more-wrap">
                                         <a class="more-btn" href="javascript:void(0)" data-category-index="${origIdx}">更多 →</a>
                                     </div>
                                 ` : ''}
-                                <ul class="article-list">${listItems}</ul>
                             </section>
                         `;
                     }).join('')}</div>`;

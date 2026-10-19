@@ -30,7 +30,8 @@
         .hero-text .hero-cta:hover { background-color: #996633; }
 
         /* ===== 资源列表 ===== */
-        .resources-page { width: 98%; max-width: 1200px; margin: 0 auto; padding: 20px 10px; }
+        /* 修复：将宽度调整与中文版一致，统一最大宽度并增加左右内边距 */
+        .resources-page { max-width: 1200px; margin: 30px auto 60px; padding: 0 20px; }
         .page-meta { text-align: center; color: #666; font-size: 0.9rem; margin: 10px 0 15px; }
         .search-box { max-width: 480px; margin: 0 auto 25px; }
         .search-box input { width: 100%; padding: 12px 20px; border: 1.5px solid #ddd; border-radius: 40px; font-size: 0.95rem; outline: none; background: #fff; box-sizing: border-box; transition: border-color 0.2s, box-shadow 0.2s; }
@@ -46,9 +47,12 @@
         .article-list a { display: block; padding: 9px 6px; font-size: 0.92rem; color: #1a1a1a; border-radius: 6px; transition: background 0.15s, color 0.15s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .article-list a:hover { background: #faf7f2; color: #996633; }
         .article-list .empty { text-align: center; padding: 14px 0; color: #999; font-size: 0.85rem; }
-        .more-wrap { margin-top: 10px; text-align: right; }
-        .more-btn { display: inline-block; background: #996633; color: #fff !important; padding: 7px 18px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
+        
+        /* 更多按钮位置调整 */
+        .more-wrap { margin-top: 12px; text-align: center; } /* 居中显示更协调 */
+        .more-btn { display: inline-block; background: #996633; color: #fff !important; padding: 8px 24px; border-radius: 30px; font-size: 0.85rem; font-weight: 600; transition: background 0.2s; }
         .more-btn:hover { background: #7a522a; color: #fff !important; }
+        
         mark { background: #ffe58a; padding: 0 2px; border-radius: 3px; }
         .notice-box { text-align: center; margin-top: 40px; padding: 18px 12px; background: #f9f7ec; border-radius: 8px; font-size: 0.9rem; color: #333; }
         .notice-box a { color: #996633; font-weight: 600; }
@@ -56,7 +60,7 @@
         .loading { text-align: center; padding: 40px 0; color: #888; }
 
         /* ===== 分类页 ===== */
-        .category-page { width: 98%; max-width: 1000px; margin: 0 auto; padding: 20px 10px 10px; }
+        .category-page { max-width: 1000px; margin: 30px auto 60px; padding: 0 20px; }
         .category-page-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 2px solid #f0e8dd; }
         .category-page-header h2 { font-size: 1.4rem; margin: 0; display: flex; align-items: center; gap: 8px; }
         .category-page-header .back-link { font-size: 0.9rem; color: #996633; font-weight: 600; }
@@ -83,13 +87,15 @@
             .hero-text p { font-size: 0.82rem; margin-bottom: 14px; }
             .hero-text .hero-cta { padding: 8px 18px; font-size: 0.85rem; }
 
-            /* 资源列表 */
+            /* 资源列表 手机端调整 */
+            .resources-page { margin: 20px auto 40px; padding: 0 15px; } /* 确保左右有 15px 留白 */
             .grid { grid-template-columns: 1fr; gap: 16px; }
             .category { padding: 14px 14px 12px; }
             .category-header h2 { font-size: 1rem; }
             .article-list a { font-size: 0.88rem; padding: 8px 4px; }
-            .more-wrap { text-align: center; }
             .more-btn { padding: 8px 24px; font-size: 0.85rem; }
+            
+            .category-page { margin: 20px auto 40px; padding: 0 15px; }
             .category-page-header h2 { font-size: 1.15rem; }
             .full-list { grid-template-columns: 1fr; gap: 0; }
             .full-list a { font-size: 0.9rem; padding: 11px 6px; }
@@ -179,6 +185,7 @@
                                         </li>
                                     `).join('');
 
+                                // 修复：将“More”按钮移至 <ul> 列表下方
                                 return `
                                     <section class="category">
                                         <div class="category-header">
@@ -236,6 +243,7 @@
                         return;
                     }
 
+                    // 修复：搜索结果中的“More”按钮也移到列表下方
                     contentEl.innerHTML = `<div class="grid">${filteredData.map(cat => {
                         const preview = cat.filteredArticles.slice(0, PREVIEW_COUNT);
                         const hasMore = cat.filteredArticles.length > PREVIEW_COUNT;

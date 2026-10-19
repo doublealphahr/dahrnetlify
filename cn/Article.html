@@ -1,18 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Article | Double Alpha HR</title>
+  <title>文章详情 | Double Alpha HR</title>
   <style>
     .article-detail {
       max-width: 900px;
       margin: 0 auto;
-      padding: 1.5rem 1rem;
+      /* 加大上下 padding，避免与页头页脚贴得太紧 */
+      padding: 2.5rem 1rem; 
       font-size: 16px;
       line-height: 1.7;
       color: #0b2d3b;
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, "Microsoft YaHei", sans-serif;
     }
     .article-detail h1.title {
       font-size: 1.6rem;
@@ -43,12 +44,22 @@
   </style>
 </head>
 <body>
+
+  <!-- ================= 1. 页头占位符 ================= -->
+  <div id="site-header"></div>
+
+  <!-- ================= 2. 文章主体内容 ================= -->
   <div class="article-detail">
-    <a class="back" href="../resources.html">← 返回文章列表</a>
+    <!-- 注意：请确保这里的返回路径是您中文版资源列表页的正确路径，例如 /cn/resources.html 或 resources.html -->
+    <a class="back" href="resources.html">← 返回文章列表</a>
     <h1 class="title" id="articleTitle">加载中...</h1>
     <div class="body" id="articleBody"></div>
   </div>
 
+  <!-- ================= 3. 页脚占位符 ================= -->
+  <div id="site-footer"></div>
+
+  <!-- ================= 4. 文章加载脚本 (已汉化报错提示) ================= -->
   <script>
   (function() {
       var params = new URLSearchParams(location.search);
@@ -56,14 +67,14 @@
 
       if (!file) {
           document.getElementById('articleBody').innerHTML =
-              '<div class="error">Lack of parameter f</div>';
+              '<div class="error">缺少参数 f</div>';
           return;
       }
 
       file = file.replace(/\\/g, '/');
       if (file.indexOf('..') !== -1 || file.charAt(0) === '/') {
           document.getElementById('articleBody').innerHTML =
-              '<div class="error">Parameter Error</div>';
+              '<div class="error">参数错误</div>';
           return;
       }
 
@@ -90,10 +101,49 @@
           })
           .catch(function(err) {
               document.getElementById('articleBody').innerHTML =
-                  '<div class="error">❌ Load failed ' + err.message +
-                  '<br>Please confirm the path of the file ' + url + '</div>';
+                  '<div class="error">❌ 加载失败 ' + err.message +
+                  '<br>请确认文件路径是否正确：' + url + '</div>';
           });
   })();
   </script>
+
+  <!-- ================= 5. 中文版页头页脚加载器 ================= -->
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // 加载中文页头
+      fetch('/components/cn-header.html')
+          .then(response => response.text())
+          .then(data => {
+              const headerContainer = document.getElementById('site-header');
+              headerContainer.innerHTML = data;
+              
+              // 重新执行注入的 script 标签 (确保导航栏 JS 生效)
+              const scripts = headerContainer.querySelectorAll('script');
+              scripts.forEach(oldScript => {
+                  const newScript = document.createElement('script');
+                  Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                  newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                  oldScript.parentNode.replaceChild(newScript, oldScript);
+              });
+          });
+      
+      // 加载中文页脚
+      fetch('/components/cn-footer.html')
+          .then(response => response.text())
+          .then(data => {
+              const footerContainer = document.getElementById('site-footer');
+              footerContainer.innerHTML = data;
+              
+              const scripts = footerContainer.querySelectorAll('script');
+              scripts.forEach(oldScript => {
+                  const newScript = document.createElement('script');
+                  Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                  newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                  oldScript.parentNode.replaceChild(newScript, oldScript);
+              });
+          });
+  });
+  </script>
+
 </body>
 </html>
